@@ -1,48 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Patents</title>
+  <meta charset="UTF-8">
+  <title>Patent Certificates</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
+      background-color: #f4faff;
+      font-family: sans-serif;
+      max-width: 1000px;
       margin: auto;
-      padding: 20px;
-      line-height: 1.6;
+      padding: 2em;
     }
     h1 {
       text-align: center;
-      color: #007BFF;
+      color: #003366;
     }
-    .back {
-      display: block;
-      margin-top: 40px;
+    .top-img {
+      text-align: center;
+      margin-bottom: 2em;
+    }
+    .top-img img {
+      width: 80%;
+      max-width: 600px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    .item {
+      width: 30%;
       text-align: center;
     }
-    .back a {
+    .item img {
+      width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+    .notice {
+      margin-top: 3em;
+      font-size: 1.2em;
+      color: #003366;
+      text-align: left;
+      line-height: 1.6;
+    }
+    .notice strong {
+      display: block;
+      margin-bottom: 0.5em;
+      font-size: 1.4em;
+      color: #000;
+    }
+    a.back {
+      display: inline-block;
+      margin-top: 2em;
       text-decoration: none;
-      color: #007BFF;
-      font-weight: bold;
+      background: #cce7ff;
+      padding: 8px 14px;
+      border-radius: 6px;
+      color: #000;
     }
   </style>
 </head>
 <body>
-  <h1>Patents</h1>
 
-  <p>
-    This section features intellectual property and proprietary innovations registered to protect the project’s original technologies.
-    These patents ensure the uniqueness and legal protection of the core waste-to-housing solution.
-  </p>
+  <h1>Patent Certificates</h1>
 
-  <ul>
-    <li>✅ Patents granted for modular housing assembly.</li>
-    <li>✅ Patents covering waste treatment to construction pipeline.</li>
-    <li>✅ Technologies protected in multiple jurisdictions.</li>
-  </ul>
-
-  <div class="back">
-    <a href="index.html">← Back to Home</a>
+  <div class="top-img">
+    <img src="1.jpg" alt="Main Patent Image">
   </div>
+
+  <div class="gallery">
+    <div class="item"><img src="2.jpg" alt=""></div>
+    <div class="item"><img src="3.jpg" alt=""></div>
+    <div class="item"><img src="4.jpg" alt=""></div>
+    <div class="item"><img src="5.jpg" alt=""></div>
+    <div class="item"><img src="6.jpg" alt=""></div>
+    <div class="item"><img src="7.jpg" alt=""></div>
+    <div class="item"><img src="8.jpg" alt=""></div>
+    <div class="item"><img src="9.jpg" alt=""></div>
+    <div class="item"><img src="10.jpg" alt=""></div>
+    <div class="item"><img src="11.jpg" alt=""></div>
+    <div class="item"><img src="12.jpg" alt=""></div>
+    <div class="item"><img src="13.jpg" alt=""></div>
+    <div class="item"><img src="14.jpg" alt=""></div>
+    <div class="item"><img src="15.jpg" alt=""></div>
+  </div>
+
+  <div class="notice">
+    <strong>Submitted Patent Applications</strong>
+    <p>1. A textile waste board manufacturing process — Application No.: <strong>2021108973930</strong></p>
+    <p>2. An Efficient and Environmentally Friendly Marine Plastic Waste Treatment System and Its Preparation Method — Application No.: <strong>819457</strong></p>
+  </div>
+
+  <a class="back" href="index.html">← Back to Home</a>
+
 </body>
 </html>
