@@ -3,8 +3,8 @@
   <span style="font-size: 20px; font-weight: normal;">Our Collaboration with the Māori Foundation in New Zealand</span>
 </h2>
 
-<!-- 响应式图片网格 -->
-<div style="
+<!-- 响应式图片展示 -->
+<section style="
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
@@ -12,20 +12,33 @@
   max-width: 1200px;
   margin: auto;
 ">
-  <img src="en/1.11.jpg" alt="案例照片" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #ccc;">
-  <img src="en/1.12.jpg" alt="案例照片" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #ccc;">
-  <img src="en/1.14.jpg" alt="案例照片" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #ccc;">
-  <img src="en/1.15.jpg" alt="案例照片" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #ccc;">
-  <img src="en/1.16.jpg" alt="案例照片" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #ccc;">
-  <img src="en/1.17.jpg" alt="案例照片" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #ccc;">
-  <img src="en/1.18.jpg" alt="案例照片" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #ccc;">
-  <img src="en/1.19.jpg" alt="案例照片" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #ccc;">
-  <img src="en/1.20.jpg" alt="案例照片" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #ccc;">
-</div>
+  <img src="en/1.11.jpg" alt="毛利族文化活动现场 1" loading="lazy" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #ccc; transition: transform 0.3s;">
+  <img src="en/1.12.jpg" alt="毛利族文化活动现场 2" loading="lazy" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #ccc; transition: transform 0.3s;">
+  <img src="en/1.14.jpg" alt="毛利族文化交流照片" loading="lazy" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #ccc; transition: transform 0.3s;">
+  <img src="en/1.15.jpg" alt="合作仪式现场" loading="lazy" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #ccc; transition: transform 0.3s;">
+  <img src="en/1.16.jpg" alt="文化展演" loading="lazy" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #ccc; transition: transform 0.3s;">
+  <img src="en/1.17.jpg" alt="互动体验活动" loading="lazy" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #ccc; transition: transform 0.3s;">
+  <img src="en/1.18.jpg" alt="团队合影" loading="lazy" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #ccc; transition: transform 0.3s;">
+  <img src="en/1.19.jpg" alt="传统表演活动" loading="lazy" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #ccc; transition: transform 0.3s;">
+  <img src="en/1.20.jpg" alt="闭幕仪式现场" loading="lazy" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #ccc; transition: transform 0.3s;">
+</section>
+
+<!-- 图片 hover 动效 -->
+<style>
+  section img:hover {
+    transform: scale(1.02);
+  }
+
+  @media (max-width: 600px) {
+    section {
+      padding: 10px !important;
+    }
+  }
+</style>
 
 <!-- 返回首页按钮 -->
 <div style="text-align: center; margin: 50px 0;">
-  <a href="index.html" style="
+  <a href="index.html" aria-label="返回首页 Back to Home" style="
     text-decoration: none;
     background-color: #4CAF50;
     color: white;
