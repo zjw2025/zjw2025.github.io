@@ -1,5 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>Working Together</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #dcebf7;
+      padding: 2em;
+      color: #111;
+    }
+    h1 {
+      color: #003366;
+      text-align: center;
+    }
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 2em;
+    }
+    .menu a {
+      text-decoration: none;
+      background: #cce7ff;
+      padding: 10px 16px;
+      border-radius: 8px;
+      color: #000;
+      font-weight: bold;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+    .content {
+      font-size: 1.15em;
+      color: #111;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.8em;
+    }
+    .content p {
+      margin-bottom: 1.5em;
+    }
+    p.footer {
+      text-align: center;
+      font-size: 0.95em;
+      margin-top: 3em;
+      color: #333;
+    }
+  </style>
+</head>
 <body>
-  <!-- 上方導覽 -->
+
+  <!-- 導覽列 -->
   <div class="menu">
     <a href="patents.html">📜 專利證書</a>
     <a href="testing.html">✏️ 檢測報告</a>
@@ -10,13 +61,13 @@
     <a href="videos.html">🎥 視頻資料</a>
   </div>
 
-  <!-- 標題 -->
+  <!-- 主標題 -->
   <h1>Working Together for a Sustainable Future</h1>
-  <p style="font-size: 1em; color: #555; margin-top: -0.5em;">
+  <p style="font-size: 1em; color: #555; text-align: center; margin-top: -0.5em;">
     Using waste to solve waste – Patented technology turning marine and textile waste into durable housing materials
   </p>
 
-  <!-- 核心說明 -->
+  <!-- 核心內容 -->
   <div class="content">
     <p>用最簡單、直接、以廢治廢的方式，解決全球性固廢利用問題。</p>
     <p>3000美元給窮人一間高品質、零污染、阻燃性能B1、抗壓強度25–30MPa、壽命30年的房屋。</p>
@@ -25,8 +76,10 @@
   </div>
 
   <!-- 頁尾聲明 -->
-  <p style="text-align:center; font-size:0.95em; margin-top:3em; color:#333;">
+  <p class="footer">
     本網站由發明人張建文設計與維護，所有內容來自實地試驗、第三方檢測與國內外正式合作，無任何商業包裝與修飾。<br>
     This website is independently designed and maintained by inventor Zhang Jianwen. All content is based on real-world testing, certified reports, and formal domestic and international collaborations — without any commercial embellishment.
   </p>
+
 </body>
+</html>
