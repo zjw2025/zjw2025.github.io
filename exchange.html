@@ -11,135 +11,164 @@
       padding: 2em;
       color: #111;
     }
+
     h1, h2 {
       text-align: center;
       color: #003366;
     }
+
     h2 {
-      margin-top: 3em;
+      margin-top: 2.5em;
       font-size: 1.6em;
     }
-    .media-section {
-      justify-content: center;
-      gap: 2em;
-      flex-wrap: wrap;
+
+    .section {
+      margin-top: 2em;
     }
-    .media-section img {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .media-info {
-      max-width: 400px;
-    .media-info p, .link-center {
-      text-align: left;
-    }
-    .link-center {
-      text-align: center;
-      font-size: 1.4em;
-    }
-    .link-center a {
-      text-decoration: none;
-      font-weight: bold;
+
     .gallery {
       display: flex;
       justify-content: center;
-      margin-top: 2em;
       flex-wrap: wrap;
+      gap: 2em;
     }
-      max-width: 300px;
+
+    .gallery img {
+      width: 100%;
+      max-width: 400px;
       border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+
     .caption {
       text-align: center;
       font-style: italic;
       margin-top: 0.5em;
-    .speech {
-      max-width: 800px;
-      margin: 1em auto;
+      color: #333;
+    }
+
+    .media-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2em;
+      margin-top: 2em;
+    }
+
+    .media-section img {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .media-info {
+      max-width: 400px;
       font-size: 1em;
     }
+
+    .link-center {
+      text-align: center;
+      margin: 2em 0;
+      font-size: 1.1em;
+    }
+
+    .link-center a {
+      background-color: #cce7ff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #003366;
+      font-weight: bold;
+    }
+
+    .speech {
+      max-width: 800px;
+      margin: 1.5em auto;
+      line-height: 1.6;
+    }
   </style>
+</head>
 <body>
+
   <h1>International Exchange</h1>
 
+  <!-- Section 1: Dubai Forum -->
+  <h2>Attending the 3rd World Expo Vision Forum in Dubai</h2>
   <div class="gallery">
     <div>
-      <div class="caption">Signing the cooperation MOU with the Forum Committee</div>
+      <img src="4.2.jpg" alt="Signing MOU">
+      <div class="caption">Signing cooperation MOU with the Forum Committee</div>
     </div>
     <div>
+      <img src="4.3.jpg" alt="Zhang Speaking">
       <div class="caption">Zhang Jianwen speaking at the Forum</div>
     </div>
   </div>
+
   <p class="speech">
-    Zhang Jianwen stated in his speech: “The world today is moving forward rapidly under the drive of automation and intelligent technology. Digitization and network connectivity have made our lives more colorful and fast-paced. From automobiles to apparel and consumer electronics, products are being updated at lightning speed. Yet, waste and discarded materials have grown at the same pace and are spinning out of control. The core problem lies in our lack of effective and advanced technologies to deal with it.”
-
-  <p class="link-center">
-    <img src="4.4.jpg" alt="Media Report Table" style="max-width: 100%;">
-  <div class="media-section">
-    <div class="media-info">
-      <p><strong>List of 30 Chinese Media Outlets:</strong> Including WorkerCN, China Daily, Xinhua, Economic Daily, Workers’ Daily, and Phoenix News, among others.</p>
-  </div>
-
-    <a href="https://www.workercn.cn/33005/201912/02/191202153748307.shtml" target="_blank">▶ Click to read full media coverage (WorkerCN)</a>
+    Zhang Jianwen stated: “The world is advancing rapidly under the push of automation and smart technologies. This evolution brings exciting innovation and change to industries and daily life — but it also produces ever-growing amounts of waste. The core problem is that we still lack truly effective and advanced solutions to keep this under control.”
   </p>
 
-  <h2>China–France Green Building Exchange Conference</h2>
-  <div class="gallery">
-    <div>
-      <img src="4.5.jpg" alt="French Exchange Poster">
-      <div class="caption">Event Poster</div>
+  <!-- Section 2: Media coverage -->
+  <div class="section">
+    <h2>Media Coverage</h2>
+    <div class="media-section">
+      <img src="4.4.jpg" alt="Media Report Summary">
+      <div class="media-info">
+        <p><strong>30 Major Chinese Media Outlets Reported the News:</strong></p>
+        <p>Including WorkerCN, China Daily, Xinhua, Economic Daily, Workers’ Daily, Phoenix News, and more.</p>
+      </div>
     </div>
-    <div>
-      <img src="4.6.jpg" alt="French Exchange Guests">
-    </div>
-    <div>
-      <img src="4.7.jpg" alt="French Exchange Panel">
-      <div class="caption">Discussion Session</div>
+
+    <p class="link-center">
+      <a href="https://www.workercn.cn/33005/201912/02/191202153748307.shtml" target="_blank">
+        ▶ View full report (WorkerCN)
+      </a>
+    </p>
+  </div>
+
+  <!-- Section 3: China–France exchange -->
+  <div class="section">
+    <h2>China–France Green Building Exchange Conference</h2>
+    <div class="gallery">
+      <div>
+        <img src="4.5.jpg" alt="Event Poster">
+        <div class="caption">Event Poster</div>
+      </div>
+      <div>
+        <img src="4.6.jpg" alt="Delegates">
+        <div class="caption">Delegates Group Photo</div>
+      </div>
+      <div>
+        <img src="4.7.jpg" alt="Discussion Session">
+        <div class="caption">Discussion Panel Session</div>
+      </div>
     </div>
   </div>
 
-  <h2>Health Expo by Global Outlook Forum (New Zealand)</h2>
-  <div class="gallery">
-    <div>
-      <img src="4.8.jpg" alt="Exchange with Indonesia">
-      <div class="caption">Exchange with officials from Indonesia’s Ministry of Technology</div>
-    </div>
-    <div>
-      <img src="5.0.jpg" alt="High 5 Vision">
-      <div class="caption">Expo Poster</div>
-    </div>
-    <div>
-      <img src="4.9.jpg" alt="High 5 Expo Award">
-      <div class="caption">Award Ceremony</div>
+  <!-- Section 4: New Zealand High 5 Expo -->
+  <div class="section">
+    <h2>Health Expo by Global Outlook Forum (New Zealand)</h2>
+    <div class="gallery">
+      <div>
+        <img src="4.8.jpg" alt="Exchange with Indonesian Officials">
+        <div class="caption">Exchange with officials from Indonesia's Ministry of Technology</div>
+      </div>
+      <div>
+        <img src="5.0.jpg" alt="Expo Poster">
+        <div class="caption">Expo Visual Poster</div>
+      </div>
+      <div>
+        <img src="4.9.jpg" alt="Award Ceremony">
+        <div class="caption">Zhang Jianwen receiving award on stage</div>
+      </div>
     </div>
   </div>
-  <p class="link-center">
-    <a href="index.html" style="background-color: #cce7ff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold;">&larr; Return to Home</a>
-  </p>
+
+  <!-- Return to home -->
+  <div class="link-center">
+    <a href="index.html">&larr; Return to Home</a>
+  </div>
+
 </body>
 </html>
-      <div class="caption">Group Photo of Chinese and French Guests</div>
-  <p class="link-center">
-    </div>
-  </p>
-  </p>
-
-      <img src="4.3.jpg" alt="Dubai Speech">
-      <img src="4.2.jpg" alt="Dubai Signing">
-  <h2>Attending the 3rd World Expo Vision Forum in Dubai</h2>
-</head>
-      line-height: 1.6;
-    }
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    .gallery img {
-      gap: 20px;
-    }
-      color: #4b0082;
-      margin-top: 2.5em;
-      margin: 0.5em 0;
-    }
-      max-width: 400px;
-      margin-top: 2em;
-      display: flex;
-
