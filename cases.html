@@ -27,19 +27,30 @@
       width: 30%;
       text-align: center;
     }
-    .item img {
+    .contracts {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 2em;
+    }
+    .contract-img {
+      width: 32%;
+    }
+    .contract-img img {
       width: 100%;
       border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
     .caption {
       margin-top: 0.5em;
       font-size: 0.9em;
       color: #444;
+      text-align: center;
     }
     .intro {
-      font-size: 1.1em;
-      color: #333;
+      font-size: 1.2em;
+      color: #222;
+      margin-top: 2em;
     }
     a.back {
       display: inline-block;
@@ -56,6 +67,7 @@
 
   <h1>實施案例</h1>
 
+  <!-- 前 7 張圖 -->
   <div class="gallery">
     <div class="item"><img src="3.0.jpg"><div class="caption">3.0</div></div>
     <div class="item"><img src="3.1.jpg"><div class="caption">3.1</div></div>
@@ -64,17 +76,19 @@
     <div class="item"><img src="3.4.jpg"><div class="caption">3.4</div></div>
     <div class="item"><img src="3.5.jpg"><div class="caption">3.5</div></div>
     <div class="item"><img src="3.6.jpg"><div class="caption">3.6</div></div>
-    <div class="item"><img src="3.7.jpg"><div class="caption">3.7</div></div>
-    <div class="item"><img src="3.8.jpg"><div class="caption">3.8</div></div>
-    <div class="item"><img src="3.9.jpg"><div class="caption">3.9</div></div>
   </div>
 
+  <!-- 合同圖：單獨一排 -->
+  <div class="contracts">
+    <div class="contract-img"><img src="3.7.jpg"><div class="caption">3.7</div></div>
+    <div class="contract-img"><img src="3.8.jpg"><div class="caption">3.8</div></div>
+    <div class="contract-img"><img src="3.9.jpg"><div class="caption">3.9</div></div>
+  </div>
+
+  <!-- 文字說明 -->
   <div class="intro">
-    本項目於紐西蘭毛利人社區落地，由志願者使用環保材料現場建造樣板房，展示系統性建築技術。<br><br>
-    已與 <strong>毛利基金會</strong> 簽署合作協議，並與 <strong>中國外貿公司</strong> 簽訂出口與技術合作協議。<br><br>
-    因疫情影響，合作推進階段受阻。為突破材料來源與成本限制，張建文於2022年9月前往紐西蘭，
-    實地嘗試將火山灰（電廠煙囪灰、高爐廢渣等矽質材料）與專利膠凝劑結合，反覆試驗，
-    最終成功研發出創新型環保建材，實現“以廢治廢”。
+    本項目於紐西蘭毛利人社區落地，這是現場建造樣板房，展示系統性建築技術。因疫情影響，合作推進階段受阻。<br><br>
+    為突破材料來源與成本限制，張建文於2022年9月前往紐西蘭，實地嘗試將火山灰（電廠煙囪灰、高爐廢渣等矽質材料）與專利膠凝劑結合，反覆試驗，最終成功研發出創新型環保建材，實現“以廢治廢”。
   </div>
 
   <a class="back" href="index.html">← 返回首頁</a>
