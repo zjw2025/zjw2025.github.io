@@ -1,101 +1,72 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>實施案例</title>
+  <title>Implementation Cases</title>
   <style>
     body {
-      background-color: #f4faff;
       font-family: sans-serif;
-      max-width: 1000px;
-      margin: auto;
+      background-color: #f0f8ff;
       padding: 2em;
-      line-height: 1.7;
+      color: #111;
     }
     h1 {
       text-align: center;
       color: #003366;
     }
-    .gallery, .contracts {
+    .gallery {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
-      justify-content: space-between;
-      margin-bottom: 2em;
+      justify-content: center;
+      margin: 2em auto;
+      max-width: 1000px;
     }
-    .item, .contract-img {
-      flex: 1 1 calc(33% - 20px);
-      max-width: calc(33% - 20px);
-      box-sizing: border-box;
-      text-align: center;
+    .gallery img {
+      max-width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    }
-    .caption {
-      margin-top: 0.5em;
-      font-size: 0.9em;
-      color: #444;
-    }
-    .intro {
-      font-size: 1.2em;
-      color: #222;
-      margin-top: 2em;
+    .text {
+      max-width: 800px;
+      margin: 2em auto;
+      line-height: 1.8;
     }
     a.back {
-      display: inline-block;
-      margin-top: 2em;
+      display: block;
+      text-align: center;
+      margin-top: 3em;
       text-decoration: none;
       background: #cce7ff;
-      padding: 8px 14px;
+      padding: 10px 16px;
       border-radius: 6px;
       color: #000;
-    }
-    @media (max-width: 768px) {
-      .item, .contract-img {
-        flex: 1 1 100%;
-        max-width: 100%;
-      }
     }
   </style>
 </head>
 <body>
+  <h1>Implementation Cases</h1>
 
-  <h1>實施案例</h1>
+  <div class="text">
+    <p>This project was implemented in a Māori community in New Zealand, where a model house was built on-site to demonstrate the systematic construction technology. However, progress in the collaboration was hindered due to the COVID-19 pandemic.</p>
 
-  <!-- 前 7 張圖 -->
+    <p>To overcome limitations in material sources and costs, Zhang Jianwen traveled to New Zealand in September 2022. There, he conducted on-site experiments combining volcanic ash (including power plant chimney ash and blast furnace slag — all rich in silica) with his patented solidification binder. After repeated testing, he successfully developed an innovative eco-friendly building material, realizing the goal of "using waste to treat waste."</p>
+  </div>
+
   <div class="gallery">
-    <div class="item"><img src="3.0.jpg"><div class="caption">3.0</div></div>
-    <div class="item"><img src="3.1.jpg"><div class="caption">3.1</div></div>
-    <div class="item"><img src="3.2.jpg"><div class="caption">3.2</div></div>
-    <div class="item"><img src="3.3.jpg"><div class="caption">3.3</div></div>
-    <div class="item"><img src="3.4.jpg"><div class="caption">3.4</div></div>
-    <div class="item"><img src="3.5.jpg"><div class="caption">3.5</div></div>
-    <div class="item"><img src="3.6.jpg"><div class="caption">3.6</div></div>
+    <img src="3.0.jpg">
+    <img src="3.1.jpg">
+    <img src="3.2.jpg">
+    <img src="3.3.jpg">
+    <img src="3.4.jpg">
+    <img src="4.41.jpg">
+    <img src="3.5.jpg">
+    <img src="3.6.jpg">
+    <img src="3.7.jpg">
+    <img src="3.8.jpg">
+    <img src="3.9.jpg">
   </div>
 
-  <div class="contracts">
-    <div class="contract-img"><img src="3.7.jpg"><div class="caption">3.7</div></div>
-    <div class="contract-img"><img src="3.8.jpg"><div class="caption">3.8</div></div>
-    <div class="contract-img"><img src="3.9.jpg"><div class="caption">3.9</div></div>
-  </div>
-
-  <!-- 合同圖：第二排 -->
-  <div class="contracts">
-    <div class="contract-img"><img src="4.0.jpg"><div class="caption">4.0</div></div>
-    <div class="contract-img"><img src="4.1.jpg"><div class="caption">4.1</div></div>
-  </div>
-
-  <!-- 文字說明 -->
-  <div class="intro">
-    本項目於紐西蘭毛利人社區落地，這是現場建造樣板房，展示系統性建築技術。因疫情影響，合作推進階段受阻。<br><br>
-    為突破材料來源與成本限制，張建文於2022年9月前往紐西蘭，實地嘗試將火山灰（電廠煙囪灰、高爐廢渣等矽質材料）與專利膠凝劑結合，反覆試驗，最終成功研發出創新型環保建材，實現“以廢治廢”。
-  </div>
-
-  <a class="back" href="index.html">← 返回首頁</a>
-
+  <a class="back" href="index.html">&larr; Return to Home</a>
 </body>
 </html>
