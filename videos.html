@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>視頻資料</title>
+  <style>
+    body {
+      background-color: #f4faff;
+      font-family: sans-serif;
+      max-width: 1000px;
+      margin: auto;
+      padding: 2em;
+      line-height: 1.7;
+    }
+    h1 {
+      text-align: center;
+      color: #003366;
+    }
+    video {
+      width: 100%;
+      max-width: 800px;
+      display: block;
+      margin: 2em auto;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 2em;
+    }
+    .gallery img {
+      width: 100%;
+      max-width: 45%;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    .desc {
+      font-size: 1.05em;
+      margin-bottom: 2em;
+    }
+    a.back {
+      display: inline-block;
+      margin-top: 3em;
+      text-decoration: none;
+      background: #cce7ff;
+      padding: 8px 14px;
+      border-radius: 6px;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>視頻資料 / Video Demonstration</h1>
+
+  <!-- 影片 -->
+  <video controls>
+    <source src="5.MP4" type="video/mp4">
+    您的瀏覽器不支援影片播放。
+  </video>
