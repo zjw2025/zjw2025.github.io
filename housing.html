@@ -1,67 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Housing Solution</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
       background-color: #f4faff;
-      margin: 0;
       padding: 2em;
       color: #111;
+      max-width: 960px;
+      margin: auto;
     }
+
     h1 {
       text-align: center;
       color: #003366;
-      margin-bottom: 2em;
+      margin-bottom: 1.5em;
     }
-    p {
-      max-width: 800px;
-      margin: 1em auto;
-      font-size: 1.1em;
+
+    .section {
+      margin-bottom: 3em;
+    }
+
+    .section p {
+      margin: 0.8em 0;
       line-height: 1.6;
     }
+
     .gallery {
       display: flex;
+      justify-content: space-around;
       flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 2em;
-      gap: 2em;
+      margin-top: 1.5em;
+      gap: 1em;
     }
+
     .gallery img {
-      width: 300px;
+      max-width: 300px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+
     .caption {
       text-align: center;
       font-style: italic;
       margin-top: 0.5em;
     }
-    .solution-section {
-      max-width: 1000px;
-      margin: 3em auto;
+
+    .solution {
       display: flex;
+      flex-wrap: wrap;
+      align-items: center;
       gap: 2em;
-      align-items: flex-start;
-    }
-    .solution-section img {
-      width: 50%;
-      border-radius: 8px;
-    }
-    .solution-text {
-      width: 50%;
-    }
-    .solution-text h2 {
-      color: #003366;
-      margin-bottom: 1em;
-    }
-    .link-center {
-      text-align: center;
       margin-top: 3em;
     }
-    .link-center a {
+
+    .solution img {
+      max-width: 400px;
+      flex: 1;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .solution-text {
+      flex: 2;
+    }
+
+    .solution-text h2 {
+      margin-bottom: 0.8em;
+      color: #003366;
+    }
+
+    .return {
+      text-align: center;
+      margin-top: 4em;
+    }
+
+    .return a {
       background-color: #cce7ff;
       padding: 10px 20px;
       border-radius: 6px;
@@ -74,22 +90,37 @@
 <body>
   <h1>Housing Solution</h1>
 
-  <p><strong>Is it their fault to be poor?</strong> Do they deserve to live in such conditions?</p>
-  <p>Shouldn't we take responsibility and help them in any way we can? Are you doing something?</p>
-  <p>Follow me. With my technology, we can turn solid waste into affordable, high-quality housing for those in need — while solving pollution at the same time.</p>
-  <p>In our system, waste is not garbage — it's a valuable resource.</p>
-  <p>Join me, and let us tackle two global challenges with one invention: my soon-to-be-filed international patent.</p>
+  <div class="section">
+    <p><strong>Is it their fault to be poor?</strong> Do they deserve to live in such conditions?</p>
+    <p>Shouldn't we take responsibility and help them in any way we can? Are you doing something?</p>
+    <p>Follow me. With my technology, we can turn solid waste into affordable, high-quality housing for those in need — while solving pollution at the same time.</p>
+    <p>In our system, waste is not garbage — it's a valuable resource.</p>
+    <p>Join me, and let us tackle two global challenges with one invention: my soon-to-be-filed international patent.</p>
+  </div>
 
-  <div class="solution-section">
-    <img src="101.jpg" alt="DIY Housing Construction">
-    <div class="solution-text">
-      <h2>Our Solution: DIY Molds & Community Housing</h2>
-      <p>This is a simple and effective approach using our patented molds and binder system. The process requires only a small-scale shredder and mixer. In collaboration with environmental NGOs and green foundations, we provide molds and volunteer technical support to families in need.</p>
-      <p>Low-income families can construct their own homes with just three people in 5–7 days. These houses are high quality, non-toxic, and environmentally friendly — turning waste into dignified shelter.</p>
+  <div class="gallery">
+    <div>
+      <img src="bad_house.jpg" alt="Slum Housing">
+      <div class="caption">Slum Housing Conditions</div>
+    </div>
+    <div>
+      <img src="un_report.jpg" alt="UN Report">
+      <div class="caption">UN: Housing Crisis News</div>
     </div>
   </div>
 
-  <div class="link-center">
+  <!-- New DIY Housing Solution Section -->
+  <div class="solution">
+    <img src="101.jpg" alt="Completed Affordable House in New Zealand">
+    <div class="solution-text">
+      <h2>Our DIY Housing Solution for the Poor</h2>
+      <p>Our approach combines modular molds with patented eco-binder technology. A simple and cost-effective system includes a small shredder and mixer, enabling poor families to participate directly in home construction.</p>
+      <p>In collaboration with environmental NGOs and sustainability funds, we provide molds and technical guidance through volunteer support. Families can build high-quality, pollution-free homes by themselves.</p>
+      <p>With just 3 people and 5–7 days, a durable and dignified house like the one shown here can be completed. This is not just shelter — it’s empowerment through innovation.</p>
+    </div>
+  </div>
+
+  <div class="return">
     <a href="index.html">&larr; Return to Home</a>
   </div>
 </body>
