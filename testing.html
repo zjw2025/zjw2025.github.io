@@ -1,203 +1,139 @@
-<div class="section">
-  <h2>Test Report Summaries</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Test Report Summary</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 20px;
+    }
+    h2 {
+      color: #004080;
+      text-align: center;
+    }
+    .section {
+      margin-bottom: 50px;
+    }
+    .images-row {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .images-row img {
+      max-width: 300px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+      margin: 10px;
+    }
+    .caption {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Test Report Summary</h2>
 
   <!-- Row 1 -->
-  <h3>Row 1 – Formaldehyde Emission Test (TÜV Rheinland)</h3>
-  <table border="1" cellspacing="0" cellpadding="8">
-    <thead>
-      <tr>
-        <th>Test Item</th>
-        <th>Requirement</th>
-        <th>Result</th>
-        <th>Conclusion</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Formaldehyde emission</td>
-        <td>&lt; 0.1 ppm (n.d.)</td>
-        <td>n.d. (not detected)</td>
-        <td>Pass</td>
-      </tr>
-    </tbody>
-  </table>
-  <p><strong>Conclusion:</strong> Both MDF and OSB samples passed the formaldehyde emission test under ASTM D6007-02 standards using a small-scale chamber test method.</p>
+  <div class="section">
+    <h3>Formaldehyde Emission Test (TÜV Rheinland)</h3>
+    <div class="images-row">
+      <div>
+        <img src="row1-1.jpg" alt="Formaldehyde Test 1">
+        <div class="caption">TÜV Rheinland Certification Cover</div>
+      </div>
+      <div>
+        <img src="row1-2.jpg" alt="Formaldehyde Test 2">
+        <div class="caption">Material Description</div>
+      </div>
+      <div>
+        <img src="row1-3.jpg" alt="Formaldehyde Test 3">
+        <div class="caption">Emission Measurement Table</div>
+      </div>
+    </div>
+  </div>
 
   <!-- Row 2 -->
-  <h3>Row 2 – Fire Resistance Test</h3>
-  <table border="1" cellspacing="0" cellpadding="8">
-    <thead>
-      <tr>
-        <th>Property</th>
-        <th>Requirement</th>
-        <th>Test Result</th>
-        <th>Conclusion</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Combustion time (tₓ)</td>
-        <td>0 seconds</td>
-        <td>0 s</td>
-        <td>Pass</td>
-      </tr>
-      <tr>
-        <td>Mass loss (Δm)</td>
-        <td>≤ 50%</td>
-        <td>39%</td>
-        <td>Pass</td>
-      </tr>
-      <tr>
-        <td>Temperature increase (ΔT)</td>
-        <td>≤ 30°C</td>
-        <td>3°C</td>
-        <td>Pass</td>
-      </tr>
-      <tr>
-        <td>Heat of combustion (PCS)</td>
-        <td>≤ 2.0 MJ/kg</td>
-        <td>0.2 MJ/kg</td>
-        <td>Pass</td>
-      </tr>
-    </tbody>
-  </table>
-  <p><strong>Conclusion:</strong> Material classified as A1 grade non-combustible building board in accordance with GB8624-2012 standard.</p>
+  <div class="section">
+    <h3>Fire Resistance Test</h3>
+    <div class="images-row">
+      <div>
+        <img src="row2-1.jpg" alt="Fire Test 1">
+        <div class="caption">Test Report Cover - Fireboard</div>
+      </div>
+      <div>
+        <img src="row2-2.jpg" alt="Fire Test 2">
+        <div class="caption">Sample & Testing Info</div>
+      </div>
+      <div>
+        <img src="row2-3.jpg" alt="Fire Test 3">
+        <div class="caption">Flame Spread & Smoke Release</div>
+      </div>
+    </div>
+  </div>
 
   <!-- Row 3 -->
-  <h3>Row 3 – Combustion and Emission Test</h3>
-  <table border="1" cellspacing="0" cellpadding="8">
-    <thead>
-      <tr>
-        <th>Property</th>
-        <th>Requirement</th>
-        <th>Result</th>
-        <th>Conclusion</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>SBI single combustion test</td>
-        <td>&lt; threshold</td>
-        <td>Pass</td>
-        <td>Pass</td>
-      </tr>
-      <tr>
-        <td>Smoke emission (THR600s)</td>
-        <td>&lt; 150 MJ</td>
-        <td>&lt; 150</td>
-        <td>Pass</td>
-      </tr>
-      <tr>
-        <td>Flame spread (FIGRA)</td>
-        <td>&lt; 120 kW/m²</td>
-        <td>&lt; 120</td>
-        <td>Pass</td>
-      </tr>
-      <tr>
-        <td>Heat release (PCS)</td>
-        <td>&lt; 2.0 MJ/kg</td>
-        <td>&lt; 2.0</td>
-        <td>Pass</td>
-      </tr>
-      <tr>
-        <td>Smoke release (SMOGRA)</td>
-        <td>&lt; 30</td>
-        <td>&lt; 30</td>
-        <td>Pass</td>
-      </tr>
-    </tbody>
-  </table>
-  <p><strong>Conclusion:</strong> All tested values meet fire safety standards.</p>
+  <div class="section">
+    <h3>Combustion & Emission Test</h3>
+    <div class="images-row">
+      <div>
+        <img src="row3-1.jpg" alt="Emission Test 1">
+        <div class="caption">Combustion Resistance Sample Info</div>
+      </div>
+      <div>
+        <img src="row3-2.jpg" alt="Emission Test 2">
+        <div class="caption">Formaldehyde Release Level: B1</div>
+      </div>
+      <div>
+        <img src="row3-3.jpg" alt="Emission Test 3">
+        <div class="caption">Smoke Density & Compliance Table</div>
+      </div>
+    </div>
+  </div>
 
   <!-- Row 4 -->
-  <h3>Row 4 – Physical Properties Test</h3>
-  <table border="1" cellspacing="0" cellpadding="8">
-    <thead>
-      <tr>
-        <th>Property</th>
-        <th>Requirement</th>
-        <th>Result (Samples)</th>
-        <th>Conclusion</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Static bending strength</td>
-        <td>≥13.0 MPa</td>
-        <td>13.6 / 11.8 MPa</td>
-        <td>Pass</td>
-      </tr>
-      <tr>
-        <td>Modulus of rupture (MOR)</td>
-        <td>≥1600 MPa</td>
-        <td>3470 MPa</td>
-        <td>Pass</td>
-      </tr>
-      <tr>
-        <td>Internal bonding strength (IB)</td>
-        <td>≥0.8 MPa</td>
-        <td>0.87 / 0.43 MPa</td>
-        <td>Pass</td>
-      </tr>
-      <tr>
-        <td>Surface bonding strength</td>
-        <td>≥0.8 MPa</td>
-        <td>1.14 / 0.96 MPa</td>
-        <td>Pass</td>
-      </tr>
-      <tr>
-        <td>2h Thickness swelling rate</td>
-        <td>≤6.0% (avg)</td>
-        <td>0.8% / 1.7%</td>
-        <td>Pass</td>
-      </tr>
-    </tbody>
-  </table>
-  <p><strong>Conclusion:</strong> All tested parameters meet the required national standards.</p>
+  <div class="section">
+    <h3>Physical Property Test</h3>
+    <div class="images-row">
+      <div>
+        <img src="row4-1.jpg" alt="Property Test 1">
+        <div class="caption">Mechanical Property Report Cover</div>
+      </div>
+      <div>
+        <img src="row4-2.jpg" alt="Property Test 2">
+        <div class="caption">Sample Spec & Test Conditions</div>
+      </div>
+      <div>
+        <img src="row4-3.jpg" alt="Property Test 3">
+        <div class="caption">Measured Bending, Bonding & Swelling Rates</div>
+      </div>
+    </div>
+  </div>
 
   <!-- Row 5 -->
-  <h3>Row 5 – Moisture, Bonding & Aging Resistance</h3>
-  <table border="1" cellspacing="0" cellpadding="8">
-    <thead>
-      <tr>
-        <th>Property</th>
-        <th>Requirement</th>
-        <th>Result</th>
-        <th>Conclusion</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>24h Swelling in thickness</td>
-        <td>/</td>
-        <td>3.1%</td>
-        <td>Pass</td>
-      </tr>
-      <tr>
-        <td>Bending strength (Parallel / Across)</td>
-        <td>/</td>
-        <td>56.3 MPa / 46.9 MPa</td>
-        <td>Pass</td>
-      </tr>
-      <tr>
-        <td>Bonding strength</td>
-        <td>/</td>
-        <td>0.59 – 1.64 MPa</td>
-        <td>Pass</td>
-      </tr>
-      <tr>
-        <td>Formaldehyde emission (9~11L)</td>
-        <td>/</td>
-        <td>Not detected</td>
-        <td>Pass</td>
-      </tr>
-      <tr>
-        <td>Moisture content</td>
-        <td>/</td>
-        <td>10.8%</td>
-        <td>Pass</td>
-      </tr>
-    </tbody>
-  </table>
-  <p><strong>Conclusion:</strong> Material passed all required mechanical, moisture, and aging tests.</p>
-</div>
+  <div class="section">
+    <h3>Thermal Resistance & Aging</h3>
+    <div class="images-row">
+      <div>
+        <img src="row5-1.jpg" alt="Aging Test 1">
+        <div class="caption">Thermal Insulation Report</div>
+      </div>
+      <div>
+        <img src="row5-2.jpg" alt="Aging Test 2">
+        <div class="caption">Aging Test Condition</div>
+      </div>
+      <div>
+        <img src="row5-3.jpg" alt="Aging Test 3">
+        <div class="caption">Moisture Content & Stability Results</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
