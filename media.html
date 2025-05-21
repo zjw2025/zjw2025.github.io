@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Media Reports | Hehe New Material</title>
+  <title>Media Coverage | Hehe New Materials</title>
   <style>
     body {
       font-family: sans-serif;
-      background: #f7fbff;
+      background: #f6f9fc;
       color: #111;
       margin: 0;
       padding: 2em;
@@ -14,6 +14,7 @@
     }
     h1, h2 {
       color: #003366;
+      margin-bottom: 0.3em;
     }
     iframe {
       border-radius: 8px;
@@ -21,55 +22,98 @@
       width: 90%;
       max-width: 720px;
       height: 405px;
-      margin-top: 2em;
+      margin: 1.5em 0;
     }
-    img {
-      width: 90%;
-      max-width: 700px;
-      margin: 2em 0;
-      border-radius: 6px;
-      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    .section {
+      margin: 3em 0;
     }
-    p {
-      max-width: 700px;
-      margin: 1em auto;
-      font-size: 1.1em;
+    .description {
+      max-width: 720px;
+      margin: 0 auto 2em auto;
+      text-align: left;
+      line-height: 1.6;
+      font-size: 1.05em;
     }
-    a {
-      color: #0066cc;
-      text-decoration: none;
-      font-weight: bold;
+    .media-summary {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2em;
     }
-    .report-link {
-      display: inline-block;
-      background: #dceeff;
-      padding: 0.8em 1.5em;
+    .media-summary img {
+      max-width: 420px;
       border-radius: 8px;
-      margin-top: 1em;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    .media-info {
+      max-width: 500px;
+      text-align: left;
+    }
+    .media-info p {
+      font-size: 1em;
+      line-height: 1.5em;
+    }
+    .button-link {
+      display: inline-block;
+      margin-top: 1.5em;
+      padding: 0.75em 1.5em;
+      background: #d8eefe;
+      color: #0055cc;
+      font-weight: bold;
+      font-size: 1em;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .button-link:hover {
+      background: #c0e0fa;
+    }
+    .back {
+      margin-top: 3em;
+      display: block;
+      color: #0066cc;
     }
   </style>
 </head>
 <body>
-  <!-- SECTION 1: Video Report -->
-  <h1>📺 Media Coverage</h1>
-  <p>Jiangsu local TV station reported on our company’s straw gelling technology and held a promotion meeting, which received widespread attention.</p>
 
-  <iframe src="https://www.youtube.com/embed/-XK8u9GHQZ0"
-          title="Jiangsu TV Report"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
+  <!-- Section 1: Video -->
+  <div class="section">
+    <h1>📺 Media Coverage</h1>
+    
+    <iframe src="https://www.youtube.com/embed/-XK8u9GHQZ0"
+            title="Jiangsu TV Report"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
 
-  <!-- SECTION 2: Media Summary -->
-  <h2>📰 Media Summary</h2>
-  <p><strong>30 Major Chinese Media Outlets Reported the News:</strong></p>
-  <p>
-    Including WorkerCN, China Daily, Xinhua, Economic Daily, Workers’ Daily, Phoenix News, and more.
-  </p>
-  <a class="report-link" href="https://www.workercn.cn/33005/201912/02/191202153748307.shtml" target="_blank">
-    🔷 View Full Report (WorkerCN)
-  </a>
+    <div class="description">
+      <p><strong>This is a local news report from Jiangsu Province, China</strong>, featuring an innovative eco-friendly binder developed by Shanghai Hehe New Materials Co., Ltd.</p>
+      <p>The technology converts agricultural straw waste into durable, low-emission construction panels. It addresses the long-standing issue of open-field straw burning, improving rural air quality and providing economic value.</p>
+      <p>The technology has attracted strong attention from local governments in Jiangsu. A special technical promotion forum was convened to explore its broader implementation across several counties.</p>
+      <p>📺 <strong>Report Year:</strong> 2016<br>
+         🌾 <strong>Focus:</strong> Eco-binder for straw-based panel production<br>
+         🏭 <strong>Developer:</strong> Shanghai Hehe New Materials Co., Ltd.
+      </p>
+    </div>
+  </div>
 
-  <p style="margin-top: 3em;"><a href="index.html">← Back to Home</a></p>
+  <!-- Section 2: Media Summary -->
+  <div class="section">
+    <h2>📰 Media Summary</h2>
+    <div class="media-summary">
+      <img src="4.4.jpg" alt="Media Report Summary" />
+      <div class="media-info">
+        <p><strong>30 Major Chinese Media Outlets Reported the News:</strong></p>
+        <p>Including WorkerCN, China Daily, Xinhua, Economic Daily, Workers’ Daily, Phoenix News, and more.</p>
+        <a class="button-link" href="https://www.worker.cn/33005/201912/02/191202153748307.shtml" target="_blank">
+          🔷 View Full Report (WorkerCN)
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <a href="index.html" class="back">← Back to Home</a>
 </body>
 </html>
