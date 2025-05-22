@@ -5,61 +5,80 @@
   <title>Product Transformation</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
       background-color: #f4faff;
-      font-family: sans-serif;
-      padding: 40px;
-      line-height: 1.6;
-      font-size: 1.2em;
       color: #111;
+      margin: 0;
+      padding: 2em;
+      line-height: 1.6;
     }
     h1 {
       text-align: center;
       color: #004080;
+      font-size: 2em;
       margin-bottom: 0.5em;
     }
-    .content {
-      max-width: 900px;
-      margin: 0 auto;
-    }
     .section {
-      margin-top: 2.5em;
+      max-width: 1000px;
+      margin: 2em auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 2em;
     }
-    .section video, .section img {
-      max-width: 100%;
+    .text {
+      flex: 1;
+      min-width: 280px;
+    }
+    .text h2 {
+      font-size: 1.3em;
+      margin-top: 0;
+      margin-bottom: 0.5em;
+      color: #000;
+    }
+    .text p {
+      margin: 0.5em 0;
+    }
+    .video {
+      flex: 1;
+      min-width: 320px;
+    }
+    iframe {
+      width: 100%;
+      height: 315px;
       border-radius: 8px;
-      margin-top: 1em;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border: 1px solid #ccc;
     }
-    h2 {
-      color: #003366;
-      margin-top: 1em;
+    .back {
+      display: block;
+      text-align: center;
+      margin-top: 3em;
+      text-decoration: none;
+      background: #cce7ff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      color: #000;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
+
   <h1>♻️ Product Transformation</h1>
-  <div class="content">
-    <p>This section introduces our methods for transforming various waste streams into sustainable construction products using our patented binder technology.</p>
 
-    <div class="section">
-      <h2>Textile Waste ➝ Composite Panels</h2>
-      <p>We transform textile waste into solid, moldable panels using a simple 4-step process: shredding, mixing with our binder, molding, and curing. These materials are ideal for housing and infrastructure in underdeveloped regions.</p>
-      <video controls>
-        <source src="Production process of textile waste.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+  <div class="section">
+    <div class="text">
+      <h2>Full Production Process from Waste Textile</h2>
+      <p>This video demonstrates how textile waste is transformed into durable construction blocks through a simple and low-cost process.</p>
+      <p>The stages include crushing, mixing, molding, and demolding — all completed within a compact production setup.</p>
+      <p>This solution provides a scalable and clean method to convert industrial solid waste into usable materials for affordable housing.</p>
     </div>
-
-    <div class="section">
-      <h2>Plastic Waste ➝ Marine Landfill Blocks</h2>
-      <p>Collected ocean plastic waste is processed onboard a converted vessel. The resulting blocks are cured within 6 hours and ready for use in marine landfill operations. Our system can eliminate 100,000 tons in just 100 working days.</p>
-      <img src="202.jpg" alt="Plastic samples after seawater immersion">
-    </div>
-
-    <div class="section">
-      <h2>Scalability and Global Relevance</h2>
-      <p>Our technology works with various waste materials including plastics, fibers, and even municipal sludge. The cured blocks are high-strength, water-resistant, and compatible with conventional construction systems.</p>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/1pkMmaoFRkU" title="Production process of textile waste" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
+
+  <a class="back" href="index.html">&larr; Return to Home</a>
+
 </body>
 </html>
