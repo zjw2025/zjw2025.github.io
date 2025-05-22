@@ -2,85 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Waste-to-Product Transformation</title>
+  <title>Product Transformation</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       background-color: #f4faff;
+      font-family: sans-serif;
+      padding: 40px;
+      line-height: 1.6;
+      font-size: 1.2em;
       color: #111;
-      margin: 0;
-      padding: 2em;
     }
     h1 {
       text-align: center;
-      font-size: 1.8em;
-      color: #003366;
-      margin-bottom: 1.5em;
+      color: #004080;
+      margin-bottom: 0.5em;
+    }
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
     }
     .section {
-      max-width: 1100px;
-      margin: 2em auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2em;
-      align-items: flex-start;
+      margin-top: 2.5em;
     }
-    .section img, .section video {
+    .section video, .section img {
       max-width: 100%;
-      width: 500px;
       border-radius: 8px;
+      margin-top: 1em;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    .text {
-      flex: 1;
-      min-width: 280px;
-      font-size: 1.1em;
-      line-height: 1.6;
-    }
-    .text h2 {
-      margin-top: 0;
-      color: #000;
-      font-size: 1.4em;
-    }
-    .back {
-      display: block;
-      text-align: center;
-      margin: 4em auto 1em;
-      text-decoration: none;
-      background: #cce7ff;
-      padding: 10px 20px;
-      border-radius: 6px;
-      color: #000;
-      font-weight: bold;
-      width: fit-content;
+    h2 {
+      color: #003366;
+      margin-top: 1em;
     }
   </style>
 </head>
 <body>
+  <h1>♻️ Product Transformation</h1>
+  <div class="content">
+    <p>This section introduces our methods for transforming various waste streams into sustainable construction products using our patented binder technology.</p>
 
-  <h1>Waste-to-Product Transformation</h1>
-
-  <div class="section">
-    <div class="text">
-      <h2>Textile Waste to Building Panels</h2>
-      <p>This video shows the full transformation process of discarded textile waste into solidified construction-grade composite panels. The stages include shredding, binder mixing, molding, and final product formation.</p>
+    <div class="section">
+      <h2>Textile Waste ➝ Composite Panels</h2>
+      <p>We transform textile waste into solid, moldable panels using a simple 4-step process: shredding, mixing with our binder, molding, and curing. These materials are ideal for housing and infrastructure in underdeveloped regions.</p>
+      <video controls>
+        <source src="Production process of textile waste.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
-    <video controls>
-      <source src="Production process of textile waste.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
 
-  <div class="section">
-    <div class="text">
-      <h2>Plastic Samples Soaked in Seawater</h2>
-      <p>This image shows a selection of plastic composite samples made from ocean plastic waste after being submerged in seawater for six months.</p>
-      <p><em>For a video showing the production process, please contact the author directly. This photo represents only a portion of our material samples.</em></p>
+    <div class="section">
+      <h2>Plastic Waste ➝ Marine Landfill Blocks</h2>
+      <p>Collected ocean plastic waste is processed onboard a converted vessel. The resulting blocks are cured within 6 hours and ready for use in marine landfill operations. Our system can eliminate 100,000 tons in just 100 working days.</p>
+      <img src="202.jpg" alt="Plastic samples after seawater immersion">
     </div>
-    <img src="202.jpg" alt="Plastic samples after 6 months in seawater">
+
+    <div class="section">
+      <h2>Scalability and Global Relevance</h2>
+      <p>Our technology works with various waste materials including plastics, fibers, and even municipal sludge. The cured blocks are high-strength, water-resistant, and compatible with conventional construction systems.</p>
+    </div>
   </div>
-
-  <a class="back" href="index.html">&larr; Return to Home</a>
-
 </body>
 </html>
