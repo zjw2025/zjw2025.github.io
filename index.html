@@ -100,6 +100,35 @@
       vertical-align: middle;
       margin-right: 6px;
     }
+
+    /* Call-to-action button */
+    .cta-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 18px 0 28px;
+    }
+
+    .cta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #2c6cb0;
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+      box-shadow: 0 6px 20px rgba(44,108,176,.25);
+      position: relative;
+      z-index: 10;
+      pointer-events: auto;
+    }
+
+    .cta-link * {
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
@@ -115,27 +144,11 @@
     <a href="media.html">📰 Media Reports</a>
     <a href="product-transformation.html">♻️ Product Transformation</a>
   </div>
-<div style="
-  width:100%;
-  display:flex;
-  justify-content:center;
-  margin: 18px 0 28px;
-<a href="./废物艺术.html">探索废弃艺术</a>
-  <style>
-/* 只要这段在页面里，链接几乎不会被误拦截或遮挡 */
-.cta-link{
-  display:inline-flex; align-items:center; gap:10px;
-  background:#2c6cb0; color:#fff;
-  padding:12px 22px; border-radius:14px;
-  text-decoration:none; font-weight:700; font-size:18px;
-  box-shadow:0 6px 20px rgba(44,108,176,.25);
 
-  position:relative; z-index:10;     /* 防止被上层元素盖住 */
-  pointer-events:auto;               /* 确保自己可点 */
-}
-.cta-link *{ pointer-events:none; }  /* 内部元素不截获点击 */
-</style>
-</div>
+  <div class="cta-container">
+    <a href="./waste-art.html" class="cta-link">Explore Waste Art</a>
+  </div>
+
   <h1>Together for a Sustainable Future</h1>
   <h2>Solving Waste with Waste — Patented Technology to Transform Ocean and Solid Waste into Durable Housing Materials</h2>
 
@@ -143,9 +156,9 @@
     <p>
       We are using the simplest and most direct method, through non-commercial technology integration, to solve global solid waste problems and provide affordable high-quality housing for the poor.
     </p>
-   <p>
-  For only USD 3,000, we can provide a durable, zero-pollution, B1 fire-rated house with 25–30 MPa strength — an affordable solution for over a billion people living in poor housing conditions.
-</p>
+    <p>
+      For only USD 3,000, we can provide a durable, zero-pollution, B1 fire-rated house with 25–30 MPa strength — an affordable solution for over a billion people living in poor housing conditions.
+    </p>
     <p>
       With USD 500 million (one-sixth of which is used to build a mobile operating platform), we can clean up 100,000 tons of Pacific plastic waste in 100 working days and generate 300,000 cubic meters of landfilling material. The platform can also be relocated to clean up other marine zones.
     </p>
@@ -153,9 +166,10 @@
     <p class="highlight">✅ Core Technology: Our binder is made of 65% proprietary formulation + 35% volcanic ash and inorganic silicate materials.</p>
   </div>
 
- <p class="note">
-  All content on this website is based on real-world testing, certified reports, and formal domestic and international collaborations — without any commercial embellishment.
-</p>
+  <p class="note">
+    All content on this website is based on real-world testing, certified reports, and formal domestic and international collaborations — without any commercial embellishment.
+  </p>
+
   <footer>
     <div>
       <a href="https://x.com/atlasecoz" target="_blank">
@@ -174,5 +188,4 @@
   </footer>
 
 </body>
-
 </html>
