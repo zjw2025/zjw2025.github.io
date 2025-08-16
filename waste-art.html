@@ -1,129 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Waste Art</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>废物艺术画廊</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f1f8ff;
+      background-color: #fafafa;
       margin: 0;
       padding: 0;
     }
-
-    nav {
-      background-color: #dfefff;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 20px 10px;
-      gap: 12px;
-    }
-
-    nav a {
-      padding: 10px 15px;
-      background-color: #c0e0ff;
-      border-radius: 10px;
-      text-decoration: none;
-      color: #003366;
-      font-weight: bold;
-      font-size: 14px;
-    }
-
     h1 {
       text-align: center;
-      margin-top: 40px;
-      color: #003366;
+      padding: 20px;
+      margin: 0;
+      background-color: #333;
+      color: #fff;
     }
-
-    p.description {
-      text-align: center;
-      max-width: 700px;
-      margin: 10px auto 40px auto;
-      padding: 0 20px;
-    }
-
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      padding: 0 30px 40px 30px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      padding: 24px;
+      max-width: 1400px;
+      margin: 0 auto;
     }
-
     .gallery-item {
       text-align: center;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      transition: transform 0.2s ease;
     }
-
+    .gallery-item:hover {
+      transform: translateY(-4px);
+    }
     .gallery-item img {
       width: 100%;
       height: auto;
-      border-radius: 8px;
-      border: 1px solid #ccc;
+      display: block;
     }
-
     .caption {
-      margin-top: 6px;
+      padding: 10px;
       font-size: 14px;
       color: #333;
-    }
-
-    .back {
-      display: inline-block;
-      margin: 30px auto 60px auto;
-      text-align: center;
-      font-size: 16px;
-      text-decoration: none;
-      color: #0056b3;
+      background-color: #f4f4f4;
     }
   </style>
 </head>
 <body>
 
-  <!-- Top navigation -->
-  <nav>
-    <a href="patents.html">📜 Patents</a>
-    <a href="testing.html">🧪 Test Reports</a>
-    <a href="cases.html">🎯 Implementation Cases</a>
-    <a href="exchange.html">🌐 International Exchange</a>
-    <a href="ocean.html">🌊 Ocean Cleanup</a>
-    <a href="housing.html">🏠 Housing Construction</a>
-    <a href="videos.html">🎬 Video Materials</a>
-    <a href="media.html">📰 Media Reports</a>
-    <a href="product-transformation.html">♻️ Product Transformation</a>
-  </nav>
+  <h1>废物艺术画廊</h1>
 
-  <h1>Waste Art</h1>
-
-  <p class="description">
-    These artworks have been created by the technology developer since 2014 using straw and other solid waste materials. The goal is to help impoverished communities.
-  </p>
-
- <div class="gallery">
-  <!-- 101.* 这8张 -->
-  <div class="gallery-item"><img src="101.1.jpg" alt="Waste Art 1"><div class="caption">Waste Art 1</div></div>
-  <div class="gallery-item"><img src="102.2.jpg" alt="Waste Art 2"><div class="caption">Waste Art 2</div></div>
-  <div class="gallery-item"><img src="103.3.jpg" alt="Waste Art 3"><div class="caption">Waste Art 3</div></div>
-  <div class="gallery-item"><img src="104.4.jpg" alt="Waste Art 4"><div class="caption">Waste Art 4</div></div>
-  <div class="gallery-item"><img src="105.5.jpg" alt="Waste Art 5"><div class="caption">Waste Art 5</div></div>
-  <div class="gallery-item"><img src="106.jpg"   alt="Waste Art 6"><div class="caption">Waste Art 6</div></div>
-  <div class="gallery-item"><img src="107.7.jpg" alt="Waste Art 7"><div class="caption">Waste Art 7</div></div>
-  <div class="gallery-item"><img src="108.8.jpg" alt="Waste Art 8"><div class="caption">Waste Art 8</div></div>
-
-  <!-- 202.* 这9张（按你仓库名）-->
-  <div class="gallery-item"><img src="202.1.jpg" alt="Waste Art 9"><div class="caption">Waste Art 9</div></div>
-  <div class="gallery-item"><img src="202.2.jpg" alt="Waste Art 10"><div class="caption">Waste Art 10</div></div>
-  <div class="gallery-item"><img src="202.jpg"   alt="Waste Art 11"><div class="caption">Waste Art 11</div></div>
-  <div class="gallery-item"><img src="203.3.jpg" alt="Waste Art 12"><div class="caption">Waste Art 12</div></div>
-  <div class="gallery-item"><img src="204.4.jpg" alt="Waste Art 13"><div class="caption">Waste Art 13</div></div>
-  <div class="gallery-item"><img src="205.5.jpg" alt="Waste Art 14"><div class="caption">Waste Art 14</div></div>
-  <div class="gallery-item"><img src="206.6.jpg" alt="Waste Art 15"><div class="caption">Waste Art 15</div></div>
-  <div class="gallery-item"><img src="207.7.jpg" alt="Waste Art 16"><div class="caption">Waste Art 16</div></div>
-  <div class="gallery-item"><img src="209.9.jpg" alt="Waste Art 17"><div class="caption">Waste Art 17</div></div>
-</div>
-
-  <div style="text-align: center;">
-    <a class="back" href="index.html">&larr; Return to Home</a>
+  <div class="gallery">
+    <div class="gallery-item"><img src="waste-art/废物艺术 1.jpg" alt="废物艺术 1"><div class="caption">废物艺术 1</div></div>
+    <div class="gallery-item"><img src="waste-art/废物艺术 2.jpg" alt="废物艺术 2"><div class="caption">废物艺术 2</div></div>
+    <div class="gallery-item"><img src="waste-art/废物艺术 3.jpg" alt="废物艺术 3"><div class="caption">废物艺术 3</div></div>
+    <div class="gallery-item"><img src="waste-art/废物艺术 4.jpg" alt="废物艺术 4"><div class="caption">废物艺术 4</div></div>
+    <div class="gallery-item"><img src="waste-art/废物艺术 5.jpg" alt="废物艺术 5"><div class="caption">废物艺术 5</div></div>
+    <div class="gallery-item"><img src="waste-art/废物艺术 6.jpg" alt="废物艺术 6"><div class="caption">废物艺术 6</div></div>
+    <div class="gallery-item"><img src="waste-art/废物艺术 7.jpg" alt="废物艺术 7"><div class="caption">废物艺术 7</div></div>
+    <div class="gallery-item"><img src="waste-art/废物艺术 8.jpg" alt="废物艺术 8"><div class="caption">废物艺术 8</div></div>
+    <div class="gallery-item"><img src="waste-art/废物艺术 9.jpg" alt="废物艺术 9"><div class="caption">废物艺术 9</div></div>
+    <div class="gallery-item"><img src="waste-art/废物艺术 10.jpg" alt="废物艺术 10"><div class="caption">废物艺术 10</div></div>
+    <div class="gallery-item"><img src="waste-art/废物艺术 11.jpg" alt="废物艺术 11"><div class="caption">废物艺术 11</div></div>
+    <div class="gallery-item"><img src="waste-art/废物艺术 12.jpg" alt="废物艺术 12"><div class="caption">废物艺术 12</div></div>
+    <div class="gallery-item"><img src="waste-art/废物艺术 13.jpg" alt="废物艺术 13"><div class="caption">废物艺术 13</div></div>
+    <div class="gallery-item"><img src="waste-art/废物艺术 14.jpg" alt="废物艺术 14"><div class="caption">废物艺术 14</div></div>
+    <div class="gallery-item"><img src="waste-art/废物艺术 15.jpg" alt="废物艺术 15"><div class="caption">废物艺术 15</div></div>
+    <div class="gallery-item"><img src="waste-art/废物艺术 16.jpg" alt="废物艺术 16"><div class="caption">废物艺术 16</div></div>
+    <div class="gallery-item"><img src="waste-art/废物艺术 17.jpg" alt="废物艺术 17"><div class="caption">废物艺术 17</div></div>
   </div>
 
 </body>
