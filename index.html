@@ -120,15 +120,24 @@
   display:flex;
   justify-content:center;
   margin: 18px 0 28px;
-<a href="waste-art.html"
-   style="display:inline-flex; align-items:center; gap:10px;
-          background-color:#2C7BE5; color:white; padding:8px 16px;
-          border-radius:25px; text-decoration:none;
-          font-size:18px; font-weight:700;
-          box-shadow:0 6px 20px rgba(44,108,176,.25);">
-  🎨 WASTE = ART ♻️
+<a href="./waste-art.html" class="cta-link">
+  🎨 <span>探索废弃艺术</span>
 </a>
 
+<style>
+/* 只要这段在页面里，链接几乎不会被误拦截或遮挡 */
+.cta-link{
+  display:inline-flex; align-items:center; gap:10px;
+  background:#2c6cb0; color:#fff;
+  padding:12px 22px; border-radius:14px;
+  text-decoration:none; font-weight:700; font-size:18px;
+  box-shadow:0 6px 20px rgba(44,108,176,.25);
+
+  position:relative; z-index:10;     /* 防止被上层元素盖住 */
+  pointer-events:auto;               /* 确保自己可点 */
+}
+.cta-link *{ pointer-events:none; }  /* 内部元素不截获点击 */
+</style>
 </div>
   <h1>Together for a Sustainable Future</h1>
   <h2>Solving Waste with Waste — Patented Technology to Transform Ocean and Solid Waste into Durable Housing Materials</h2>
