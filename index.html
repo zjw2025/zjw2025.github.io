@@ -1,140 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Together for a Sustainable Future</title>
+  <meta charset="UTF-8" />
+  <title>Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #eef3f8;
+      background-color: #e9f2f9;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+      padding: 40px 40px;
       margin: 0;
-      padding: 0;
-      text-align: center;
+      line-height: 1.6;
+      font-size: 1.2em;
+      color: #111;
     }
 
-    /* Navigation buttons */
-    .nav-container {
-      margin-top: 30px;
+    /* top nav */
+    .nav {
+      max-width: 960px;
+      margin: 0 auto 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
-    .nav-button {
-      display: inline-block;
-      background-color: #d9e7f7;
+    .nav a {
+      background-color: #d8e6f2;
       color: #004080;
-      font-weight: bold;
-      padding: 12px 20px;
-      margin: 8px;
-      border-radius: 8px;
       text-decoration: none;
-      font-size: 16px;
-      transition: background-color 0.3s ease;
+      font-weight: bold;
+      border-radius: 12px;
+      padding: 10px 18px;
+      font-size: 1em;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color .25s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,.06);
     }
-    .nav-button:hover {
-      background-color: #bcd4f5;
-    }
+    .nav a:hover { background-color: #c8dbef; }
 
-    /* Orange button special style */
-    .highlight-button {
-      background: linear-gradient(to bottom, #ffa94d, #ff7b00);
-      color: white;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      position: relative;
-      overflow: hidden;
-    }
-    /* Glossy effect */
-    .highlight-button::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 50%;
-      background: rgba(255, 255, 255, 0.3);
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-    }
-    .highlight-button:hover {
-      background: linear-gradient(to bottom, #ffb866, #ff7300);
-      transform: scale(1.05);
-    }
-
-    /* Title section */
     h1 {
+      font-size: 2.4em;
+      text-align: center;
       color: #004080;
-      font-size: 28px;
+      letter-spacing: 1px;
+      margin: 6px 0 10px;
+    }
+    h2 {
+      font-size: 1.2em;
+      text-align: center;
+      color: #2b2b2b;
+      font-weight: 500;
+      margin: 0 0 28px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .content { max-width: 860px; margin: 0 auto; }
+    .content p { margin-bottom: 1em; }
+
+    .highlight { color: #0a8a0a; font-weight: 700; margin-top: 1em; }
+
+    .note {
+      font-size: .95em;
+      text-align: center;
+      color: #555;
+      margin-top: 40px;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    footer {
+      background-color: #f0f8ff;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 1em;
+      border-top: 1px solid #ccc;
       margin-top: 40px;
     }
-    p {
-      font-size: 16px;
-      color: #333;
-      max-width: 800px;
-      margin: 10px auto;
-      line-height: 1.6;
-    }
+    footer a { color: #004080; text-decoration: none; margin: 0 12px; }
+    footer img { vertical-align: middle; margin-right: 6px; }
 
-    /* Gallery section */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      padding: 40px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .gallery-item {
-      background: white;
+    /* Standalone Waste Art CTA */
+    .cta-wrap { text-align: center; margin: 16px 0 24px; }
+    .cta-waste {
+      display: inline-block;
+      background-color: #f9a825;       /* soft orange */
+      color: #fff;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: .2px;
+      padding: 12px 26px;
       border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-      padding: 10px;
-      transition: transform 0.3s ease;
+      text-decoration: none;
+      box-shadow: 0 6px 14px rgba(0,0,0,.12);
+      transition: background-color .25s ease, transform .08s ease;
     }
-    .gallery-item img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    .gallery-item:hover {
-      transform: translateY(-5px);
-    }
+    .cta-waste:hover { background-color: #f57f17; }
+    .cta-waste:active { transform: translateY(1px); }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <div class="nav-container">
-    <a href="#" class="nav-button">🧵 Patents</a>
-    <a href="#" class="nav-button">🧪 Test Reports</a>
-    <a href="#" class="nav-button">🎯 Implementation Cases</a>
-    <a href="#" class="nav-button">🌐 International Exchange</a>
-    <a href="#" class="nav-button">🌊 Ocean Cleanup</a>
-    <a href="#" class="nav-button">🏠 Housing Construction</a>
-    <a href="#" class="nav-button">🎥 Video Materials</a>
-    <a href="#" class="nav-button">📰 Media Reports</a>
-    <a href="#" class="nav-button">♻️ Product Transformation</a>
-    <a href="#" class="nav-button highlight-button">🎨 Waste Art</a>
+  <!-- Top Nav (9 items, without Waste Art) -->
+  <nav class="nav" aria-label="Main Navigation">
+    <a href="patents.html">📜 Patents</a>
+    <a href="testing.html">🧪 Test Reports</a>
+    <a href="cases.html">🎯 Implementation Cases</a>
+    <a href="exchange.html">🌐 International Exchange</a>
+    <a href="ocean.html">🌊 Ocean Cleanup</a>
+    <a href="housing.html">🏠 Housing Construction</a>
+    <a href="videos.html">🎥 Video Materials</a>
+    <a href="media.html">📰 Media Reports</a>
+    <a href="product-transformation.html">♻️ Product Transformation</a>
+  </nav>
+
+  <!-- Standalone Waste Art button (centered, below Product Transformation) -->
+  <div class="cta-wrap">
+    <a class="cta-waste" href="waste-art.html">🎨 Waste Art</a>
   </div>
 
-  <!-- Title -->
   <h1>Together for a Sustainable Future</h1>
-  <p>
-    Solving Waste with Waste — Patented Technology to Transform Ocean and Solid Waste into Durable Housing Materials
+  <h2>Solving Waste with Waste — Patented Technology to Transform Ocean and Solid Waste into Durable Housing Materials</h2>
+
+  <main class="content">
+    <p>
+      We are using the simplest and most direct method, through non-commercial technology integration, to solve global solid waste problems and provide affordable high-quality housing for the poor.
+    </p>
+    <p>
+      For only USD 3,000, we can provide a durable, zero-pollution, B1 fire-rated house with 25–30 MPa strength — an affordable solution for over a billion people living in poor housing conditions.
+    </p>
+    <p>
+      With USD 500 million (one-sixth of which is used to build a mobile operating platform), we can clean up 100,000 tons of Pacific plastic waste in 100 working days and generate 300,000 cubic meters of landfilling material. The platform can also be relocated to clean up other marine zones.
+    </p>
+    <p class="highlight">✅ Our website does not promote donations — we hope you will act with us.</p>
+    <p class="highlight">✅ Core Technology: Our binder is made of 65% proprietary formulation + 35% volcanic ash and inorganic silicate materials.</p>
+  </main>
+
+  <p class="note">
+    All content on this website is based on real-world testing, certified reports, and formal domestic and international collaborations — without any commercial embellishment.
   </p>
 
-  <!-- Intro text -->
-  <p style="font-weight: bold; max-width: 900px;">
-    Since 2014, while developing environmental protection technologies, the technology developer has also created these works using straw and other solid waste. The aim is to enable impoverished people to create artworks from nearby waste materials, thereby improving their lives. This technology has already obtained a patent certificate.
-  </p>
-
-  <!-- Gallery -->
-  <div class="gallery">
-    <div class="gallery-item"><img src="image1.jpg" alt="Art 1"></div>
-    <div class="gallery-item"><img src="image2.jpg" alt="Art 2"></div>
-    <div class="gallery-item"><img src="image3.jpg" alt="Art 3"></div>
-    <div class="gallery-item"><img src="image4.jpg" alt="Art 4"></div>
-    <div class="gallery-item"><img src="image5.jpg" alt="Art 5"></div>
-    <div class="gallery-item"><img src="image6.jpg" alt="Art 6"></div>
-    <div class="gallery-item"><img src="image7.jpg" alt="Art 7"></div>
-    <div class="gallery-item"><img src="image8.jpg" alt="Art 8"></div>
-  </div>
+  <footer>
+    <div>
+      <a href="https://x.com/atlasecoz" target="_blank" rel="noopener">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" width="24"> X
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100091581505543" target="_blank" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook logo" width="24"> Facebook
+      </a>
+    </div>
+    <div style="margin-top: 8px;">
+      <a href="mailto:mgrsns@gmail.com">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email icon" width="24">
+        mgrsns63@gmail.com
+      </a>
+    </div>
+  </footer>
 
 </body>
 </html>
