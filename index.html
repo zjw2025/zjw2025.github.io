@@ -40,6 +40,16 @@
       background-color: #b0d4ef;
     }
 
+    /* Waste Art 按钮专属样式 */
+    .nav a.waste-art {
+      background-color: #32CD32; /* 柔和亮绿色 */
+      color: white; /* 白色字体 */
+    }
+
+    .nav a.waste-art:hover {
+      background-color: #FFA500; /* 橙色悬停 */
+    }
+
     h1 {
       font-size: 2.4em;
       text-align: center;
@@ -100,35 +110,6 @@
       vertical-align: middle;
       margin-right: 6px;
     }
-
-    /* Call-to-action button */
-    .cta-container {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin: 18px 0 28px;
-    }
-
-    .cta-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: #2c6cb0;
-      color: #fff;
-      padding: 12px 22px;
-      border-radius: 14px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 18px;
-      box-shadow: 0 6px 20px rgba(44,108,176,.25);
-      position: relative;
-      z-index: 10;
-      pointer-events: auto;
-    }
-
-    .cta-link * {
-      pointer-events: none;
-    }
   </style>
 </head>
 <body>
@@ -142,11 +123,8 @@
     <a href="housing.html">🏠 Housing Construction</a>
     <a href="videos.html">🎥 Video Materials</a>
     <a href="media.html">📰 Media Reports</a>
+    <a href="waste-art.html" class="waste-art">🎨 Waste Art</a>
     <a href="product-transformation.html">♻️ Product Transformation</a>
-  </div>
-
-  <div class="cta-container">
-    <a href="./waste-art.html" class="cta-link">Explore Waste Art</a>
   </div>
 
   <h1>Together for a Sustainable Future</h1>
