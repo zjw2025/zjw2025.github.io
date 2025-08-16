@@ -1,9 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Waste Art</title>
   <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .description {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -13,77 +26,56 @@
     }
 
     .gallery-item {
+      width: 250px;
       text-align: center;
     }
 
     .gallery-item img {
-      width: 200px;
+      width: 100%;
       height: auto;
-      display: block;
-      margin: 0 auto;
+      border: 1px solid #ccc;
     }
 
     .caption {
       margin-top: 8px;
       font-size: 14px;
-      color: #333;
     }
 
     .back {
-      display: inline-block;
-      margin: 40px auto;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #4CAF50;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    .back:hover {
-      background-color: #45a049;
-    }
-
-    .description {
+      display: block;
       text-align: center;
-      font-size: 1.1em;
-      max-width: 800px;
-      margin: 20px auto;
+      margin: 30px;
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
-
-  <h1 style="text-align: center;">Waste Art</h1>
-
+  <h1>Waste Art</h1>
   <p class="description">
-    These artworks have been created by the technology developer since 2014 using straw and other solid waste materials. The goal is to help impoverished communities improve their lives using nearby discarded materials. This technique has been patented.
+    These artworks have been created by the technology developer since 2014 using straw and other solid waste materials. The goal is to help impoverished communities.
   </p>
 
   <div class="gallery">
     <div class="gallery-item"><img src="101.1.jpg" alt="Waste Art 1"><div class="caption">Waste Art 1</div></div>
-    <div class="gallery-item"><img src="101.2.jpg" alt="Waste Art 2"><div class="caption">Waste Art 2</div></div>
-    <div class="gallery-item"><img src="101.3.jpg" alt="Waste Art 3"><div class="caption">Waste Art 3</div></div>
-    <div class="gallery-item"><img src="101.4.jpg" alt="Waste Art 4"><div class="caption">Waste Art 4</div></div>
-    <div class="gallery-item"><img src="101.5.jpg" alt="Waste Art 5"><div class="caption">Waste Art 5</div></div>
-    <div class="gallery-item"><img src="101.6.jpg" alt="Waste Art 6"><div class="caption">Waste Art 6</div></div>
-    <div class="gallery-item"><img src="101.7.jpg" alt="Waste Art 7"><div class="caption">Waste Art 7</div></div>
-    <div class="gallery-item"><img src="101.8.jpg" alt="Waste Art 8"><div class="caption">Waste Art 8</div></div>
-    <div class="gallery-item"><img src="101.9.jpg" alt="Waste Art 9"><div class="caption">Waste Art 9</div></div>
-    <div class="gallery-item"><img src="201.0.jpg" alt="Waste Art 10"><div class="caption">Waste Art 10</div></div>
-    <div class="gallery-item"><img src="201.1.jpg" alt="Waste Art 11"><div class="caption">Waste Art 11</div></div>
-    <div class="gallery-item"><img src="201.2.jpg" alt="Waste Art 12"><div class="caption">Waste Art 12</div></div>
-    <div class="gallery-item"><img src="201.5.jpg" alt="Waste Art 13"><div class="caption">Waste Art 13</div></div>
-    <div class="gallery-item"><img src="201.6.jpg" alt="Waste Art 14"><div class="caption">Waste Art 14</div></div>
-    <div class="gallery-item"><img src="201.7.jpg" alt="Waste Art 15"><div class="caption">Waste Art 15</div></div>
-    <div class="gallery-item"><img src="201.8.jpg" alt="Waste Art 16"><div class="caption">Waste Art 16</div></div>
-    <div class="gallery-item"><img src="201.9.jpg" alt="Waste Art 17"><div class="caption">Waste Art 17</div></div>
+    <div class="gallery-item"><img src="102.2.jpg" alt="Waste Art 2"><div class="caption">Waste Art 2</div></div>
+    <div class="gallery-item"><img src="103.3.jpg" alt="Waste Art 3"><div class="caption">Waste Art 3</div></div>
+    <div class="gallery-item"><img src="104.4.jpg" alt="Waste Art 4"><div class="caption">Waste Art 4</div></div>
+    <div class="gallery-item"><img src="105.5.jpg" alt="Waste Art 5"><div class="caption">Waste Art 5</div></div>
+    <div class="gallery-item"><img src="106.jpg" alt="Waste Art 6"><div class="caption">Waste Art 6</div></div>
+    <div class="gallery-item"><img src="107.7.jpg" alt="Waste Art 7"><div class="caption">Waste Art 7</div></div>
+    <div class="gallery-item"><img src="108.8.jpg" alt="Waste Art 8"><div class="caption">Waste Art 8</div></div>
+    <div class="gallery-item"><img src="100.jpg" alt="Waste Art 9"><div class="caption">Waste Art 9</div></div>
+
+    <div class="gallery-item"><img src="201.1.jpg" alt="Waste Art 10"><div class="caption">Waste Art 10</div></div>
+    <div class="gallery-item"><img src="202.2.jpg" alt="Waste Art 11"><div class="caption">Waste Art 11</div></div>
+    <div class="gallery-item"><img src="203.3.jpg" alt="Waste Art 12"><div class="caption">Waste Art 12</div></div>
+    <div class="gallery-item"><img src="204.4.jpg" alt="Waste Art 13"><div class="caption">Waste Art 13</div></div>
+    <div class="gallery-item"><img src="205.5.jpg" alt="Waste Art 14"><div class="caption">Waste Art 14</div></div>
+    <div class="gallery-item"><img src="206.6.jpg" alt="Waste Art 15"><div class="caption">Waste Art 15</div></div>
+    <div class="gallery-item"><img src="207.7.jpg" alt="Waste Art 16"><div class="caption">Waste Art 16</div></div>
+    <div class="gallery-item"><img src="209.9.jpg" alt="Waste Art 17"><div class="caption">Waste Art 17</div></div>
   </div>
 
-  <div style="text-align: center;">
-    <a class="back" href="index.html">&larr; Return to Home</a>
-  </div>
-
+  <a class="back" href="index.html">&larr; Return to Home</a>
 </body>
 </html>
