@@ -50,7 +50,7 @@
     .pill:hover{ transform: translateY(-2px); box-shadow:0 14px 28px rgba(0,0,0,.12); }
     .pill.active{ background:#dfe7ff; }
 
-    /* Header */
+    /* Header + intro */
     header{
       max-width:1200px;
       margin:24px auto 0;
@@ -63,12 +63,16 @@
       font-size:42px;
       letter-spacing:1px;
     }
-    header p{
-      margin:0 auto;
-      max-width:980px;
-      line-height:1.6;
-      font-size:16px;
-      opacity:.92;
+    .intro{
+      max-width:1100px;
+      margin:14px auto 0;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:12px;
+      padding:16px 18px;
+      line-height:1.65;
+      font-size:15px;
+      color:#f8fafc;
     }
 
     /* Gallery */
@@ -98,19 +102,14 @@
       background:#e5e7eb;
     }
     .cap{
-      padding:12px 14px 14px;
+      padding:14px 14px 16px;
       text-align:center;
       border-top:1px solid #edf0f6;
     }
     .cap .t{
       font-weight:700;
-      font-size:15px;
-      margin-bottom:6px;
+      font-size:16px;
       color:var(--primary);
-    }
-    .cap .s{
-      font-size:13px;
-      color:var(--muted);
     }
 
     /* Back button */
@@ -135,7 +134,7 @@
 </head>
 <body>
 
-  <!-- Top navigation (only links that exist in your repo) -->
+  <!-- Top navigation -->
   <nav class="nav" aria-label="Site">
     <a class="pill" href="index.html">Home</a>
     <a class="pill" href="patents.html">Patents</a>
@@ -151,108 +150,31 @@
 
   <header>
     <h1>Waste Art Gallery</h1>
-    <p>
-      These artworks have been created by the technology developer since 2014 using straw and other solid
-      waste materials. The goal is to help impoverished communities improve their lives by making use of locally
-      available discarded materials. This technology is patented.
-    </p>
+    <div class="intro">
+      Since 2014, while developing environmental protection technologies, the technology developer has also created these works using straw and other solid waste. The aim is to enable impoverished people to create artworks from nearby waste materials, thereby improving their lives. This technology has already obtained a patent certificate.
+    </div>
   </header>
 
   <main class="wrap">
     <section class="gallery">
-
-      <!-- 001 ~ 017 — images are in the SAME folder as this HTML file -->
-      <figure class="item">
-        <img class="thumb" src="001.jpg" alt="Waste Art 1">
-        <figcaption class="cap"><div class="t">Waste Art 1</div><div class="s">Waste Art 1</div></figcaption>
-      </figure>
-
-      <figure class="item">
-        <img class="thumb" src="002.jpg" alt="Waste Art 2">
-        <figcaption class="cap"><div class="t">Waste Art 2</div><div class="s">Waste Art 2</div></figcaption>
-      </figure>
-
-      <figure class="item">
-        <img class="thumb" src="003.jpg" alt="Waste Art 3">
-        <figcaption class="cap"><div class="t">Waste Art 3</div><div class="s">Waste Art 3</div></figcaption>
-      </figure>
-
-      <figure class="item">
-        <img class="thumb" src="004.jpg" alt="Waste Art 4">
-        <figcaption class="cap"><div class="t">Waste Art 4</div><div class="s">Waste Art 4</div></figcaption>
-      </figure>
-
-      <figure class="item">
-        <img class="thumb" src="005.jpg" alt="Waste Art 5">
-        <figcaption class="cap"><div class="t">Waste Art 5</div><div class="s">Waste Art 5</div></figcaption>
-      </figure>
-
-      <figure class="item">
-        <img class="thumb" src="006.jpg" alt="Waste Art 6">
-        <figcaption class="cap"><div class="t">Waste Art 6</div><div class="s">Waste Art 6</div></figcaption>
-      </figure>
-
-      <figure class="item">
-        <img class="thumb" src="007.jpg" alt="Waste Art 7">
-        <figcaption class="cap"><div class="t">Waste Art 7</div><div class="s">Waste Art 7</div></figcaption>
-      </figure>
-
-      <figure class="item">
-        <img class="thumb" src="008.jpg" alt="Waste Art 8">
-        <figcaption class="cap"><div class="t">Waste Art 8</div><div class="s">Waste Art 8</div></figcaption>
-      </figure>
-
-      <figure class="item">
-        <img class="thumb" src="009.jpg" alt="Waste Art 9">
-        <figcaption class="cap"><div class="t">Waste Art 9</div><div class="s">Waste Art 9</div></figcaption>
-      </figure>
-
-      <figure class="item">
-        <img class="thumb" src="010.jpg" alt="Waste Art 10">
-        <figcaption class="cap"><div class="t">Waste Art 10</div><div class="s">Waste Art 10</div></figcaption>
-      </figure>
-
-      <figure class="item">
-        <img class="thumb" src="012.jpg" alt="Waste Art 11">
-        <figcaption class="cap"><div class="t">Waste Art 11</div><div class="s">Waste Art 11</div></figcaption>
-      </figure>
-
-      <figure class="item">
-        <img class="thumb" src="013.jpg" alt="Waste Art 12">
-        <figcaption class="cap"><div class="t">Waste Art 12</div><div class="s">Waste Art 12</div></figcaption>
-      </figure>
-
-      <figure class="item">
-        <img class="thumb" src="014.jpg" alt="Waste Art 13">
-        <figcaption class="cap"><div class="t">Waste Art 13</div><div class="s">Waste Art 13</div></figcaption>
-      </figure>
-
-      <figure class="item">
-        <img class="thumb" src="015.jpg" alt="Waste Art 14">
-        <figcaption class="cap"><div class="t">Waste Art 14</div><div class="s">Waste Art 14</div></figcaption>
-      </figure>
-
-      <figure class="item">
-        <img class="thumb" src="016.jpg" alt="Waste Art 15">
-        <figcaption class="cap"><div class="t">Waste Art 15</div><div class="s">Waste Art 15</div></figcaption>
-      </figure>
-
-      <figure class="item">
-        <img class="thumb" src="017.jpg" alt="Waste Art 16">
-        <figcaption class="cap"><div class="t">Waste Art 16</div><div class="s">Waste Art 16</div></figcaption>
-      </figure>
-
-      <figure class="item">
-        <img class="thumb" src="011.jpg" alt="Waste Art 17">
-        <figcaption class="cap"><div class="t">Waste Art 17</div><div class="s">Waste Art 17</div></figcaption>
-      </figure>
-
-      <!-- 如果你也想展示 018.jpg，再加一张：
-      <figure class="item">
-        <img class="thumb" src="018.jpg" alt="Waste Art 18">
-        <figcaption class="cap"><div class="t">Waste Art 18</div><div class="s">Waste Art 18</div></figcaption>
-      </figure>
-      -->
+      <!-- 001 ~ 017 strictly one-to-one -->
+      <figure class="item"><img class="thumb" src="001.jpg" alt="Waste Art 1"><figcaption class="cap"><div class="t">Waste Art 1</div></figcaption></figure>
+      <figure class="item"><img class="thumb" src="002.jpg" alt="Waste Art 2"><figcaption class="cap"><div class="t">Waste Art 2</div></figcaption></figure>
+      <figure class="item"><img class="thumb" src="003.jpg" alt="Waste Art 3"><figcaption class="cap"><div class="t">Waste Art 3</div></figcaption></figure>
+      <figure class="item"><img class="thumb" src="004.jpg" alt="Waste Art 4"><figcaption class="cap"><div class="t">Waste Art 4</div></figcaption></figure>
+      <figure class="item"><img class="thumb" src="005.jpg" alt="Waste Art 5"><figcaption class="cap"><div class="t">Waste Art 5</div></figcaption></figure>
+      <figure class="item"><img class="thumb" src="006.jpg" alt="Waste Art 6"><figcaption class="cap"><div class="t">Waste Art 6</div></figcaption></figure>
+      <figure class="item"><img class="thumb" src="007.jpg" alt="Waste Art 7"><figcaption class="cap"><div class="t">Waste Art 7</div></figcaption></figure>
+      <figure class="item"><img class="thumb" src="008.jpg" alt="Waste Art 8"><figcaption class="cap"><div class="t">Waste Art 8</div></figcaption></figure>
+      <figure class="item"><img class="thumb" src="009.jpg" alt="Waste Art 9"><figcaption class="cap"><div class="t">Waste Art 9</div></figcaption></figure>
+      <figure class="item"><img class="thumb" src="010.jpg" alt="Waste Art 10"><figcaption class="cap"><div class="t">Waste Art 10</div></figcaption></figure>
+      <figure class="item"><img class="thumb" src="011.jpg" alt="Waste Art 11"><figcaption class="cap"><div class="t">Waste Art 11</div></figcaption></figure>
+      <figure class="item"><img class="thumb" src="012.jpg" alt="Waste Art 12"><figcaption class="cap"><div class="t">Waste Art 12</div></figcaption></figure>
+      <figure class="item"><img class="thumb" src="013.jpg" alt="Waste Art 13"><figcaption class="cap"><div class="t">Waste Art 13</div></figcaption></figure>
+      <figure class="item"><img class="thumb" src="014.jpg" alt="Waste Art 14"><figcaption class="cap"><div class="t">Waste Art 14</div></figcaption></figure>
+      <figure class="item"><img class="thumb" src="015.jpg" alt="Waste Art 15"><figcaption class="cap"><div class="t">Waste Art 15</div></figcaption></figure>
+      <figure class="item"><img class="thumb" src="016.jpg" alt="Waste Art 16"><figcaption class="cap"><div class="t">Waste Art 16</div></figcaption></figure>
+      <figure class="item"><img class="thumb" src="017.jpg" alt="Waste Art 17"><figcaption class="cap"><div class="t">Waste Art 17</div></figcaption></figure>
     </section>
 
     <div class="back">
