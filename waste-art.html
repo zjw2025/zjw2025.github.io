@@ -1,132 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Waste Art Gallery</title>
-  <style>
-    :root{
-      --bg:#f5f7fb;
-      --card:#ffffff;
-      --text:#111827;      /* 黑色文字 */
-      --muted:#6b7280;
-      --primary:#0f172a;
-      --shadow:0 10px 20px rgba(0,0,0,.08);
-      --radius:14px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC","Hiragino Sans GB","Microsoft YaHei", sans-serif;
-      color:var(--text);
-      /* 顶部深色过渡到浅色背景 */
-      background:linear-gradient(180deg,#0f172a 0 140px, var(--bg) 140px 100%);
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Waste Art Gallery</title>
+<style>
+  :root{
+    --bg:#f5f7fb;
+    --card:#ffffff;
+    --text:#111827;
+    --shadow:0 10px 20px rgba(0,0,0,.08);
+    --radius:14px;
+    --tile-h: 300px; /* 统一卡片高度，行内底边对齐；可调 */
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    color:var(--text);
+    background:linear-gradient(180deg,#0f172a 0 140px, var(--bg) 140px 100%);
+  }
 
-    /* 顶部导航（可保留/删改） */
-    .nav{
-      max-width:1200px;
-      margin:0 auto;
-      padding:16px 20px 0;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 14px;
-      border-radius:999px;
-      background:#e8eefc;
-      color:#2746c7;
-      text-decoration:none;
-      font-weight:600;
-      box-shadow: var(--shadow);
-      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-    }
-    .pill:hover{ transform: translateY(-2px); box-shadow:0 14px 28px rgba(0,0,0,.12); }
-    .pill.active{ background:#dfe7ff; }
+  /* 顶部导航（可保留/删改） */
+  .nav{
+    max-width:1200px;margin:0 auto;padding:16px 20px 0;
+    display:flex;gap:10px;flex-wrap:wrap;justify-content:center;
+  }
+  .pill{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:#e8eefc;color:#2746c7;text-decoration:none;font-weight:600;box-shadow:var(--shadow);transition:.15s}
+  .pill:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(0,0,0,.12)}
+  .pill.active{background:#dfe7ff}
 
-    /* 标题 */
-    header{
-      max-width:1200px;
-      margin:12px auto 0;
-      padding:0 20px 8px;
-      text-align:center;
-      color:#fff;
-    }
-    header h1{
-      margin:0;
-      font-size:40px;
-      letter-spacing:.5px;
-    }
+  header{max-width:1200px;margin:12px auto 0;padding:0 20px 8px;text-align:center;color:#fff}
+  header h1{margin:0;font-size:40px;letter-spacing:.5px}
 
-    /* 主体容器 */
-    .wrap{
-      max-width:1200px;
-      margin:20px auto 80px;
-      padding:0 20px;
-    }
+  .wrap{max-width:1200px;margin:20px auto 80px;padding:0 20px}
 
-    /* 置顶介绍 —— 黑体加粗，不改动文案 */
-    .intro{
-      background:#fff;
-      border:1px solid #e5e7eb;
-      border-radius:12px;
-      padding:18px 20px;
-      line-height:1.7;
-      font-size:16px;
-      font-weight:700;           /* 加粗 */
-      color:#111;                /* 黑色 */
-      box-shadow: var(--shadow);
-      margin-bottom:18px;
-    }
+  /* 置顶介绍（黑色加粗，原文不改） */
+  .intro{
+    background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:18px 20px;
+    line-height:1.7;font-size:16px;font-weight:700;color:#111;box-shadow:var(--shadow);margin-bottom:18px;
+  }
 
-    /* 图墙 */
-    .gallery{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
-      gap:20px;
-    }
-    .item{
-      background:var(--card);
-      border-radius:var(--radius);
-      overflow:hidden; /* 仅用于圆角 */
-      box-shadow: var(--shadow);
-      transition: transform .15s ease, box-shadow .15s ease;
-    }
-    .item:hover{ transform:translateY(-4px); box-shadow:0 16px 32px rgba(0,0,0,.12); }
+  .section-title{margin:26px 0 12px;font-size:20px;font-weight:800;color:#0f172a}
 
-    /* 关键：原图等比例，不裁剪 */
-    .thumb{
-      display:block;
-      width:100%;
-      height:auto;        /* 高度自适应，保持比例 */
-      object-fit:contain; /* 只缩放，不裁剪 */
-      background:#e5e7eb; /* 未加载前的底色 */
-    }
+  /* 图墙：统一高度，底边对齐；只显示图片，无白条 */
+  .gallery{
+    display:grid;gap:20px;align-items:end;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  }
+  /* 第二排固定 5 列 */
+  .gallery.row2{
+    grid-template-columns:repeat(5,1fr);
+  }
 
-    /* 返回按钮 */
-    .back{
-      margin:36px auto 0;
-      text-align:center;
-    }
-    .back a{
-      display:inline-block;
-      text-decoration:none;
-      background:#22c55e;
-      color:#fff;
-      padding:12px 18px;
-      border-radius:10px;
-      font-weight:700;
-      box-shadow: var(--shadow);
-      transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
-    }
-    .back a:hover{ transform: translateY(-2px); box-shadow:0 14px 28px rgba(0,0,0,.14); }
-    .back a:active{ transform: translateY(0); opacity:.9; }
-  </style>
+  .item{
+    background:var(--card);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    transition:transform .15s ease, box-shadow .15s ease;
+    height:var(--tile-h);
+    display:flex;align-items:flex-end;justify-content:center;
+    padding:10px;
+  }
+  .item:hover{ transform:translateY(-4px); box-shadow:0 16px 32px rgba(0,0,0,.12); }
+
+  /* 保持原图比例，不裁剪 */
+  .thumb{
+    max-height:100%; max-width:100%;
+    width:auto; height:auto;
+    object-fit:contain;
+    display:block; background:#e5e7eb; border-radius:8px;
+  }
+
+  .back{margin:36px auto 0;text-align:center}
+  .back a{
+    display:inline-block;text-decoration:none;background:#22c55e;color:#fff;
+    padding:12px 18px;border-radius:10px;font-weight:700;box-shadow:var(--shadow);transition:.15s
+  }
+  .back a:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(0,0,0,.14)}
+</style>
 </head>
 <body>
 
@@ -154,30 +107,72 @@
       Since 2014, while developing environmental protection technologies, the technology developer has also created these works using straw and other solid waste. The aim is to enable impoverished people to create artworks from nearby waste materials, thereby improving their lives. This technology has already obtained a patent certificate.
     </div>
 
-    <!-- 只显示图片（001~017），等比例、不裁剪 -->
-    <section class="gallery">
-      <figure class="item"><img class="thumb" src="001.jpg" alt="Waste Art 1"></figure>
-      <figure class="item"><img class="thumb" src="002.jpg" alt="Waste Art 2"></figure>
-      <figure class="item"><img class="thumb" src="003.jpg" alt="Waste Art 3"></figure>
-      <figure class="item"><img class="thumb" src="004.jpg" alt="Waste Art 4"></figure>
-      <figure class="item"><img class="thumb" src="005.jpg" alt="Waste Art 5"></figure>
-      <figure class="item"><img class="thumb" src="006.jpg" alt="Waste Art 6"></figure>
-      <figure class="item"><img class="thumb" src="007.jpg" alt="Waste Art 7"></figure>
-      <figure class="item"><img class="thumb" src="008.jpg" alt="Waste Art 8"></figure>
-      <figure class="item"><img class="thumb" src="009.jpg" alt="Waste Art 9"></figure>
-      <figure class="item"><img class="thumb" src="010.jpg" alt="Waste Art 10"></figure>
-      <figure class="item"><img class="thumb" src="011.jpg" alt="Waste Art 11"></figure>
-      <figure class="item"><img class="thumb" src="012.jpg" alt="Waste Art 12"></figure>
-      <figure class="item"><img class="thumb" src="013.jpg" alt="Waste Art 13"></figure>
-      <figure class="item"><img class="thumb" src="014.jpg" alt="Waste Art 14"></figure>
-      <figure class="item"><img class="thumb" src="015.jpg" alt="Waste Art 15"></figure>
-      <figure class="item"><img class="thumb" src="016.jpg" alt="Waste Art 16"></figure>
-      <figure class="item"><img class="thumb" src="017.jpg" alt="Waste Art 17"></figure>
+    <!-- 第一排：011、003、001、002（按你指定的顺序） -->
+    <h2 class="section-title" style="display:none">Row 1</h2>
+    <section class="gallery row1" aria-label="Row 1">
+      <figure class="item"><img class="thumb" src="011.jpg" alt="011"></figure>
+      <figure class="item"><img class="thumb" src="003.jpg" alt="003"></figure>
+      <figure class="item"><img class="thumb" src="001.jpg" alt="001"></figure>
+      <figure class="item"><img class="thumb" src="002.jpg" alt="002"></figure>
+    </section>
+
+    <!-- 第二排：5 幅 → 004、005、006、008、007（顺序固定） -->
+    <h2 class="section-title" style="display:none">Row 2</h2>
+    <section class="gallery row2" aria-label="Row 2">
+      <figure class="item"><img class="thumb" src="004.jpg" alt="004"></figure>
+      <figure class="item"><img class="thumb" src="005.jpg" alt="005"></figure>
+      <figure class="item"><img class="thumb" src="006.jpg" alt="006"></figure>
+      <figure class="item"><img class="thumb" src="008.jpg" alt="008"></figure>
+      <figure class="item"><img class="thumb" src="007.jpg" alt="007"></figure>
+    </section>
+
+    <!-- 其余：先按编号顺序放置（需要按日期时，把 data-date 填上即可自动按日期排序） -->
+    <h2 class="section-title" style="display:none">Others</h2>
+    <section id="others" class="gallery" aria-label="Others">
+      <!-- 先给出图片；如需按日期排序，把 data-date="YYYY-MM-DD" 补上，脚本会按日期升序重新排列 -->
+      <figure class="item"><img class="thumb" src="009.jpg" alt="009" data-date=""></figure>
+      <figure class="item"><img class="thumb" src="010.jpg" alt="010" data-date=""></figure>
+      <figure class="item"><img class="thumb" src="012.jpg" alt="012" data-date=""></figure>
+      <figure class="item"><img class="thumb" src="013.jpg" alt="013" data-date=""></figure>
+      <figure class="item"><img class="thumb" src="014.jpg" alt="014" data-date=""></figure>
+      <figure class="item"><img class="thumb" src="015.jpg" alt="015" data-date=""></figure>
+      <figure class="item"><img class="thumb" src="016.jpg" alt="016" data-date=""></figure>
+      <figure class="item"><img class="thumb" src="017.jpg" alt="017" data-date=""></figure>
     </section>
 
     <div class="back">
       <a href="index.html">&larr; Return to Home</a>
     </div>
   </main>
+
+<script>
+/* 可选：给“其余作品”按日期排序 —— 只要给每张图片加 data-date="YYYY-MM-DD" */
+(function(){
+  const box = document.getElementById('others');
+  const items = Array.from(box.querySelectorAll('.item'));
+  // 取出有日期的数据
+  const withDate = items
+    .map(el=>{
+      const img = el.querySelector('img');
+      const d = img.getAttribute('data-date');
+      return { el, date: d && /^\d{4}-\d{2}-\d{2}$/.test(d) ? new Date(d).getTime() : null };
+    });
+
+  // 如果至少有两张填了日期，按日期升序排序；否则保持原顺序
+  const dated = withDate.filter(x=>x.date!==null);
+  if(dated.length >= 2){
+    const sorted = withDate.slice().sort((a,b)=>{
+      if(a.date===null && b.date===null) return 0;
+      if(a.date===null) return 1;
+      if(b.date===null) return -1;
+      return a.date - b.date;
+    });
+    // 重新渲染
+    box.innerHTML = '';
+    sorted.forEach(x=> box.appendChild(x.el));
+  }
+})();
+</script>
+
 </body>
 </html>
