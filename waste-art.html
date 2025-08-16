@@ -1,78 +1,126 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>废物艺术画廊</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fafafa;
-      margin: 0;
-      padding: 0;
-    }
-    h1 {
-      text-align: center;
-      padding: 20px;
-      margin: 0;
-      background-color: #333;
-      color: #fff;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
-      padding: 24px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    .gallery-item {
-      text-align: center;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-      overflow: hidden;
-      transition: transform 0.2s ease;
-    }
-    .gallery-item:hover {
-      transform: translateY(-4px);
-    }
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .caption {
-      padding: 10px;
-      font-size: 14px;
-      color: #333;
-      background-color: #f4f4f4;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>废物艺术画廊</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            background-color: #333;
+            color: #fff;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            padding: 24px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-4px);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .caption {
+            padding: 10px;
+            font-size: 14px;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+    </style>
 </head>
 <body>
-
-  <h1>废物艺术画廊</h1>
-
-  <div class="gallery">
-    <div class="gallery-item"><img src="waste-art/废物艺术 1.jpg" alt="废物艺术 1"><div class="caption">废物艺术 1</div></div>
-    <div class="gallery-item"><img src="waste-art/废物艺术 2.jpg" alt="废物艺术 2"><div class="caption">废物艺术 2</div></div>
-    <div class="gallery-item"><img src="waste-art/废物艺术 3.jpg" alt="废物艺术 3"><div class="caption">废物艺术 3</div></div>
-    <div class="gallery-item"><img src="waste-art/废物艺术 4.jpg" alt="废物艺术 4"><div class="caption">废物艺术 4</div></div>
-    <div class="gallery-item"><img src="waste-art/废物艺术 5.jpg" alt="废物艺术 5"><div class="caption">废物艺术 5</div></div>
-    <div class="gallery-item"><img src="waste-art/废物艺术 6.jpg" alt="废物艺术 6"><div class="caption">废物艺术 6</div></div>
-    <div class="gallery-item"><img src="waste-art/废物艺术 7.jpg" alt="废物艺术 7"><div class="caption">废物艺术 7</div></div>
-    <div class="gallery-item"><img src="waste-art/废物艺术 8.jpg" alt="废物艺术 8"><div class="caption">废物艺术 8</div></div>
-    <div class="gallery-item"><img src="waste-art/废物艺术 9.jpg" alt="废物艺术 9"><div class="caption">废物艺术 9</div></div>
-    <div class="gallery-item"><img src="waste-art/废物艺术 10.jpg" alt="废物艺术 10"><div class="caption">废物艺术 10</div></div>
-    <div class="gallery-item"><img src="waste-art/废物艺术 11.jpg" alt="废物艺术 11"><div class="caption">废物艺术 11</div></div>
-    <div class="gallery-item"><img src="waste-art/废物艺术 12.jpg" alt="废物艺术 12"><div class="caption">废物艺术 12</div></div>
-    <div class="gallery-item"><img src="waste-art/废物艺术 13.jpg" alt="废物艺术 13"><div class="caption">废物艺术 13</div></div>
-    <div class="gallery-item"><img src="waste-art/废物艺术 14.jpg" alt="废物艺术 14"><div class="caption">废物艺术 14</div></div>
-    <div class="gallery-item"><img src="waste-art/废物艺术 15.jpg" alt="废物艺术 15"><div class="caption">废物艺术 15</div></div>
-    <div class="gallery-item"><img src="waste-art/废物艺术 16.jpg" alt="废物艺术 16"><div class="caption">废物艺术 16</div></div>
-    <div class="gallery-item"><img src="waste-art/废物艺术 17.jpg" alt="废物艺术 17"><div class="caption">废物艺术 17</div></div>
-  </div>
-
+    <h1>废物艺术画廊</h1>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="img/废物艺术1.jpg" alt="废物艺术 1">
+            <div class="caption">废物艺术 1</div>
+        </div>
+        <div class="gallery-item">
+            <img src="img/废物艺术2.jpg" alt="废物艺术 2">
+            <div class="caption">废物艺术 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="img/废物艺术3.jpg" alt="废物艺术 3">
+            <div class="caption">废物艺术 3</div>
+        </div>
+        <div class="gallery-item">
+            <img src="img/废物艺术4.jpg" alt="废物艺术 4">
+            <div class="caption">废物艺术 4</div>
+        </div>
+        <div class="gallery-item">
+            <img src="img/废物艺术5.jpg" alt="废物艺术 5">
+            <div class="caption">废物艺术 5</div>
+        </div>
+        <div class="gallery-item">
+            <img src="img/废物艺术6.jpg" alt="废物艺术 6">
+            <div class="caption">废物艺术 6</div>
+        </div>
+        <div class="gallery-item">
+            <img src="img/废物艺术7.jpg" alt="废物艺术 7">
+            <div class="caption">废物艺术 7</div>
+        </div>
+        <div class="gallery-item">
+            <img src="img/废物艺术8.jpg" alt="废物艺术 8">
+            <div class="caption">废物艺术 8</div>
+        </div>
+        <div class="gallery-item">
+            <img src="img/废物艺术9.jpg" alt="废物艺术 9">
+            <div class="caption">废物艺术 9</div>
+        </div>
+        <div class="gallery-item">
+            <img src="img/废物艺术10.jpg" alt="废物艺术 10">
+            <div class="caption">废物艺术 10</div>
+        </div>
+        <div class="gallery-item">
+            <img src="img/废物艺术11.jpg" alt="废物艺术 11">
+            <div class="caption">废物艺术 11</div>
+        </div>
+        <div class="gallery-item">
+            <img src="img/废物艺术12.jpg" alt="废物艺术 12">
+            <div class="caption">废物艺术 12</div>
+        </div>
+        <div class="gallery-item">
+            <img src="img/废物艺术13.jpg" alt="废物艺术 13">
+            <div class="caption">废物艺术 13</div>
+        </div>
+        <div class="gallery-item">
+            <img src="img/废物艺术14.jpg" alt="废物艺术 14">
+            <div class="caption">废物艺术 14</div>
+        </div>
+        <div class="gallery-item">
+            <img src="img/废物艺术15.jpg" alt="废物艺术 15">
+            <div class="caption">废物艺术 15</div>
+        </div>
+        <div class="gallery-item">
+            <img src="img/废物艺术16.jpg" alt="废物艺术 16">
+            <div class="caption">废物艺术 16</div>
+        </div>
+        <div class="gallery-item">
+            <img src="img/废物艺术17.jpg" alt="废物艺术 17">
+            <div class="caption">废物艺术 17</div>
+        </div>
+    </div>
 </body>
 </html>
