@@ -8,41 +8,36 @@
   <style>
     :root {
       --bg: #f5faff;
-      --surface: #ffffff;
       --ink: #003366;
       --muted: #446384;
       --chip: #d8e6f2;
       --chip-hover: #bcd4f5;
       --accent: #f9a825;
       --accent-hover: #e68900;
-      --maxw: min(92vw, 1440px); /* ✅ 内容更宽，占屏 92% */
-      --measure: 95ch;           /* ✅ 行宽更宽 */
-      --space: 20px;
+      --maxw: min(94vw, 1480px); /* 更宽，占屏94% */
+      --measure: 95ch;
       --radius: 14px;
       --shadow: 0 8px 24px rgba(0,0,0,.06);
-      --fit: 1; /* 动态缩放系数，JS 会修改 */
+      --fit: 1; 
     }
-
-    html, body { height: 100%; margin:0; padding:0; }
-    * { box-sizing: border-box; }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: var(--bg);
       color: var(--ink);
       text-align: center;
+      margin: 0;
       line-height: 1.7;
     }
 
-    /* 顶部导航 */
+    /* 导航 */
     .nav {
       max-width: var(--maxw);
-      margin: 22px auto var(--space);
+      margin: 22px auto 20px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 6px;
-      padding: 0 8px;
     }
     .nav a {
       background: var(--chip);
@@ -50,8 +45,8 @@
       text-decoration: none;
       font-weight: bold;
       border-radius: 8px;
-      padding: 5px 12px;
-      font-size: .85em;
+      padding: 6px 14px;
+      font-size: 0.95em; /* 导航稍微大一点 */
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       transition: background .25s ease;
     }
@@ -59,46 +54,43 @@
     .orange-button { background: var(--accent) !important; color:#fff !important; }
     .orange-button:hover { background: var(--accent-hover) !important; }
 
-    /* 标题区 */
-    .hero { padding: 0 0 calc(var(--space) * .75); }
+    /* 标题 */
     .hero h1 {
-      margin: 6px 0 8px;
+      margin: 8px 0;
       font-weight: 800;
-      font-size: clamp(28px, 3.6vw, 44px);
-      line-height: 1.25;
+      font-size: clamp(30px, 3.8vw, 48px); /* ✅ 更大 */
+      line-height: 1.3;
     }
     .hero h2 {
-      margin: 0 auto 18px;
+      margin: 0 auto 20px;
       font-weight: 500;
-      font-size: clamp(16px, 1.8vw, 22px);
-      max-width: 72ch; /* 更宽一点，少换行 */
+      font-size: clamp(18px, 2vw, 24px); /* ✅ 更清晰 */
+      max-width: 80ch;
       color: var(--muted);
     }
 
-    /* 正文 */
-    .content { max-width: var(--measure); margin: 0 auto; text-align: left; }
-    .content p { margin: 0 0 14px; }
+    /* 内容 */
+    .content { max-width: var(--measure); margin: 0 auto; text-align: left; font-size: 1.15rem; } /* ✅ 主体文字加大 */
+    .content p { margin: 0 0 16px; }
     .content .highlight {
       font-weight: 700;
-      color: #004080;
-      margin-top: 14px;
       background: #e9f2fb;
-      padding: 8px 10px;
-      border-radius: 8px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      margin-top: 16px;
     }
 
     .note {
       max-width: 1100px;
-      margin: 14px auto 0;
+      margin: 16px auto;
       padding: 0 16px;
-      font-size: .96rem;
+      font-size: 1rem;
       color: var(--muted);
-      line-height: 1.6;
     }
 
     /* 页脚 */
     footer {
-      margin-top: 12px;
+      margin-top: 16px;
       background: #eef5fb;
       border-top: 2px solid #d8e6f2;
       box-shadow: var(--shadow);
@@ -110,52 +102,30 @@
     }
     footer a {
       color: #004080;
-      text-decoration: none;
       font-weight: 700;
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 6px 10px;
+      padding: 8px 12px;
       border-radius: 10px;
       background: var(--chip);
-      transition: background .25s ease;
     }
     footer a:hover { background: var(--chip-hover); }
-    footer img { vertical-align: middle; }
     footer .row { display:flex; flex-wrap:wrap; gap: 12px; justify-content:center; }
-    footer .row + .row { margin-top: 8px; }
+    footer .row + .row { margin-top: 10px; }
 
     /* 手机版 */
     @media (max-width: 480px) {
-      .nav {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .nav { display: grid; grid-template-columns: repeat(2, 1fr); }
       .hero h1 { font-size: 22px; }
       .hero h2 { font-size: 15px; max-width: 36ch; }
-      .content { max-width: 92vw; }
-    }
-
-    /* 桌面端根据缩放系数调节字号/间距 */
-    @media (min-width: 1024px){
-      html { font-size: calc(16px * var(--fit)); }
-      :root{
-        --space: calc(20px * var(--fit));
-      }
-      .hero{ padding-bottom: calc(6px * var(--fit)); }
-      .hero h1{ margin: calc(6px * var(--fit)) 0 calc(4px * var(--fit)); }
-      .hero h2{ margin-bottom: calc(8px * var(--fit)); }
-      .content p{ margin: 0 0 calc(12px * var(--fit)); }
-      .content .highlight{ padding: calc(8px * var(--fit)) calc(10px * var(--fit)); }
-      .note{ margin-top: calc(10px * var(--fit)); }
-      footer{ margin-top: calc(10px * var(--fit)); }
-      footer .wrap{ padding: calc(12px * var(--fit)) calc(10px * var(--fit)); }
+      .content { max-width: 92vw; font-size: 1rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- 顶部导航 -->
   <nav class="nav">
     <a href="patents.html">🧵 Patents</a>
     <a href="testing.html">🧪 Test Reports</a>
@@ -170,13 +140,11 @@
     <a href="waste-art.html" class="orange-button">🎨 Waste Art</a>
   </nav>
 
-  <!-- 标题 -->
   <div class="hero">
     <h1>Together for a Sustainable Future</h1>
     <h2>“Solving Waste with Waste — Patented Technology to Transform Ocean Plastic Waste and Solid Waste into Durable Housing Materials.”</h2>
   </div>
 
-  <!-- 正文 -->
   <main class="content">
     <p>We are using the simplest and most direct method, through non-commercial technology integration, to solve global solid waste problems and provide affordable high-quality housing for the poor.</p>
     <p>For only USD 3,000, we can provide a durable, zero-pollution, B1 fire-rated house with 25–30 MPa strength — an affordable solution for over a billion people living in poor housing conditions.</p>
@@ -189,44 +157,17 @@
     All content on this website is based on real-world testing, certified reports, and formal domestic and international collaborations — without any commercial embellishment.
   </p>
 
-  <!-- 页脚 -->
   <footer>
     <div class="wrap">
       <div class="row">
-        <a href="https://x.com/atlasecoz" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" width="20"> X</a>
-        <a href="https://www.facebook.com/profile.php?id=100091581505543" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" width="20"> Facebook</a>
+        <a href="https://x.com/atlasecoz" target="_blank">X</a>
+        <a href="https://www.facebook.com/profile.php?id=100091581505543" target="_blank">Facebook</a>
       </div>
       <div class="row">
-        <a href="mailto:mgrsns63@gmail.com"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" width="20"> mgrsns63@gmail.com</a>
+        <a href="mailto:mgrsns63@gmail.com">mgrsns63@gmail.com</a>
       </div>
     </div>
   </footer>
-
-  <!-- JS: 自动缩放让整页一屏显示 -->
-  <script>
-  (function(){
-    var isDesktop = window.matchMedia('(pointer:fine)').matches && window.innerWidth >= 1024;
-    if (!isDesktop) return;
-
-    function setFit(val){
-      document.documentElement.style.setProperty('--fit', String(val));
-    }
-
-    function fitToScreen(){
-      var fit = 1.0;
-      setFit(fit);
-      var guard = 0;
-      while (document.documentElement.scrollHeight > window.innerHeight && fit > 0.75 && guard < 30){
-        fit -= 0.02;
-        setFit(fit.toFixed(3));
-        guard++;
-      }
-    }
-
-    window.addEventListener('load', fitToScreen);
-    window.addEventListener('resize', fitToScreen);
-  })();
-  </script>
 
 </body>
 </html>
