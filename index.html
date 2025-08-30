@@ -1,160 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Together for a Sustainable Future</title>
-  <style>
-    body {
-      background-color: #e9f2f9;
-      font-family: sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.8;
-      font-size: 1.2em;
-      color: #1a1a1a;
-    }
-    header {
-      text-align: center;
-      padding: 20px;
-    }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-    nav a {
-      text-decoration: none;
-      background: #dfeeff;
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-weight: bold;
-      color: #003366;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: background 0.2s;
-    }
-    nav a:hover {
-      background: #c6e0ff;
-    }
-    h1 {
-      font-size: 2.5em;
-      color: #002a5c;
-      margin-bottom: 10px;
-    }
-    h2 {
-      font-size: 1.5em;
-      color: #003366;
-      margin: 10px 0 30px;
-      text-align: center;
-    }
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 0 20px 40px;
-    }
-    p {
-      margin-bottom: 20px;
-      text-align: justify;
-    }
-    .highlight {
-      background: #f5faff;
-      padding: 12px 16px;
-      border-radius: 8px;
-      font-weight: bold;
-      margin: 20px 0;
-    }
-    .highlight.green {
-      border-left: 6px solid #22c55e;
-    }
-    footer {
-      background: #f0f4f8;
-      text-align: center;
-      padding: 25px 20px;
-      font-size: 0.9em;
-      color: #444;
-    }
-    footer p {
-      margin-bottom: 12px;
-      line-height: 1.5;
-    }
-    .contact {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 8px;
-    }
-    .btn {
-      display: inline-block;
-      background: #d9e8ff;
-      color: #003366;
-      padding: 10px 18px;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: background 0.2s, transform 0.2s;
-    }
-    .btn:hover {
-      background: #c6e0ff;
-      transform: translateY(-2px);
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Together for a Sustainable Future</title>
+<style>
+  :root{
+    --bg-top: #0f172a;            /* 顶部深色渐变 */
+    --bg-main:#eef4ff;            /* 主背景 */
+    --glass: rgba(255,255,255,.25);
+    --glass-border: rgba(255,255,255,.45);
+    --ink:#0f172a;
+    --muted:#334155;
+    --chip:#e8eefc;
+    --chip-ink:#2746c7;
+    --shadow: 0 10px 30px rgba(15,23,42,.12);
+    --wrap: 1120px;
+    --radius: 16px;
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7;
+    background:
+      linear-gradient(180deg, var(--bg-top) 0 160px, transparent 160px 100%),
+      var(--bg-main);
+  }
+
+  /* 头部装饰带（玻璃拟态条） */
+  .glassbar{
+    position: sticky; top:0; z-index:5;
+    display:flex; justify-content:center;
+    padding:10px 12px;
+    background: rgba(255,255,255,.04);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255,255,255,.12);
+  }
+
+  /* ===== 导航（两排固定顺序） ===== */
+  .nav{ max-width:var(--wrap); width:100%; }
+  .row{
+    display:flex; justify-content:center; gap:12px; flex-wrap:nowrap;
+    margin:8px 0;
+  }
+  .pill{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 18px; border-radius:999px;
+    background: var(--chip); color: var(--chip-ink);
+    text-decoration:none; font-weight:800; letter-spacing:.2px;
+    box-shadow: var(--shadow);
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    white-space:nowrap;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .pill:hover{ transform: translateY(-2px); box-shadow: 0 16px 34px rgba(15,23,42,.16); }
+  .pill:active{ transform: translateY(0); }
+
+  /* Waste Art 橙色强调 */
+  .pill.waste{ background:#ffb84d; color:#111; }
+  .pill.waste:hover{ background:#ffa733; }
+
+  /* 窄屏时允许换行，但顺序保持（上排先、下排后） */
+  @media (max-width: 980px){
+    .row{ flex-wrap:wrap; }
+  }
+
+  /* ===== Hero 标题区（紧凑、可读） ===== */
+  header{
+    max-width: var(--wrap);
+    margin: 18px auto 8px;
+    padding: 0 18px;
+    text-align:center;
+    color:#fff;
+  }
+  h1{
+    margin: 10px 0 6px;
+    font-size: clamp(28px, 4vw, 40px);
+    letter-spacing:.3px;
+    text-shadow: 0 4px 20px rgba(0,0,0,.25);
+  }
+  .sub{
+    margin: 0 auto 12px;
+    color: #e2e8f0;
+    font-size: clamp(15px, 1.8vw, 18px);
+    max-width: 900px;
+  }
+
+  /* ===== 主体 ===== */
+  main{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 18px;
+  }
+  p{ margin: 0 0 12px; color: var(--ink); }
+  .hl{
+    margin: 12px 0;
+    background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.75));
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    padding: 12px 16px;
+    font-weight: 800; color: var(--ink);
+    box-shadow: var(--shadow);
+  }
+
+  /* ===== 页脚（更紧凑 + 玻璃质感） ===== */
+  footer{
+    max-width: 900px;
+    margin: 18px auto 26px;
+    padding: 0 18px;
+    text-align:center;
+    color:#475569;
+    font-size: 15px;
+  }
+  .foot-glass{
+    margin: 0 auto;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(8px);
+    padding: 14px 16px;
+  }
+  footer p{ margin: 0 0 10px; }
+  .contact{
+    margin-top: 6px;
+    display:flex; justify-content:center; gap:10px; flex-wrap:wrap;
+  }
+  .btn{
+    background: #dce8fa; color:#0f2958; text-decoration:none;
+    font-weight: 800; border-radius: 10px;
+    padding: 10px 16px;
+    box-shadow: var(--shadow);
+    transition: transform .18s ease, background .18s ease;
+  }
+  .btn:hover{ background:#c8dbf9; transform: translateY(-2px); }
+
+  /* 减少动效偏好 */
+  @media (prefers-reduced-motion: reduce){
+    .pill, .btn{ transition: none; }
+    .pill:hover, .btn:hover{ transform:none; }
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <nav>
-      <a href="patents.html">📑 Patents</a>
-      <a href="test.html">🧪 Test Reports</a>
-      <a href="cases.html">📊 Implementation Cases</a>
-      <a href="exchange.html">🌐 International Exchange</a>
-      <a href="ocean.html">🌊 Ocean Cleanup</a>
-      <a href="housing.html">🏠 Housing Construction</a>
-      <a href="video.html">📽️ Video Materials</a>
-      <a href="media.html">📰 Media Reports</a>
-      <a href="product.html">♻️ Product Transformation</a>
-      <a href="agu.html">🔬 AGU: Global Platform for Science & Innovation</a>
-      <a href="art.html">🎨 Waste Art</a>
-    </nav>
-    <h1>Together for a Sustainable Future</h1>
-    <h2>“Solving Waste with Waste — Patented Technology to Transform Ocean Plastic Waste and Solid Waste into Durable Housing Materials.”</h2>
-  </header>
-
-  <main>
-    <p>
-      We are using the simplest and most direct method, through non-commercial technology integration,
-      to solve global solid waste problems and provide affordable high-quality housing for the poor.
-    </p>
-    <p>
-      For only USD 3,000, we can provide a durable, zero-pollution, B1 fire-rated house with 25–30 MPa strength —
-      an affordable solution for over a billion people living in poor housing conditions.
-    </p>
-    <p>
-      With USD 500 million (one-sixth of which is used to build a mobile operating platform),
-      we can clean up 100,000 tons of Pacific plastic waste in 100 working days and generate 300,000 cubic meters of landfilling material.
-      The platform can also be relocated to clean up other marine zones.
-    </p>
-
-    <div class="highlight green">✅ Our website does not promote donations — we hope you will act with us.</div>
-    <div class="highlight green">✅ Core Technology: Our binder is made of 65% proprietary formulation + 35% volcanic ash and inorganic silica materials.</div>
-  </main>
-
-  <footer>
-    <p>
-      All content on this website is based on real-world testing, certified reports,
-      and formal domestic and international approvals, without any commercial embellishment.
-    </p>
-    <div class="contact">
-      <a href="https://x.com/mgrsns63" target="_blank" class="btn">X</a>
-      <a href="https://www.facebook.com/mgrsns63" target="_blank" class="btn">Facebook</a>
-      <a href="mailto:mgrsns63@gmail.com" class="btn">mgrsns63@gmail.com</a>
+<!-- 顶部玻璃条 + 导航（两排固定） -->
+<div class="glassbar">
+  <nav class="nav" aria-label="Main navigation">
+    <!-- 上排：6 个 -->
+    <div class="row">
+      <a class="pill" href="patents.html">📰 Patents</a>
+      <a class="pill" href="reports.html">✏️ Test Reports</a>
+      <a class="pill" href="cases.html">📊 Implementation Cases</a>
+      <a class="pill" href="exchange.html">🌐 International Exchange</a>
+      <a class="pill" href="cleanup.html">🌊 Ocean Cleanup</a>
+      <a class="pill" href="housing.html">🏠 Housing Construction</a>
     </div>
-  </footer>
+    <!-- 下排：5 个（Waste Art 橙色） -->
+    <div class="row">
+      <a class="pill" href="videos.html">🎬 Video Materials</a>
+      <a class="pill" href="media.html">📰 Media Reports</a>
+      <a class="pill" href="product.html">♻️ Product Transformation</a>
+      <a class="pill" href="agu.html">🔬 AGU: Global Platform for Science & Innovation</a>
+      <a class="pill waste" href="waste-art.html">🎨 Waste Art</a>
+    </div>
+  </nav>
+</div>
+
+<!-- 标题：紧凑可读 -->
+<header>
+  <h1>Together for a Sustainable Future</h1>
+  <p class="sub">“Solving Waste with Waste — Patented Technology to Transform Ocean Plastic Waste and Solid Waste into Durable Housing Materials.”</p>
+</header>
+
+<!-- 主体：段落短、行距舒适；首屏能看到绝大部分 -->
+<main>
+  <p>We are using the simplest and most direct method, through non-commercial technology integration, to solve global solid waste problems and provide affordable high-quality housing for the poor.</p>
+  <p>For only USD 3,000, we can provide a durable, zero-pollution, B1 fire-rated house with 25–30 MPa strength — an affordable solution for over a billion people living in poor housing conditions.</p>
+  <p>With USD 500 million (one-sixth of which is used to build a mobile operating platform), we can clean up 100,000 tons of Pacific plastic waste in 100 working days and generate 300,000 cubic meters of landfilling material. The platform can also be relocated to clean up other marine zones.</p>
+
+  <div class="hl">✅ Our website does not promote donations — we hope you will act with us.</div>
+  <div class="hl">✅ Core Technology: Our binder is made of 65% proprietary formulation + 35% volcanic ash and inorganic silica materials.</div>
+</main>
+
+<!-- 页脚：玻璃卡片 + 紧凑间距（说明 + 联系方式） -->
+<footer>
+  <div class="foot-glass" role="contentinfo" aria-label="Site disclaimer and contact">
+    <p>All content on this website is based on real-world testing, certified reports, and formal domestic and international approvals, without any commercial embellishment.</p>
+    <div class="contact" aria-label="Contact links">
+      <a class="btn" href="https://x.com/mgrsns63" target="_blank" rel="noopener">X</a>
+      <a class="btn" href="https://www.facebook.com/mgrsns63" target="_blank" rel="noopener">Facebook</a>
+      <a class="btn" href="mailto:mgrsns63@gmail.com">mgrsns63@gmail.com</a>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
+
 
 
 
