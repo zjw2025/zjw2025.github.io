@@ -2,152 +2,123 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Home</title>
+  <title>AGU: Global Platform for Science & Innovation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
-      background-color: #e9f2f9;
-      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-      padding: 40px 40px;
-      margin: 0;
-      line-height: 1.6;
-      font-size: 1.2em;
-      color: #111;
+      background:#e9f2f9;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+      margin:0; padding:32px 20px; color:#113; line-height:1.6;
     }
+    .wrap { max-width:1000px; margin:0 auto; }
 
-    /* Top nav */
-    .nav {
-      max-width: 1100px;
-      margin: 0 auto 30px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
+    /* section card */
+    .card {
+      background:#eef6ff;
+      border-radius:14px;
+      box-shadow:0 10px 28px rgba(0,0,0,.08);
+      padding:22px 22px;
+      margin:18px 0;
     }
-    .nav a {
-      background-color: #d8e6f2;
-      color: #004080;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 12px;
-      padding: 10px 18px;
-      font-size: 1em;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: background-color .25s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,.06);
-      white-space: nowrap;
-    }
-    .nav a:hover { background-color: #c8dbef; }
-
-    /* Orange button (same size as others) */
-    .orange-button {
-      background-color: #f9a825 !important;
-      color: #fff !important;
-      font-weight: 800;
-    }
-    .orange-button:hover { background-color: #f57f17 !important; }
 
     h1 {
-      font-size: 2.4em;
-      text-align: center;
-      color: #004080;
-      letter-spacing: 1px;
-      margin: 6px 0 10px;
+      margin:8px 0 6px;
+      font-size:28px;
+      color:#0a3d78;
+      letter-spacing:.2px;
     }
     h2 {
-      font-size: 1.2em;
-      text-align: center;
-      color: #2b2b2b;
-      font-weight: 500;
-      margin: 0 0 28px;
-      max-width: 1100px;
-      margin-left: auto;
-      margin-right: auto;
+      margin:0 0 10px;
+      font-size:18px;
+      color:#0f2f5c;
+      font-weight:700;
     }
+    .mini { font-size:14px; color:#456; }
 
-    .content { max-width: 860px; margin: 0 auto; }
-    .content p { margin-bottom: 1em; }
-
-    .highlight { color: #0a8a0a; font-weight: 700; margin-top: 1em; }
-
-    .note {
-      font-size: .95em;
-      text-align: center;
-      color: #555;
-      margin-top: 40px;
-      max-width: 860px;
-      margin-left: auto;
-      margin-right: auto;
+    /* list link */
+    .link-box a {
+      display:inline-flex; align-items:center; gap:8px;
+      background:#e8f2ff; color:#0a3d78; font-weight:700;
+      text-decoration:none; border-radius:10px;
+      padding:10px 14px; margin:6px 0;
+      box-shadow:0 6px 16px rgba(0,0,0,.06);
+      transition:transform .05s ease, background-color .2s ease;
     }
+    .link-box a:hover { background:#dcebff; }
+    .link-box a:active { transform:translateY(1px); }
 
-    footer {
-      background-color: #f0f8ff;
-      padding: 20px 0;
-      text-align: center;
-      font-size: 1em;
-      border-top: 1px solid #ccc;
-      margin-top: 40px;
+    /* screenshot */
+    .shot {
+      display:block; width:100%; max-width:960px; height:auto;
+      border-radius:10px; box-shadow:0 8px 18px rgba(0,0,0,.08);
     }
-    footer a { color: #004080; text-decoration: none; margin: 0 12px; }
-    footer img { vertical-align: middle; margin-right: 6px; }
+    .shot-bar { display:flex; align-items:center; gap:10px; margin-top:8px; }
+
+    /* back button (统一风格，小尺寸) */
+    .back-wrap { text-align:center; margin:26px 0 10px; }
+    .btn {
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 18px; border-radius:12px; font-weight:800;
+      color:#fff; text-decoration:none; background:#0a3d78;
+      box-shadow:0 10px 20px rgba(0,0,0,.12);
+      transition:transform .05s ease, background-color .2s ease;
+    }
+    .btn:hover { background:#072f60; }
+    .btn:active { transform:translateY(1px); }
+
+    /* small icon bullets */
+    .bullet { margin-right:6px; }
+
+    /* narrow screens */
+    @media (max-width:640px){
+      h1 { font-size:22px; }
+    }
   </style>
 </head>
 <body>
+  <div class="wrap">
+    <h1>AGU & Ocean Sciences Conferences</h1>
 
-<nav class="nav" aria-label="主导航">
-  <a href="专利.html">📜 专利</a>
-  <a href="测试.html">🧪 测试报告</a>
-  <a href="案例.html">🎯 实施案例</a>
-  <a href="交换.html">🌐 国际交流</a>
-  <a href="海洋.html">🌊 海洋清理</a>
-  <a href="住房.html">🏠 房屋建筑</a>
-  <a href="视频.html">🎥 视频资料</a>
-  <a href="媒体.html">📰 媒体报道</a>
-  <a href="产品转换.html">♻️ 产品转型</a>
-  <a href="agu.html">🌍 AGU: 全球科学与创新平台</a>
-  <a href="废物艺术.html" class="cta-waste">🎨 废物艺术</a>
-</nav>
-
-  <h1>Together for a Sustainable Future</h1>
-  <h2>“Solving Waste with Waste — Patented Technology to Transform Ocean Plastic Waste and Solid Waste into Durable Housing Materials.”</h2>
-
-  <main class="content">
-    <p>
-      We are using the simplest and most direct method, through non-commercial technology integration, to solve global solid waste problems and provide affordable high-quality housing for the poor.
-    </p>
-    <p>
-      For only USD 3,000, we can provide a durable, zero-pollution, B1 fire-rated house with 25–30 MPa strength — an affordable solution for over a billion people living in poor housing conditions.
-    </p>
-    <p>
-      With USD 500 million (one-sixth of which is used to build a mobile operating platform), we can clean up 100,000 tons of Pacific plastic waste in 100 working days and generate 300,000 cubic meters of landfilling material. The platform can also be relocated to clean up other marine zones.
-    </p>
-    <p class="highlight">✅ Our website does not promote donations — we hope you will act with us.</p>
-    <p class="highlight">✅ Core Technology: Our binder is made of 65% proprietary formulation + 35% volcanic ash and inorganic silicate materials.</p>
-  </main>
-
-  <p class="note">
-    All content on this website is based on real-world testing, certified reports, and formal domestic and international collaborations — without any commercial embellishment.
-  </p>
-
-  <footer>
-    <div>
-      <a href="https://x.com/atlasecoz" target="_blank" rel="noopener">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" width="24"> X
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=100091581505543" target="_blank" rel="noopener">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook logo" width="24"> Facebook
-      </a>
+    <!-- 文章截图 -->
+    <div class="card">
+      <h2>📄 Article on Pacific Ocean Plastic Cleanup</h2>
+      <img src="100.jpg" alt="AGU Article Screenshot" class="shot" />
+      <div class="shot-bar">
+        <span class="mini">📚 View the full screenshot:</span>
+        <a class="btn" style="background:#2d6cdf" href="100.jpg" target="_blank" rel="noopener">View Full Screenshot</a>
+      </div>
     </div>
-    <div style="margin-top: 8px;">
-      <a href="mailto:mgrsns@gmail.com">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email icon" width="24">
-        mgrsns63@gmail.com
-      </a>
-    </div>
-  </footer>
 
+    <!-- 两封邀请函 -->
+    <div class="card">
+      <h2>✉️ Conference Invitations</h2>
+      <div class="link-box">
+        <a href="AGU_2025_Jianwen_Zhang_.pdf" target="_blank" rel="noopener">📄 AGU Annual Meeting 2025 Invitation (PDF)</a>
+      </div>
+      <div class="link-box">
+        <a href="AGU2026__Jinawen_Zhang_.pdf" target="_blank" rel="noopener">📄 Ocean Sciences Meeting 2026 Invitation (PDF)</a>
+      </div>
+      <div class="mini">* If a PDF does not open, check the exact file name in your repository.</div>
+    </div>
+
+    <!-- 外链到 AGU 平台文章 -->
+    <div class="card">
+      <h2>🌐 External Link</h2>
+      <div class="link-box">
+        <a
+          href="https://connect.agu.org/oceansciences/viewdocument/100-working-days-to-eliminate-1000?CommunityKey=7bd9f226-ae31-405d-93ee-e09ab1bf9dda"
+          target="_blank" rel="noopener">
+          🌍 View Full Article on AGU Platform (login may be required)
+        </a>
+      </div>
+    </div>
+
+    <!-- 返回首页 -->
+    <div class="back-wrap">
+      <a class="btn" href="index.html">⬅️ Back to Home</a>
+    </div>
+  </div>
 </body>
 </html>
+
 
