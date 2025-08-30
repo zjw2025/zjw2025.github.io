@@ -1,140 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Together for a Sustainable Future</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #e9f2f9;
-      color: #1a1a1a;
-      line-height: 1.7;
-    }
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      padding: 20px;
-    }
-    .nav a {
-      text-decoration: none;
-      background: #dce9f9;
-      color: #003366;
-      font-weight: bold;
-      padding: 10px 16px;
-      border-radius: 8px;
-      font-size: 1em;
-    }
-    .nav a:hover {
-      background: #c0daf7;
-    }
-    /* Waste Art 特别橙色按钮 */
-    .nav a.waste-art {
-      background: #ffa733;
-      color: #fff;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-      text-align: center;
-    }
-    h1 {
-      color: #003366;
-      font-size: 2.2em;
-      margin: 20px 0 10px;
-    }
-    h2 {
-      font-size: 1.3em;
-      font-weight: normal;
-      color: #003366;
-      margin: 0 0 30px;
-    }
-    p {
-      margin: 14px 0;
-      text-align: left;
-      font-size: 1.1em;
-    }
-    .highlight {
-      background: #f0f7ff;
-      border-radius: 8px;
-      padding: 12px;
-      margin: 16px 0;
-      text-align: left;
-      font-weight: bold;
-    }
-    .highlight.green {
-      border-left: 6px solid #22c55e;
-    }
-    footer {
-      margin-top: 30px;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9em;
-      color: #555;
-    }
-    .contact {
-      margin-top: 15px;
-    }
-    .contact a {
-      text-decoration: none;
-      background: #dce9f9;
-      color: #003366;
-      font-weight: bold;
-      padding: 10px 16px;
-      border-radius: 8px;
-      margin: 5px;
-      display: inline-block;
-    }
-    .contact a:hover {
-      background: #c0daf7;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Together for a Sustainable Future</title>
+<style>
+  :root{
+    --wrap: 1100px;
+    --ink: #0f172a;       /* 主要文字深色 */
+    --muted:#334155;      /* 次级文字 */
+    --bg:  #e9f2f9;       /* 页面浅底 */
+    --chip:#e8eefc;       /* 导航按钮底色 */
+    --chip-ink:#2746c7;   /* 导航按钮文字色 */
+    --radius: 12px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7;
+  }
+
+  /* ===== 顶部导航：两排固定顺序 ===== */
+  .nav{ max-width:var(--wrap); margin:18px auto 0; padding:0 16px; }
+  .row{ display:flex; justify-content:center; gap:12px; flex-wrap:nowrap; margin-bottom:12px; }
+  .pill{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:10px 14px; border-radius:999px;
+    background:var(--chip); color:var(--chip-ink);
+    text-decoration:none; font-weight:700; white-space:nowrap;
+  }
+  .pill:hover{ background:#dbe5fb; }
+  /* Waste Art 橙色强调 */
+  .pill.waste{ background:#ffb84d; color:#111; }
+  .pill.waste:hover{ background:#ffa733; }
+
+  /* 窄屏允许换行，但顺序仍为上排在前、下排在后 */
+  @media (max-width: 980px){ .row{ flex-wrap:wrap; } }
+
+  /* ===== 标题 & 副标题（与“中文样式”一致：深色、无发光） ===== */
+  header{ max-width:var(--wrap); margin:14px auto 8px; padding:0 18px; text-align:center; }
+  h1{ margin:10px 0 8px; font-size:clamp(28px,4vw,40px); color:var(--ink); }
+  .sub{ margin:0 auto 16px; max-width:900px; color:var(--muted); font-size:clamp(15px,1.8vw,18px); }
+
+  /* ===== 正文 ===== */
+  main{ max-width:900px; margin:0 auto; padding:0 18px; }
+  p{ margin:0 0 14px; }
+  .hl{
+    background:#f5fbff; border-radius:10px; padding:12px 16px; margin:14px 0;
+    font-weight:800; color:var(--ink); border-left:6px solid #22c55e;
+  }
+
+  /* ===== 页脚（浅底深字，清晰） ===== */
+  footer{
+    max-width:900px; margin:22px auto 30px; padding:0 18px;
+    text-align:center; color:#111;
+  }
+  .note{
+    background:#f5f7fb; border:1px solid #e6edf7; border-radius:12px;
+    padding:12px 16px; font-size:15px; margin:0 0 10px;
+  }
+  .contact{
+    margin-top:8px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap;
+  }
+  .btn{
+    background:#dce8fa; color:#0f2958; text-decoration:none; font-weight:800;
+    padding:10px 16px; border-radius:10px;
+  }
+  .btn:hover{ background:#c8dbf9; }
+</style>
 </head>
 <body>
-  <!-- 导航栏 -->
-  <div class="nav">
-    <a href="patents.html">📑 Patents</a>
-    <a href="test-reports.html">📝 Test Reports</a>
-    <a href="implementation.html">📊 Implementation Cases</a>
-    <a href="exchange.html">🌐 International Exchange</a>
-    <a href="cleanup.html">🌊 Ocean Cleanup</a>
-    <a href="housing.html">🏠 Housing Construction</a>
-    <a href="videos.html">🎥 Video Materials</a>
-    <a href="media.html">📰 Media Reports</a>
-    <a href="products.html">♻️ Product Transformation</a>
-    <a href="platform.html">🔬 AGU: Global Platform for Science & Innovation</a>
-    <a href="waste-art.html" class="waste-art">🎨 Waste Art</a>
+
+<!-- ===== 顶部导航（两排固定） ===== -->
+<nav class="nav" aria-label="Main navigation">
+  <!-- 上排 6 个 -->
+  <div class="row">
+    <a class="pill" href="patents.html">📰 Patents</a>
+    <a class="pill" href="reports.html">✏️ Test Reports</a>
+    <a class="pill" href="cases.html">📊 Implementation Cases</a>
+    <a class="pill" href="exchange.html">🌐 International Exchange</a>
+    <a class="pill" href="cleanup.html">🌊 Ocean Cleanup</a>
+    <a class="pill" href="housing.html">🏠 Housing Construction</a>
   </div>
-
-  <!-- 内容区 -->
-  <div class="container">
-    <h1>Together for a Sustainable Future</h1>
-    <h2>“Solving Waste with Waste — Patented Technology to Transform Ocean Plastic Waste and Solid Waste into Durable Housing Materials.”</h2>
-
-    <p>We are using the simplest and most direct method, through non-commercial technology integration, to solve global solid waste problems and provide affordable high-quality housing for the poor.</p>
-
-    <p>For only USD 3,000, we can provide a durable, zero-pollution, B1 fire-rated house with 25–30 MPa strength — an affordable solution for over a billion people living in poor housing conditions.</p>
-
-    <p>With USD 500 million (one-sixth of which is used to build a mobile operating platform), we can clean up 100,000 tons of Pacific plastic waste in 100 working days and generate 300,000 cubic meters of landfilling material. The platform can also be relocated to clean up other marine zones.</p>
-
-    <div class="highlight green">✅ Our website does not promote donations — we hope you will act with us.</div>
-    <div class="highlight green">✅ Core Technology: Our binder is made of 65% proprietary formulation + 35% volcanic ash and inorganic silica materials.</div>
+  <!-- 下排 5 个（Waste Art 橙色） -->
+  <div class="row">
+    <a class="pill" href="videos.html">🎬 Video Materials</a>
+    <a class="pill" href="media.html">📰 Media Reports</a>
+    <a class="pill" href="product.html">♻️ Product Transformation</a>
+    <a class="pill" href="agu.html">🔬 AGU: Global Platform for Science & Innovation</a>
+    <a class="pill waste" href="waste-art.html">🎨 Waste Art</a>
   </div>
+</nav>
 
-  <!-- 底部联系方式 -->
-  <footer>
-    <p>All content on this website is based on real-world testing, certified reports, and formal domestic and international approvals, without any commercial embellishment.</p>
-    <div class="contact">
-      <a href="https://x.com" target="_blank">X</a>
-      <a href="https://facebook.com" target="_blank">Facebook</a>
-      <a href="mailto:mgrsns63@gmail.com">mgrsns63@gmail.com</a>
-    </div>
-  </footer>
+<!-- ===== 标题区（深色标题 / 次级灰色副标题） ===== -->
+<header>
+  <h1>Together for a Sustainable Future</h1>
+  <p class="sub">“Solving Waste with Waste — Patented Technology to Transform Ocean Plastic Waste and Solid Waste into Durable Housing Materials.”</p>
+</header>
+
+<!-- ===== 正文（朴素清晰） ===== -->
+<main>
+  <p>We are using the simplest and most direct method, through non-commercial technology integration, to solve global solid waste problems and provide affordable high-quality housing for the poor.</p>
+
+  <p>For only USD 3,000, we can provide a durable, zero-pollution, B1 fire-rated house with 25–30 MPa strength — an affordable solution for over a billion people living in poor housing conditions.</p>
+
+  <p>With USD 500 million (one-sixth of which is used to build a mobile operating platform), we can clean up 100,000 tons of Pacific plastic waste in 100 working days and generate 300,000 cubic meters of landfilling material. The platform can also be relocated to clean up other marine zones.</p>
+
+  <div class="hl">✅ Our website does not promote donations — we hope you will act with us.</div>
+  <div class="hl">✅ Core Technology: Our binder is made of 65% proprietary formulation + 35% volcanic ash and inorganic silica materials.</div>
+</main>
+
+<!-- ===== 页脚（浅底深字 + 紧凑联系方式） ===== -->
+<footer>
+  <p class="note">
+    All content on this website is based on real-world testing, certified reports, and formal domestic and international approvals, without any commercial embellishment.
+  </p>
+  <div class="contact" aria-label="Contact links">
+    <a class="btn" href="https://x.com/mgrsns63" target="_blank" rel="noopener">X</a>
+    <a class="btn" href="https://www.facebook.com/mgrsns63" target="_blank" rel="noopener">Facebook</a>
+    <a class="btn" href="mailto:mgrsns63@gmail.com">mgrsns63@gmail.com</a>
+  </div>
+</footer>
+
 </body>
 </html>
 
