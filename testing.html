@@ -10,11 +10,13 @@
       padding: 40px;
       line-height: 1.8;
       font-size: 1.2em;
+      color: #003366;
     }
     h1 {
       font-size: 2.2em;
       text-align: center;
       color: #004080;
+      margin: 0 0 10px;
     }
     h2 {
       color: #003366;
@@ -29,23 +31,21 @@
       gap: 40px;
       margin-bottom: 40px;
     }
-    .image-block {
-      text-align: center;
-    }
+    .image-block { text-align: center; }
     .image-block img {
       width: 250px;
       border-radius: 8px;
       border: 1px solid #ccc;
-      cursor: pointer;
-      transition: transform 0.2s;
+      cursor: zoom-in;             /* 点击放大 */
+      transition: transform 0.2s, box-shadow .2s;
+      background: #f7fbff;
+      box-shadow: 0 6px 18px rgba(0,0,0,.08);
     }
     .image-block img:hover {
-      transform: scale(1.05);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0,0,0,.12);
     }
-    .back-button {
-      text-align: center;
-      margin-top: 40px;
-    }
+    .back-button { text-align: center; margin-top: 40px; }
     .back-button a {
       background-color: #004080;
       color: white;
@@ -55,18 +55,54 @@
       font-weight: bold;
       font-size: 1.1em;
     }
-    .back-button a:hover {
-      background-color: #0066cc;
+    .back-button a:hover { background-color: #0066cc; }
+    .lang-switch { text-align: right; margin-bottom: 10px; }
+    .lang-switch a { color: #004080; text-decoration: none; font-size: 1em; margin-left: 10px; }
+
+    /* ========= Lightbox（点击放大预览） ========= */
+    dialog#lightbox {
+      width: 100vw; max-width: none;
+      height: 100dvh; padding: 0; margin: 0; border: 0;
+      background: rgba(0,0,0,.75);
     }
-    .lang-switch {
-      text-align: right;
-      margin-bottom: 10px;
+    dialog#lightbox::backdrop { background: rgba(0,0,0,.65); }
+
+    .lb-toolbar{
+      position: sticky; top: 0; z-index: 2;
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 12px;
+      background: rgba(10,20,35,.85);
+      backdrop-filter: blur(6px);
     }
-    .lang-switch a {
-      color: #004080;
-      text-decoration: none;
-      font-size: 1em;
-      margin-left: 10px;
+    .lb-toolbar button, .lb-toolbar a{
+      appearance: none; border: 0; border-radius: 10px;
+      padding: 6px 10px; font-weight: 700;
+      color: #e6f0ff; background: #1f3a5b; text-decoration: none;
+      cursor: pointer;
+    }
+    .lb-toolbar button:hover, .lb-toolbar a:hover{ background:#284b75; }
+    .lb-spacer{ flex: 1; }
+
+    .lb-stage{
+      position: relative; width: 100%; height: calc(100dvh - 52px);
+      overflow: hidden; display: grid; place-items: center;
+      touch-action: none; /* 避免浏览器手势抢占 */
+    }
+    #lbImg{
+      max-width: 95vw; max-height: calc(100dvh - 64px);
+      user-select: none; -webkit-user-drag: none;
+      transform-origin: 50% 50%;
+      cursor: grab;
+      box-shadow: 0 8px 28px rgba(0,0,0,.35);
+      background: #fff;
+      border-radius: 6px;
+    }
+    #lbImg:active{ cursor: grabbing; }
+
+    /* 小屏时缩略图更友好 */
+    @media (max-width: 680px){
+      .image-section{ gap: 20px; }
+      .image-block img{ width: 42vw; max-width: 260px; }
     }
   </style>
 </head>
@@ -79,42 +115,166 @@
 
   <h2>TUV Rheinland (Germany) – Formaldehyde Test</h2>
   <div class="image-section">
-    <div class="image-block"><img src="1.1.jpg" alt="Test 1"></div>
-    <div class="image-block"><img src="1.2.jpg" alt="Test 2"></div>
-    <div class="image-block"><img src="1.3.jpg" alt="Test 3"></div>
+    <div class="image-block"><img class="zoomable" src="1.1.jpg" alt="Test 1" data-full="1.1.jpg"></div>
+    <div class="image-block"><img class="zoomable" src="1.2.jpg" alt="Test 2" data-full="1.2.jpg"></div>
+    <div class="image-block"><img class="zoomable" src="1.3.jpg" alt="Test 3" data-full="1.3.jpg"></div>
   </div>
 
   <h2>National Fire System Quality Inspection – Flame Retardant Test</h2>
   <div class="image-section">
-    <div class="image-block"><img src="1.4.jpg" alt="Test 4"></div>
-    <div class="image-block"><img src="1.5.jpg" alt="Test 5"></div>
-    <div class="image-block"><img src="1.6.jpg" alt="Test 6"></div>
+    <div class="image-block"><img class="zoomable" src="1.4.jpg" alt="Test 4" data-full="1.4.jpg"></div>
+    <div class="image-block"><img class="zoomable" src="1.5.jpg" alt="Test 5" data-full="1.5.jpg"></div>
+    <div class="image-block"><img class="zoomable" src="1.6.jpg" alt="Test 6" data-full="1.6.jpg"></div>
   </div>
 
   <h2>National Center for Building Materials Quality – Flame & Formaldehyde Test</h2>
   <div class="image-section">
-    <div class="image-block"><img src="1.7.jpg" alt="Test 7"></div>
-    <div class="image-block"><img src="1.8.jpg" alt="Test 8"></div>
-    <div class="image-block"><img src="1.9.jpg" alt="Test 9"></div>
+    <div class="image-block"><img class="zoomable" src="1.7.jpg" alt="Test 7" data-full="1.7.jpg"></div>
+    <div class="image-block"><img class="zoomable" src="1.8.jpg" alt="Test 8" data-full="1.8.jpg"></div>
+    <div class="image-block"><img class="zoomable" src="1.9.jpg" alt="Test 9" data-full="1.9.jpg"></div>
   </div>
 
   <h2>National Supervision for Wood and Bamboo Products – Physical Properties</h2>
   <div class="image-section">
-    <div class="image-block"><img src="2.0.jpg" alt="Test 10"></div>
-    <div class="image-block"><img src="2.1.jpg" alt="Test 11"></div>
-    <div class="image-block"><img src="2.2.jpg" alt="Test 12"></div>
+    <div class="image-block"><img class="zoomable" src="2.0.jpg" alt="Test 10" data-full="2.0.jpg"></div>
+    <div class="image-block"><img class="zoomable" src="2.1.jpg" alt="Test 11" data-full="2.1.jpg"></div>
+    <div class="image-block"><img class="zoomable" src="2.2.jpg" alt="Test 12" data-full="2.2.jpg"></div>
   </div>
 
   <h2>National Nanjing Forestry Panel Station – Plywood Physical & Formaldehyde Test</h2>
   <div class="image-section">
-    <div class="image-block"><img src="2.3.jpg" alt="Test 13"></div>
-    <div class="image-block"><img src="2.4.jpg" alt="Test 14"></div>
-    <div class="image-block"><img src="2.5.jpg" alt="Test 15"></div>
+    <div class="image-block"><img class="zoomable" src="2.3.jpg" alt="Test 13" data-full="2.3.jpg"></div>
+    <div class="image-block"><img class="zoomable" src="2.4.jpg" alt="Test 14" data-full="2.4.jpg"></div>
+    <div class="image-block"><img class="zoomable" src="2.5.jpg" alt="Test 15" data-full="2.5.jpg"></div>
   </div>
 
   <div class="back-button">
     <a href="index.html">Back to Home</a>
   </div>
+
+  <!-- Lightbox：点击放大预览 -->
+  <dialog id="lightbox" aria-label="Zoomed report image">
+    <div class="lb-toolbar">
+      <button type="button" id="lbClose" title="Close (Esc)">✕</button>
+      <div class="lb-spacer"></div>
+      <button type="button" id="lbZoomOut" title="Zoom out">−</button>
+      <button type="button" id="lbZoomReset" title="Reset zoom">100%</button>
+      <button type="button" id="lbZoomIn" title="Zoom in">+</button>
+      <a id="lbDownload" download title="Download original">⬇︎</a>
+    </div>
+    <div class="lb-stage">
+      <img id="lbImg" alt="">
+    </div>
+  </dialog>
+
+  <script>
+    (function(){
+      const dlg = document.getElementById('lightbox');
+      const img = document.getElementById('lbImg');
+      const btnClose = document.getElementById('lbClose');
+      const btnIn = document.getElementById('lbZoomIn');
+      const btnOut = document.getElementById('lbZoomOut');
+      const btnReset = document.getElementById('lbZoomReset');
+      const aDownload = document.getElementById('lbDownload');
+
+      let scale = 1, minScale = 1, maxScale = 6;
+      let pos = {x:0, y:0}, dragStart = null, lastTouch = null;
+
+      function openLightbox(src){
+        img.src = src;
+        aDownload.href = src;
+        scale = 1; pos = {x:0, y:0}; apply();
+        dlg.showModal();
+      }
+      function closeLightbox(){ dlg.close(); }
+
+      function apply(){
+        img.style.transform = `translate(${pos.x}px, ${pos.y}px) scale(${scale})`;
+        btnReset.textContent = `${Math.round(scale*100)}%`;
+      }
+
+      function zoom(delta, center){
+        const prev = scale;
+        scale = Math.min(maxScale, Math.max(minScale, scale + delta));
+        if(center && scale !== prev){
+          const rect = img.getBoundingClientRect();
+          const cx = center.x - rect.left - rect.width/2 - pos.x;
+          const cy = center.y - rect.top  - rect.height/2 - pos.y;
+          pos.x -= cx*(scale/prev - 1);
+          pos.y -= cy*(scale/prev - 1);
+        }
+        apply();
+      }
+
+      // 点缩略图打开
+      document.addEventListener('click', e=>{
+        const t = e.target.closest('.zoomable');
+        if(!t) return;
+        const full = t.getAttribute('data-full') || t.src;
+        openLightbox(full);
+      });
+
+      // 关闭
+      btnClose.addEventListener('click', closeLightbox);
+      dlg.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLightbox(); });
+
+      // 拖拽
+      img.addEventListener('mousedown', e=>{
+        if(scale<=1) return;
+        dragStart = {x: e.clientX - pos.x, y: e.clientY - pos.y};
+        e.preventDefault();
+      });
+      window.addEventListener('mousemove', e=>{
+        if(!dragStart) return;
+        pos = {x: e.clientX - dragStart.x, y: e.clientY - dragStart.y};
+        apply();
+      });
+      window.addEventListener('mouseup', ()=> dragStart=null);
+
+      // 滚轮放大缩小
+      img.addEventListener('wheel', e=>{
+        e.preventDefault();
+        zoom(e.deltaY < 0 ? +0.15 : -0.15, {x:e.clientX, y:e.clientY});
+      }, {passive:false});
+
+      // 触摸支持：双指缩放，单指拖动
+      img.addEventListener('touchstart', e=>{
+        if(e.touches.length===1){
+          lastTouch = {x:e.touches[0].clientX, y:e.touches[0].clientY};
+        }else if(e.touches.length===2){
+          lastTouch = {d: dist(e.touches[0], e.touches[1]), scale};
+        }
+      }, {passive:false});
+
+      img.addEventListener('touchmove', e=>{
+        e.preventDefault();
+        if(e.touches.length===1 && scale>1 && lastTouch && lastTouch.x!=null){
+          const nx = e.touches[0].clientX, ny = e.touches[0].clientY;
+          pos.x += nx - lastTouch.x; pos.y += ny - lastTouch.y;
+          lastTouch = {x:nx, y:ny};
+          apply();
+        }else if(e.touches.length===2 && lastTouch && lastTouch.d){
+          const d = dist(e.touches[0], e.touches[1]);
+          scale = Math.min(maxScale, Math.max(minScale, lastTouch.scale * (d/lastTouch.d)));
+          apply();
+        }
+      }, {passive:false});
+      function dist(a,b){ const dx=a.clientX-b.clientX, dy=a.clientY-b.clientY; return Math.hypot(dx,dy); }
+
+      // 按钮缩放
+      btnIn.addEventListener('click', ()=> zoom(+0.2));
+      btnOut.addEventListener('click', ()=> zoom(-0.2));
+      btnReset.addEventListener('click', ()=> { scale=1; pos={x:0,y:0}; apply(); });
+
+      // 点击背景关闭（避免点到图片就关闭）
+      dlg.addEventListener('click', e=>{
+        const insideImg = e.composedPath().includes(img);
+        const insideBar = e.composedPath().includes(document.querySelector('.lb-toolbar'));
+        if(!insideImg && !insideBar) closeLightbox();
+      });
+    })();
+  </script>
 </body>
 </html>
+
 
