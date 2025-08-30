@@ -2,151 +2,150 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Together for a Sustainable Future</title>
   <style>
     body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      line-height: 1.6;
       background-color: #e9f2f9;
-      color: #333;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.8;
+      font-size: 1.2em;
+      color: #1a1a1a;
     }
-
-    .nav {
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+    nav {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
-      padding: 20px;
+      gap: 10px;
+      margin-bottom: 20px;
     }
-    .nav a {
+    nav a {
       text-decoration: none;
-      background: #f0f5ff;
-      padding: 10px 18px;
+      background: #dfeeff;
+      padding: 8px 16px;
       border-radius: 8px;
-      font-weight: 600;
+      font-weight: bold;
       color: #003366;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: 0.2s;
+      transition: background 0.2s;
     }
-    .nav a:hover {
-      background: #dfe7ff;
-      transform: translateY(-2px);
+    nav a:hover {
+      background: #c6e0ff;
     }
-    .nav a.active {
-      background: #ffd580;
-      color: #000;
-    }
-
-    header {
-      text-align: center;
-      padding: 30px 20px 10px;
-    }
-    header h1 {
+    h1 {
       font-size: 2.5em;
-      color: #003366;
+      color: #002a5c;
       margin-bottom: 10px;
     }
-    header h2 {
-      font-size: 1.3em;
-      color: #004080;
-      margin-top: 0;
+    h2 {
+      font-size: 1.5em;
+      color: #003366;
+      margin: 10px 0 30px;
+      text-align: center;
     }
-
-    .content {
+    main {
       max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-      font-size: 1.1em;
+      margin: auto;
+      padding: 0 20px 40px;
     }
-    .content p {
-      margin-bottom: 1.2em;
+    p {
+      margin-bottom: 20px;
+      text-align: justify;
     }
     .highlight {
-      background: #f5fbff;
+      background: #f5faff;
       padding: 12px 16px;
       border-radius: 8px;
       font-weight: bold;
       margin: 20px 0;
     }
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      margin-top: 40px;
-      background: #f5f7fb;
-      color: #334;
-      font-size: 1em;
+    .highlight.green {
+      border-left: 6px solid #22c55e;
     }
-
-    /* 联系方式模块 */
+    footer {
+      background: #f0f4f8;
+      text-align: center;
+      padding: 25px 20px;
+      font-size: 0.9em;
+      color: #444;
+    }
+    footer p {
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
     .contact {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
-      margin-top: 20px;
+      gap: 12px;
+      margin-top: 8px;
     }
-    .contact .btn {
+    .btn {
       display: inline-block;
-      background: #e3ecf9;
+      background: #d9e8ff;
       color: #003366;
-      font-weight: bold;
-      padding: 12px 20px;
+      padding: 10px 18px;
       border-radius: 8px;
+      font-weight: bold;
       text-decoration: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      transition: 0.2s;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: background 0.2s, transform 0.2s;
     }
-    .contact .btn:hover {
-      background: #cddff7;
+    .btn:hover {
+      background: #c6e0ff;
       transform: translateY(-2px);
     }
   </style>
 </head>
 <body>
 
-  <!-- 导航 -->
-  <nav class="nav">
-    <a href="patents.html">📜 Patents</a>
-    <a href="reports.html">🧪 Test Reports</a>
-    <a href="cases.html">📍 Implementation Cases</a>
-    <a href="exchange.html">🌐 International Exchange</a>
-    <a href="cleanup.html">🌊 Ocean Cleanup</a>
-    <a href="housing.html">🏠 Housing Construction</a>
-    <a href="videos.html">🎥 Video Materials</a>
-    <a href="media.html">📰 Media Reports</a>
-    <a href="products.html">♻️ Product Transformation</a>
-    <a href="platform.html">🔬 AGU: Global Platform</a>
-    <a href="art.html" class="active">🎨 Waste Art</a>
-  </nav>
-
-  <!-- 首页头部 -->
   <header>
+    <nav>
+      <a href="patents.html">📑 Patents</a>
+      <a href="test.html">🧪 Test Reports</a>
+      <a href="cases.html">📊 Implementation Cases</a>
+      <a href="exchange.html">🌐 International Exchange</a>
+      <a href="ocean.html">🌊 Ocean Cleanup</a>
+      <a href="housing.html">🏠 Housing Construction</a>
+      <a href="video.html">📽️ Video Materials</a>
+      <a href="media.html">📰 Media Reports</a>
+      <a href="product.html">♻️ Product Transformation</a>
+      <a href="agu.html">🔬 AGU: Global Platform for Science & Innovation</a>
+      <a href="art.html">🎨 Waste Art</a>
+    </nav>
     <h1>Together for a Sustainable Future</h1>
     <h2>“Solving Waste with Waste — Patented Technology to Transform Ocean Plastic Waste and Solid Waste into Durable Housing Materials.”</h2>
   </header>
 
-  <!-- 首页正文 -->
-  <section class="content">
-    <p>We are using the simplest and most direct method, through non-commercial technology integration, to solve global solid waste problems and provide affordable high-quality housing for the poor.</p>
-    <p>For only USD 3,000, we can provide a durable, zero-pollution, B1 fire-rated house with 25–30 MPa strength — an affordable solution for over a billion people living in poor housing conditions.</p>
-    <p>With USD 500 million (one-sixth of which is used to build a mobile operating platform), we can clean up 100,000 tons of Pacific plastic waste in 100 working days and generate 300,000 cubic meters of landfilling material. The platform can also be relocated to clean up other marine zones.</p>
+  <main>
+    <p>
+      We are using the simplest and most direct method, through non-commercial technology integration,
+      to solve global solid waste problems and provide affordable high-quality housing for the poor.
+    </p>
+    <p>
+      For only USD 3,000, we can provide a durable, zero-pollution, B1 fire-rated house with 25–30 MPa strength —
+      an affordable solution for over a billion people living in poor housing conditions.
+    </p>
+    <p>
+      With USD 500 million (one-sixth of which is used to build a mobile operating platform),
+      we can clean up 100,000 tons of Pacific plastic waste in 100 working days and generate 300,000 cubic meters of landfilling material.
+      The platform can also be relocated to clean up other marine zones.
+    </p>
 
-    <div class="highlight">
-      ✅ Our website does not promote donations — we hope you will act with us.
-    </div>
+    <div class="highlight green">✅ Our website does not promote donations — we hope you will act with us.</div>
+    <div class="highlight green">✅ Core Technology: Our binder is made of 65% proprietary formulation + 35% volcanic ash and inorganic silica materials.</div>
+  </main>
 
-    <div class="highlight">
-      ✅ Core Technology: Our binder is made of 65% proprietary formulation + 35% volcanic ash and inorganic silica materials.
-    </div>
-  </section>
-
-  <!-- 页脚 + 联系方式 -->
   <footer>
-    <p>All content on this website is based on real-world testing, certified reports, and formal domestic and international approvals, without any commercial embellishment.</p>
-    
+    <p>
+      All content on this website is based on real-world testing, certified reports,
+      and formal domestic and international approvals, without any commercial embellishment.
+    </p>
     <div class="contact">
       <a href="https://x.com/mgrsns63" target="_blank" class="btn">X</a>
       <a href="https://www.facebook.com/mgrsns63" target="_blank" class="btn">Facebook</a>
