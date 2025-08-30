@@ -5,75 +5,196 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homepage</title>
   <style>
-    /* 按钮统一样式（缩小版，比原来小 20%） */
-    .button {
-      display: inline-block;
-      padding: 8px 14px;       /* 缩小 padding */
-      margin: 5px;
-      font-size: 14px;         /* 缩小字体 */
-      font-weight: bold;
-      color: #0a2a5e;
-      background-color: #e9f3ff;
-      border-radius: 10px;
-      text-decoration: none;
-      text-align: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    /* 悬停效果 */
-    .button:hover {
-      background-color: #d2e9ff;
-      transform: translateY(-2px);
-    }
-
-    /* 特殊按钮（保持原大小和颜色，不动） */
-    .button.orange {
-      padding: 10px 18px;      /* 保持原来尺寸 */
-      font-size: 16px;
-      background-color: #ffa733;
-      color: white;
-    }
-    .button.orange:hover {
-      background-color: #ff9000;
-    }
-
-    /* 首页按钮容器 */
+    /* 按钮区布局 */
     .button-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 8px;
-      margin: 15px 0;
+      gap: 12px;
+      margin: 20px 0;
+      transition: all 0.3s ease;
     }
 
-    /* 橙色按钮单独居中 */
-    .center {
+    .button-center {
       text-align: center;
-      margin-top: 15px;
+      margin: 20px 0;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 18px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 12px;
+      text-align: center;
+      min-width: 180px;
+      transition: all 0.3s ease;
+    }
+
+    /* 蓝色按钮 */
+    .blue-button {
+      background-color: #e6f0ff;
+      color: #003366;
+    }
+
+    .blue-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 51, 102, 0.2);
+    }
+
+    /* 橙色按钮 */
+    .orange-button {
+      background-color: #ffa726;
+      color: white;
+    }
+
+    .orange-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(255, 167, 38, 0.4);
+    }
+
+    /* 文章区 */
+    .intro {
+      text-align: center;
+      margin: 40px auto;
+      max-width: 800px;
+      padding: 0 15px;
+      transition: all 0.3s ease;
+    }
+
+    .intro h1 {
+      font-size: 32px;
+      font-weight: bold;
+      color: #003366;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .intro .tagline {
+      font-size: 18px;
+      font-style: italic;
+      font-weight: 500;
+      color: #444;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .intro p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      transition: all 0.3s ease;
+    }
+
+    /* 页脚 */
+    footer {
+      background-color: #f0f8ff;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 1em;
+      border-top: 1px solid #ccc;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #004080;
+      text-decoration: none;
+      margin: 0 12px;
+    }
+
+    footer img {
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    /* 响应式：平板优化 */
+    @media (max-width: 768px) {
+      .button {
+        min-width: 140px;
+        font-size: 14px;
+        padding: 8px 14px;
+      }
+      .intro h1 {
+        font-size: 24px;
+      }
+      .intro .tagline {
+        font-size: 16px;
+      }
+      .intro p {
+        font-size: 14px;
+      }
+    }
+
+    /* 响应式：手机两列对齐 */
+    @media (max-width: 480px) {
+      .button-container {
+        justify-content: center;
+      }
+      .button {
+        flex: 1 1 calc(50% - 20px); /* 每行两个按钮 */
+        min-width: auto;
+        font-size: 13px;
+        padding: 6px 10px;
+      }
+      .intro h1 {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- 首页按钮区 -->
+  <!-- 按钮导航区 -->
   <div class="button-container">
-    <a href="patents.html" class="button">🧵 Patents</a>
-    <a href="test.html" class="button">🧪 Test Reports</a>
-    <a href="cases.html" class="button">🎯 Implementation Cases</a>
-    <a href="exchange.html" class="button">🌐 International Exchange</a>
-    <a href="ocean.html" class="button">🌊 Ocean Cleanup</a>
-    <a href="housing.html" class="button">🏠 Housing Construction</a>
-    <a href="videos.html" class="button">🎥 Video Materials</a>
-    <a href="media.html" class="button">📰 Media Reports</a>
-    <a href="product.html" class="button">♻️ Product Transformation</a>
-    <a href="agu.html" class="button">🌍 AGU: Global Platform for Science & Innovation</a>
+    <a href="patents.html" class="button blue-button">🧵 Patents</a>
+    <a href="test-reports.html" class="button blue-button">✏️ Test Reports</a>
+    <a href="implementation.html" class="button blue-button">🎯 Implementation Cases</a>
+    <a href="exchange.html" class="button blue-button">🌐 International Exchange</a>
+    <a href="ocean.html" class="button blue-button">🌊 Ocean Cleanup</a>
+    <a href="housing.html" class="button blue-button">🏠 Housing Construction</a>
+    <a href="videos.html" class="button blue-button">🎥 Video Materials</a>
+    <a href="media.html" class="button blue-button">📰 Media Reports</a>
+    <a href="products.html" class="button blue-button">♻️ Product Transformation</a>
+    <a href="agu.html" class="button blue-button">🌍 AGU: Global Platform for Science & Innovation</a>
   </div>
 
-  <!-- 橙色按钮单独居中 -->
-  <div class="center">
-    <a href="art.html" class="button orange">🎨 Waste Art</a>
+  <!-- 橙色按钮单独放置 -->
+  <div class="button-center">
+    <a href="wasteart.html" class="button orange-button">🎨 Waste Art</a>
   </div>
+
+  <!-- 文章内容 -->
+  <section class="intro">
+    <h1>Together for a Sustainable Future</h1>
+    <p class="tagline">
+      “Solving Waste with Waste — Patented Technology to Transform Ocean Plastic Waste 
+      and Solid Waste into Durable Housing Materials.”
+    </p>
+    <p>
+      We are using the simplest and most direct method, through non-commercial 
+      technology integration, to solve global solid waste problems and provide 
+      affordable high-quality housing for the poor.
+    </p>
+  </section>
+
+  <!-- 页脚 -->
+  <footer>
+    <div>
+      <a href="https://x.com/atlasecoz" target="_blank" rel="noopener">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" width="24"> X
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100091581505543" target="_blank" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook logo" width="24"> Facebook
+      </a>
+    </div>
+    <div style="margin-top: 8px;">
+      <a href="mailto:mgrsns@gmail.com">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email icon" width="24">
+        mgrsns63@gmail.com
+      </a>
+    </div>
+  </footer>
 
 </body>
 </html>
