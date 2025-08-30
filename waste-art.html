@@ -254,5 +254,59 @@
 
   // 关闭与快捷键
   btnClose.addEventListener('click', closeLightbox);
-  dlg.addEven
+  dlg.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLightbox(); });
+
+  // 拖拽
+  img.addEventListener('mousedown', e=>{
+    if(scale<=1) return;
+    dragStart = {x:e.clientX - pos.x, y:e.clientY - pos.y};
+    e.preventDefault();
+  });
+  window.addEventListener('mousemove', e=>{
+    if(!dragStart) return;
+    pos = {x:e.clientX - dragStart.x, y:e.clientY - dragStart.y};
+    apply();
+  });
+  window.addEventListener('mouseup', ()=> dragStart=null);
+
+  // 滚轮缩放
+  img.addEventListener('wheel', e=>{
+    e.preventDefault();
+    zoom(e.deltaY < 0 ? +0.15 : -0.15, {x:e.clientX, y:e.clientY});
+  }, {passive:false});
+
+  // 触摸缩放/拖动
+  img.addEventListener('touchstart', e=>{
+    if(e.touches.length===1){
+      lastTouch = {x:e.touches[0].clientX, y:e.touches[0].clientY};
+    }else if(e.touches.length===2){
+      lastTouch = {d: dist(e.touches[0], e.touches[1]), scale};
+    }
+  }, {passive:false});
+  img.addEventListener('touchmove', e=>{
+    e.preventDefault();
+    if(e.touches.length===1 && scale>1 && lastTouch && lastTouch.x!=null){
+      const nx = e.touches[0].clientX, ny = e.touches[0].clientY;
+      pos.x += nx - lastTouch.x; pos.y += ny - lastTouch.y;
+      lastTouch = {x:nx, y:ny};
+      apply();
+    }else if(e.touches.length===2 && lastTouch && lastTouch.d){
+      const d = dist(e.touches[0], e.touches[1]);
+      scale = Math.min(maxScale, Math.max(minScale, lastTouch.scale * (d/lastTouch.d)));
+      apply();
+    }
+  }, {passive:false});
+  function dist(a,b){ const dx=a.clientX-b.clientX, dy=a.clientY-b.clientY; return Math.hypot(dx,dy); }
+
+  // 点击背景关闭（避免点到图片或工具栏误关）
+  dlg.addEventListener('click', e=>{
+    const insideImg = e.composedPath().includes(img);
+    const insideBar = e.composedPath().includes(document.querySelector('.lb-toolbar'));
+    if(!insideImg && !insideBar) closeLightbox();
+  });
+})();
+</script>
+
+</body>
+</html>
 
