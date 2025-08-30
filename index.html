@@ -1,198 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homepage Combined Preview</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Together for a Sustainable Future</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f5faff;
-      color: #003366;
-      text-align: center;
-      line-height: 1.7;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.6;
+      background-color: #e9f2f9;
+      color: #333;
     }
 
     .nav {
-      max-width: 94vw;
-      margin: 20px auto;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 6px;
+      gap: 12px;
+      padding: 20px;
     }
     .nav a {
-      background: #d8e6f2;
-      color: #004080;
       text-decoration: none;
-      font-weight: bold;
+      background: #f0f5ff;
+      padding: 10px 18px;
       border-radius: 8px;
-      padding: 6px 14px;
-      font-size: 0.95em;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-weight: 600;
+      color: #003366;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: 0.2s;
     }
-    .nav a:hover { background: #bcd4f5; }
-    .orange-button { background: #f9a825 !important; color: white !important; }
-    .orange-button:hover { background: #e68900 !important; }
+    .nav a:hover {
+      background: #dfe7ff;
+      transform: translateY(-2px);
+    }
+    .nav a.active {
+      background: #ffd580;
+      color: #000;
+    }
 
-    .hero h1 {
-      margin: 8px 0;
-      font-weight: 800;
-      font-size: clamp(30px, 3.8vw, 48px);
+    header {
+      text-align: center;
+      padding: 30px 20px 10px;
     }
-    .hero h2 {
-      margin: 0 auto 20px;
-      font-weight: 500;
-      font-size: clamp(18px, 2vw, 24px);
-      max-width: 80ch;
-      color: #446384;
+    header h1 {
+      font-size: 2.5em;
+      color: #003366;
+      margin-bottom: 10px;
+    }
+    header h2 {
+      font-size: 1.3em;
+      color: #004080;
+      margin-top: 0;
     }
 
     .content {
-      max-width: 95ch;
-      margin: 0 auto;
-      text-align: left;
-      font-size: 1.15rem;
-    }
-    .content p { margin: 0 0 16px; }
-    .highlight {
-      font-weight: 700;
-      background: #e9f2fb;
-      padding: 10px 12px;
-      border-radius: 10px;
-      margin-top: 16px;
-    }
-
-    .note {
-      max-width: 1100px;
-      margin: 16px auto;
-      padding: 0 16px;
-      font-size: 1rem;
-      color: #446384;
-      text-align: center;
-    }
-
-    /* 联系方式 */
-    .contact {
-      margin-top: 20px;
-      text-align: center;
-    }
-    .contact .row {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-    }
-    .contact a {
-      color: #004080;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 12px;
-      border-radius: 10px;
-      background: #d8e6f2;
-    }
-    .contact a:hover { background: #bcd4f5; }
-
-    /* 页脚 */
-    footer {
-      margin-top: 16px;
-      background: #eef5fb;
-      border-top: 2px solid #d8e6f2;
-    }
-    footer .wrap {
       max-width: 900px;
       margin: 0 auto;
-      padding: 14px 12px;
+      padding: 20px;
+      font-size: 1.1em;
     }
-    footer .row {
+    .content p {
+      margin-bottom: 1.2em;
+    }
+    .highlight {
+      background: #f5fbff;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 40px;
+      background: #f5f7fb;
+      color: #334;
+      font-size: 1em;
+    }
+
+    /* 联系方式模块 */
+    .contact {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
-      margin-bottom: 8px;
+      gap: 15px;
+      margin-top: 20px;
     }
-    footer a {
-      color: #004080;
-      font-weight: 700;
+    .contact .btn {
+      display: inline-block;
+      background: #e3ecf9;
+      color: #003366;
+      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 8px;
       text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 12px;
-      border-radius: 10px;
-      background: #d8e6f2;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: 0.2s;
     }
-    footer a:hover { background: #bcd4f5; }
+    .contact .btn:hover {
+      background: #cddff7;
+      transform: translateY(-2px);
+    }
   </style>
 </head>
 <body>
 
-  <!-- 顶部导航 -->
+  <!-- 导航 -->
   <nav class="nav">
-    <a href="patents.html">🧵 Patents</a>
-    <a href="testing.html">🧪 Test Reports</a>
-    <a href="cases.html">🎯 Implementation Cases</a>
+    <a href="patents.html">📜 Patents</a>
+    <a href="reports.html">🧪 Test Reports</a>
+    <a href="cases.html">📍 Implementation Cases</a>
     <a href="exchange.html">🌐 International Exchange</a>
-    <a href="ocean.html">🌊 Ocean Cleanup</a>
+    <a href="cleanup.html">🌊 Ocean Cleanup</a>
     <a href="housing.html">🏠 Housing Construction</a>
-    <a href="videos.html">🎬 Video Materials</a>
+    <a href="videos.html">🎥 Video Materials</a>
     <a href="media.html">📰 Media Reports</a>
-    <a href="product-transformation.html">♻️ Product Transformation</a>
-    <a href="agu.html">🌍 AGU: Global Platform for Science & Innovation</a>
-    <a href="waste-art.html" class="orange-button">🎨 Waste Art</a>
+    <a href="products.html">♻️ Product Transformation</a>
+    <a href="platform.html">🔬 AGU: Global Platform</a>
+    <a href="art.html" class="active">🎨 Waste Art</a>
   </nav>
 
-  <!-- 标题 -->
-  <div class="hero">
+  <!-- 首页头部 -->
+  <header>
     <h1>Together for a Sustainable Future</h1>
     <h2>“Solving Waste with Waste — Patented Technology to Transform Ocean Plastic Waste and Solid Waste into Durable Housing Materials.”</h2>
-  </div>
+  </header>
 
-  <!-- 主体内容 -->
-  <main class="content">
+  <!-- 首页正文 -->
+  <section class="content">
     <p>We are using the simplest and most direct method, through non-commercial technology integration, to solve global solid waste problems and provide affordable high-quality housing for the poor.</p>
     <p>For only USD 3,000, we can provide a durable, zero-pollution, B1 fire-rated house with 25–30 MPa strength — an affordable solution for over a billion people living in poor housing conditions.</p>
     <p>With USD 500 million (one-sixth of which is used to build a mobile operating platform), we can clean up 100,000 tons of Pacific plastic waste in 100 working days and generate 300,000 cubic meters of landfilling material. The platform can also be relocated to clean up other marine zones.</p>
-    <p class="highlight">✅ Our website does not promote donations — we hope you will act with us.</p>
-    <p class="highlight">✅ Core Technology: Our binder is made of 65% proprietary formulation + 35% volcanic ash and inorganic silicate materials.</p>
 
-    <p class="note">
-      All content on this website is based on real-world testing, certified reports, and formal domestic and international collaborations — without any commercial embellishment.
-    </p>
-
-    <!-- 联系方式正文内 -->
-    <div class="contact">
-      <div class="row">
-        <a href="https://x.com/atlasecoz" target="_blank">X</a>
-        <a href="https://www.facebook.com/profile.php?id=100091581505543" target="_blank">Facebook</a>
-      </div>
-      <div class="row">
-        <a href="mailto:mgrsns63@gmail.com">mgrsns63@gmail.com</a>
-      </div>
+    <div class="highlight">
+      ✅ Our website does not promote donations — we hope you will act with us.
     </div>
-  </main>
 
-  <!-- 页脚 -->
+    <div class="highlight">
+      ✅ Core Technology: Our binder is made of 65% proprietary formulation + 35% volcanic ash and inorganic silica materials.
+    </div>
+  </section>
+
+  <!-- 页脚 + 联系方式 -->
   <footer>
-    <div class="wrap">
-      <div class="row">
-        <a href="https://x.com/atlasecoz" target="_blank">X</a>
-        <a href="https://www.facebook.com/profile.php?id=100091581505543" target="_blank">Facebook</a>
-      </div>
-      <div class="row">
-        <a href="mailto:mgrsns63@gmail.com">mgrsns63@gmail.com</a>
-      </div>
+    <p>All content on this website is based on real-world testing, certified reports, and formal domestic and international approvals, without any commercial embellishment.</p>
+    
+    <div class="contact">
+      <a href="https://x.com/mgrsns63" target="_blank" class="btn">X</a>
+      <a href="https://www.facebook.com/mgrsns63" target="_blank" class="btn">Facebook</a>
+      <a href="mailto:mgrsns63@gmail.com" class="btn">mgrsns63@gmail.com</a>
     </div>
   </footer>
 
 </body>
 </html>
+
 
 
 
