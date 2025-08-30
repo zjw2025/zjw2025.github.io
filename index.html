@@ -2,197 +2,141 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homepage</title>
+  <title>AtlasEco</title>
   <style>
-    /* 按钮区布局 */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4faff;
+      margin: 0;
+      padding: 0;
+    }
     .button-container {
+      margin: 40px auto 20px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
-      margin: 20px 0;
-      transition: all 0.3s ease;
+      gap: 15px;
+      max-width: 1100px;
     }
-
-    .button-center {
-      text-align: center;
-      margin: 20px 0;
-    }
-
     .button {
-      display: inline-block;
-      padding: 10px 18px;
-      font-size: 16px;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 12px;
-      text-align: center;
-      min-width: 180px;
-      transition: all 0.3s ease;
-    }
-
-    /* 蓝色按钮 */
-    .blue-button {
       background-color: #e6f0ff;
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
       color: #003366;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s, background-color 0.2s;
+      display: inline-block;
     }
-
-    .blue-button:hover {
+    .button:hover {
+      background-color: #d0e0ff;
       transform: translateY(-3px);
-      box-shadow: 0 6px 12px rgba(0, 51, 102, 0.2);
     }
-
-    /* 橙色按钮 */
-    .orange-button {
-      background-color: #ffa726;
+    .special-button {
+      background-color: #ff9f1c;
       color: white;
+      border-radius: 12px;
+      padding: 14px 26px;
+      font-size: 20px;
+      margin-top: 20px;
+      display: inline-block;
     }
-
-    .orange-button:hover {
+    .special-button:hover {
+      background-color: #ff851b;
       transform: translateY(-3px);
-      box-shadow: 0 6px 12px rgba(255, 167, 38, 0.4);
     }
-
-    /* 文章区 */
-    .intro {
-      text-align: center;
+    .content {
       margin: 40px auto;
-      max-width: 800px;
-      padding: 0 15px;
-      transition: all 0.3s ease;
+      max-width: 900px;
+      text-align: center;
+      padding: 20px;
     }
-
-    .intro h1 {
-      font-size: 32px;
+    .content h1 {
+      font-size: 36px;
       font-weight: bold;
       color: #003366;
-      margin-bottom: 20px;
-      transition: all 0.3s ease;
     }
-
-    .intro .tagline {
-      font-size: 18px;
+    .content h2 {
+      font-size: 22px;
       font-style: italic;
-      font-weight: 500;
-      color: #444;
-      margin-bottom: 20px;
-      transition: all 0.3s ease;
-    }
-
-    .intro p {
-      font-size: 16px;
-      line-height: 1.6;
       color: #333;
-      transition: all 0.3s ease;
+      margin-top: 20px;
     }
-
-    /* 页脚 */
+    .content p {
+      font-size: 18px;
+      color: #444;
+      line-height: 1.6;
+      margin: 15px 0;
+    }
     footer {
-      background-color: #f0f8ff;
-      padding: 20px 0;
+      margin-top: 50px;
+      padding: 25px;
+      background-color: #eef6ff;
       text-align: center;
-      font-size: 1em;
-      border-top: 1px solid #ccc;
-      margin-top: 40px;
+      font-size: 16px;
+      color: #333;
     }
-
     footer a {
-      color: #004080;
+      margin: 0 15px;
       text-decoration: none;
-      margin: 0 12px;
+      color: #003366;
+      font-weight: bold;
     }
-
-    footer img {
-      vertical-align: middle;
-      margin-right: 6px;
+    footer a:hover {
+      text-decoration: underline;
     }
-
-    /* 响应式：平板优化 */
-    @media (max-width: 768px) {
-      .button {
-        min-width: 140px;
-        font-size: 14px;
-        padding: 8px 14px;
-      }
-      .intro h1 {
-        font-size: 24px;
-      }
-      .intro .tagline {
-        font-size: 16px;
-      }
-      .intro p {
-        font-size: 14px;
-      }
-    }
-
-    /* 响应式：手机两列对齐 */
-    @media (max-width: 480px) {
-      .button-container {
-        justify-content: center;
-      }
-      .button {
-        flex: 1 1 calc(50% - 20px); /* 每行两个按钮 */
-        min-width: auto;
-        font-size: 13px;
-        padding: 6px 10px;
-      }
-      .intro h1 {
-        font-size: 20px;
-      }
+    .social-icons {
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
 
-  <!-- 按钮导航区 -->
   <div class="button-container">
-    <a href="patents.html" class="button blue-button">🧵 Patents</a>
-    <a href="test-reports.html" class="button blue-button">✏️ Test Reports</a>
-    <a href="implementation.html" class="button blue-button">🎯 Implementation Cases</a>
-    <a href="exchange.html" class="button blue-button">🌐 International Exchange</a>
-    <a href="ocean.html" class="button blue-button">🌊 Ocean Cleanup</a>
-    <a href="housing.html" class="button blue-button">🏠 Housing Construction</a>
-    <a href="videos.html" class="button blue-button">🎥 Video Materials</a>
-    <a href="media.html" class="button blue-button">📰 Media Reports</a>
-    <a href="products.html" class="button blue-button">♻️ Product Transformation</a>
-    <a href="agu.html" class="button blue-button">🌍 AGU: Global Platform for Science & Innovation</a>
+    <a href="patents.html" class="button">🧵 Patents</a>
+    <a href="reports.html" class="button">✏️ Test Reports</a>
+    <a href="cases.html" class="button">🎯 Implementation Cases</a>
+    <a href="exchange.html" class="button">🌐 International Exchange</a>
+    <a href="cleanup.html" class="button">🌊 Ocean Cleanup</a>
+    <a href="housing.html" class="button">🏠 Housing Construction</a>
+    <a href="videos.html" class="button">🎬 Video Materials</a>
+    <a href="media.html" class="button">📰 Media Reports</a>
+    <a href="products.html" class="button">♻️ Product Transformation</a>
+    <a href="agu.html" class="button">🌍 AGU: Global Platform for Science & Innovation</a>
   </div>
 
-  <!-- 橙色按钮单独放置 -->
-  <div class="button-center">
-    <a href="wasteart.html" class="button orange-button">🎨 Waste Art</a>
-  </div>
+  <a href="art.html" class="special-button">🎨 Waste Art</a>
 
-  <!-- 文章内容 -->
-  <section class="intro">
+  <div class="content">
     <h1>Together for a Sustainable Future</h1>
-    <p class="tagline">
-      “Solving Waste with Waste — Patented Technology to Transform Ocean Plastic Waste 
-      and Solid Waste into Durable Housing Materials.”
-    </p>
+    <h2>“Solving Waste with Waste — Patented Technology to Transform Ocean Plastic Waste and Solid Waste into Durable Housing Materials.”</h2>
+    
     <p>
-      We are using the simplest and most direct method, through non-commercial 
-      technology integration, to solve global solid waste problems and provide 
-      affordable high-quality housing for the poor.
+      At AtlasEco, we are committed to addressing the global solid waste crisis with the simplest and most direct solutions. 
+      Through non-commercial technology integration, we aim to transform waste into valuable resources and provide sustainable alternatives for the future.
     </p>
-  </section>
+    
+    <p>
+      Our patented technology has been successfully applied in multiple international demonstration projects, 
+      earning recognition from scientists, engineers, and environmental leaders worldwide. 
+      This innovation not only reduces the burden of plastic and solid waste but also creates durable, affordable housing materials.
+    </p>
+    
+    <p>
+      Together, we can solve waste with waste, protect our oceans, and build a cleaner, more sustainable world for generations to come.
+    </p>
+  </div>
 
-  <!-- 页脚 -->
   <footer>
-    <div>
-      <a href="https://x.com/atlasecoz" target="_blank" rel="noopener">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" width="24"> X
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=100091581505543" target="_blank" rel="noopener">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook logo" width="24"> Facebook
-      </a>
+    <div class="social-icons">
+      <a href="https://twitter.com" target="_blank">✖ X</a>
+      <a href="https://facebook.com" target="_blank">📘 Facebook</a>
     </div>
-    <div style="margin-top: 8px;">
-      <a href="mailto:mgrsns@gmail.com">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email icon" width="24">
-        mgrsns63@gmail.com
-      </a>
+    <div>
+      📧 <a href="mailto:mgrsns63@gmail.com">mgrsns63@gmail.com</a>
     </div>
   </footer>
 
