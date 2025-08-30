@@ -6,167 +6,147 @@
   <title>Homepage</title>
 
   <style>
-    /* ===============================
-       Design tokens
-    =============================== */
-    :root{
+    :root {
       --bg: #f5faff;
       --surface: #ffffff;
       --ink: #003366;
       --muted: #446384;
       --chip: #d8e6f2;
-      --chip-hover:#bcd4f5;
-      --accent:#f9a825;
-      --accent-hover:#e68900;
-      --maxw: 980px;       /* 控制整页内容宽度 */
-      --measure: 70ch;     /* 正文最佳行长 */
-      --space: 24px;       /* 统一垂直节奏 */
+      --chip-hover: #bcd4f5;
+      --accent: #f9a825;
+      --accent-hover: #e68900;
+      --maxw: 1280px;   /* ✅ 内容区更宽 */
+      --measure: 85ch;  /* ✅ 行宽放松 */
+      --space: 24px;
       --radius: 14px;
       --shadow: 0 8px 24px rgba(0,0,0,.06);
     }
 
-    /* ===============================
-       Base
-    =============================== */
-    html,body{height:100%}
-    *{box-sizing:border-box}
-    body{
-      margin:0; padding:0;
+    html, body { height: 100%; }
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: var(--bg);
       color: var(--ink);
-      text-align: center;                 /* 保持你原来的居中 */
-      line-height: 1.7;                   /* 更舒服的行距 */
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+      text-align: center;
+      line-height: 1.7;
     }
 
-    .container{ max-width: var(--maxw); margin: 0 auto; padding: 0 16px; }
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 16px;
+    }
 
-    /* ===============================
-       Top Navigation  (保留你原来的结构与样式基调)
-    =============================== */
-    .nav{                               /* 你的原样式基础上微调留白 */
+    /* 顶部导航 */
+    .nav {
       max-width: var(--maxw);
       margin: 22px auto var(--space);
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
       padding: 0 8px;
     }
-    .nav a{
+    .nav a {
       background: var(--chip);
-      color:#004080; text-decoration:none; font-weight:bold;
-      border-radius:8px; padding:5px 12px; font-size:.85em;
-      display:inline-block; box-shadow:0 2px 5px rgba(0,0,0,.1);
-      transition: background .25s ease, transform .08s ease;
+      color: #004080;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      padding: 5px 12px;
+      font-size: .85em;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: background .25s ease;
     }
-    .nav a:hover{ background: var(--chip-hover); }
-    .nav a:active{ transform: translateY(1px); }
-    .orange-button{ background: var(--accent) !important; color:#fff !important; }
-    .orange-button:hover{ background: var(--accent-hover) !important; }
+    .nav a:hover { background: var(--chip-hover); }
+    .orange-button { background: var(--accent) !important; color:#fff !important; }
+    .orange-button:hover { background: var(--accent-hover) !important; }
 
-    /* ===============================
-       Hero (标题区)
-    =============================== */
-    .hero{ padding: 0 0 calc(var(--space) * .75); }
-    .hero h1{
+    /* 标题区 */
+    .hero { padding: 0 0 calc(var(--space) * .75); }
+    .hero h1 {
       margin: 6px 0 8px;
-      font-weight: 800; letter-spacing:.01em;
-      font-size: clamp(28px, 3.6vw, 44px); /* 自适应 */
+      font-weight: 800;
+      font-size: clamp(28px, 3.6vw, 44px);
       line-height: 1.25;
     }
-    .hero h2{
+    .hero h2 {
       margin: 0 auto 18px;
       font-weight: 500;
       font-size: clamp(16px, 1.8vw, 22px);
-      line-height: 1.5;
-      max-width: 42ch; /* 控制副标题行宽，避免过长 */
+      max-width: 60ch;
       color: var(--muted);
     }
 
-    /* ===============================
-       Main content
-    =============================== */
-    .content{ max-width: var(--measure); margin: 0 auto; text-align: left; }
-    .content p{ margin: 0 0 18px; }
-    .content .highlight{
-      font-weight: 700; color:#004080; margin-top: 18px;
-      background: #e9f2fb; padding: 10px 12px; border-radius: 10px;
+    /* 正文 */
+    .content { max-width: var(--measure); margin: 0 auto; text-align: left; }
+    .content p { margin: 0 0 18px; }
+    .content .highlight {
+      font-weight: 700;
+      color: #004080;
+      margin-top: 18px;
+      background: #e9f2fb;
+      padding: 10px 12px;
+      border-radius: 10px;
     }
 
-    /* ===============================
-       Note (说明文)
-    =============================== */
-    .note{
-      max-width: 720px; margin: calc(var(--space) * 1.2) auto 0; padding: 0 16px;
-      font-size: .98rem; color: var(--muted); line-height: 1.65;
+    .note {
+      max-width: 1000px;
+      margin: calc(var(--space) * 1.2) auto 0;
+      padding: 0 16px;
+      font-size: .98rem;
+      color: var(--muted);
     }
 
-    /* ===============================
-       Footer (不改你原始结构，只优化外观与留白)
-    =============================== */
-    footer{
+    /* 页脚 */
+    footer {
       margin-top: calc(var(--space) * 1.2);
-      background: #eef5fb; border-top: 2px solid #d8e6f2;
+      background: #eef5fb;
+      border-top: 2px solid #d8e6f2;
       box-shadow: var(--shadow);
     }
-    footer .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 18px 16px; }
-
-    footer a{
-      color:#004080; text-decoration:none; font-weight:700;
-      display: inline-flex; align-items: center; gap:6px;
-      padding: 6px 10px; border-radius: 10px; background: var(--chip);
+    footer .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 18px 16px;
+    }
+    footer a {
+      color: #004080;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 10px;
+      background: var(--chip);
       transition: background .25s ease;
     }
-    footer a:hover{ background: var(--chip-hover); }
-    footer img{ vertical-align: middle; }
+    footer a:hover { background: var(--chip-hover); }
+    footer img { vertical-align: middle; }
+    footer .row { display:flex; flex-wrap:wrap; gap: 12px; justify-content:center; }
+    footer .row + .row { margin-top: 8px; }
 
-    footer .row{ display:flex; flex-wrap:wrap; gap: 12px; justify-content:center; }
-    footer .row + .row{ margin-top: 8px; }
-
-    /* ===============================
-       Divider for visual rhythm
-    =============================== */
-    .rule{ width: min(680px, 72%); margin: calc(var(--space) * 1.1) auto; border: 0; border-top: 2px solid #d8e6f2; }
-
-    /* ===============================
-       Responsive
-    =============================== */
-    @media (max-width: 860px){
-      :root{ --maxw: 820px; }
-      .hero h2{ max-width: 48ch; }
+    /* 手机版 */
+    @media (max-width: 480px) {
+      .nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero h1 { font-size: 22px; }
+      .hero h2 { font-size: 15px; max-width: 36ch; }
+      .content { max-width: 92vw; }
     }
-    @media (max-width: 560px){
-      .content{ padding: 0 4px; }
-      .note{ padding: 0 8px; }
-    }
-    /* ===============================
-     Compact desktop: fit whole homepage in one screen (no scroll)
-     Triggered on typical laptop sizes
-  =============================== */
-  @media (min-width: 1100px) and (min-height: 700px){
-    html, body{ height: 100dvh; }
-    body{ display: flex; flex-direction: column; }
-    .nav, .hero, .content, .note, footer{ flex: 0 0 auto; }
-
-    :root{ --maxw: 980px; --measure: 64ch; --space: 18px; }
-    .hero{ padding: 0 0 6px; }
-    .hero h1{ font-size: 32px; margin-top: 8px; margin-bottom: 6px; }
-    .hero h2{ font-size: 18px; max-width: 40ch; margin-bottom: 12px; }
-    .content{ max-width: 64ch; }
-    .content p{ margin: 0 0 12px; }
-    .content .highlight{ padding: 8px 10px; }
-
-    .note{ margin-top: 12px; font-size: .9rem; }
-    .rule{ width: min(620px, 66%); margin: 12px auto; }
-    footer .wrap{ padding: 12px 16px; }
-  }
-
-</style>
+  </style>
 </head>
-
 <body>
-  <!-- 顶部导航（保持原链接与顺序不变） -->
-  <nav class="nav" aria-label="Main Navigation">
+
+  <!-- 顶部导航 -->
+  <nav class="nav">
     <a href="patents.html">🧵 Patents</a>
     <a href="testing.html">🧪 Test Reports</a>
     <a href="cases.html">🎯 Implementation Cases</a>
@@ -180,53 +160,38 @@
     <a href="waste-art.html" class="orange-button">🎨 Waste Art</a>
   </nav>
 
-  <!-- 标题区：不改文字，只优化排版与留白 -->
-  <header class="hero container">
+  <!-- 标题 -->
+  <div class="hero">
     <h1>Together for a Sustainable Future</h1>
     <h2>“Solving Waste with Waste — Patented Technology to Transform Ocean Plastic Waste and Solid Waste into Durable Housing Materials.”</h2>
-  </header>
+  </div>
 
-  <!-- 正文：限制行长 + 左对齐，提高可读性 -->
+  <!-- 正文 -->
   <main class="content">
-    <p>
-      We are using the simplest and most direct method, through non-commercial technology integration, to solve global solid waste problems and provide affordable high-quality housing for the poor.
-    </p>
-    <p>
-      For only USD 3,000, we can provide a durable, zero-pollution, B1 fire-rated house with 25–30 MPa strength — an affordable solution for over a billion people living in poor housing conditions.
-    </p>
-    <p>
-      With USD 500 million (one-sixth of which is used to build a mobile operating platform), we can clean up 100,000 tons of Pacific plastic waste in 100 working days and generate 300,000 cubic meters of landfilling material. The platform can also be relocated to clean up other marine zones.
-    </p>
+    <p>We are using the simplest and most direct method, through non-commercial technology integration, to solve global solid waste problems and provide affordable high-quality housing for the poor.</p>
+    <p>For only USD 3,000, we can provide a durable, zero-pollution, B1 fire-rated house with 25–30 MPa strength — an affordable solution for over a billion people living in poor housing conditions.</p>
+    <p>With USD 500 million (one-sixth of which is used to build a mobile operating platform), we can clean up 100,000 tons of Pacific plastic waste in 100 working days and generate 300,000 cubic meters of landfilling material. The platform can also be relocated to clean up other marine zones.</p>
     <p class="highlight">✅ Our website does not promote donations — we hope you will act with us.</p>
     <p class="highlight">✅ Core Technology: Our binder is made of 65% proprietary formulation + 35% volcanic ash and inorganic silicate materials.</p>
   </main>
 
-  <hr class="rule" />
-
-  <!-- 说明文：置于内容与页脚之间，起到“承上启下”的视觉权重 -->
   <p class="note">
     All content on this website is based on real-world testing, certified reports, and formal domestic and international collaborations — without any commercial embellishment.
   </p>
 
-  <!-- 页脚：保留你原本两个 div 的结构，只做样式增强 -->
+  <!-- 页脚 -->
   <footer>
     <div class="wrap">
       <div class="row">
-        <a href="https://x.com/atlasecoz" target="_blank" rel="noopener">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" width="20" height="20"> X
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=100091581505543" target="_blank" rel="noopener">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook logo" width="20" height="20"> Facebook
-        </a>
+        <a href="https://x.com/atlasecoz" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" width="20"> X</a>
+        <a href="https://www.facebook.com/profile.php?id=100091581505543" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" width="20"> Facebook</a>
       </div>
-      <div class="row" style="margin-top: 8px;">
-        <a href="mailto:mgrsns@gmail.com">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email icon" width="20" height="20">
-          mgrsns63@gmail.com
-        </a>
+      <div class="row">
+        <a href="mailto:mgrsns63@gmail.com"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" width="20"> mgrsns63@gmail.com</a>
       </div>
     </div>
   </footer>
+
 </body>
 </html>
 
