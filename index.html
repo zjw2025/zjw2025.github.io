@@ -40,6 +40,15 @@
     }
     .nav a:hover { background-color: #c8dbef; }
 
+    /* NEW: two-column row just above the orange CTA */
+    .nav.two-col { margin-top: -10px; } /* 收紧与上方间距 */
+    .nav.two-col a {
+      flex: 1 1 420px;       /* 两列布局；小屏会自动换行 */
+      justify-content: center;
+      text-align: center;
+      min-width: 280px;
+    }
+
     h1 {
       font-size: 2.4em;
       text-align: center;
@@ -105,7 +114,7 @@
 </head>
 <body>
 
-  <!-- Top Nav (9 items, without Waste Art) -->
+  <!-- Top Nav (remove Product Transformation from here) -->
   <nav class="nav" aria-label="Main Navigation">
     <a href="patents.html">📜 Patents</a>
     <a href="testing.html">🧪 Test Reports</a>
@@ -115,10 +124,15 @@
     <a href="housing.html">🏠 Housing Construction</a>
     <a href="videos.html">🎥 Video Materials</a>
     <a href="media.html">📰 Media Reports</a>
-    <a href="product-transformation.html">♻️ Product Transformation</a>
   </nav>
 
-  <!-- Standalone Waste Art button (centered, below Product Transformation) -->
+  <!-- NEW: two-column row above the orange button -->
+  <nav class="nav two-col" aria-label="AGU and Product Row">
+    <a href="product-transformation.html">♻️ Product Transformation</a>
+    <a href="agu.html">🌍 AGU: Global Platform for Science & Innovation</a>
+  </nav>
+
+  <!-- Standalone Waste Art button (centered, below the two-column row) -->
   <div class="cta-wrap">
     <a class="cta-waste" href="waste-art.html">🎨 Waste Art</a>
   </div>
