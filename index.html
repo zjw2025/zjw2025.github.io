@@ -3,76 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homepage</title>
+  <title>Homepage Preview</title>
 
   <style>
-    :root {
-      --bg: #f5faff;
-      --ink: #003366;
-      --muted: #446384;
-      --chip: #d8e6f2;
-      --chip-hover: #bcd4f5;
-      --accent: #f9a825;
-      --accent-hover: #e68900;
-      --maxw: min(94vw, 1480px); /* 更宽，占屏94% */
-      --measure: 95ch;
-      --radius: 14px;
-      --shadow: 0 8px 24px rgba(0,0,0,.06);
-      --fit: 1; 
-    }
-
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      text-align: center;
+      font-family: Arial, sans-serif;
       margin: 0;
+      background: #f5faff;
+      color: #003366;
+      text-align: center;
       line-height: 1.7;
     }
 
-    /* 导航 */
     .nav {
-      max-width: var(--maxw);
-      margin: 22px auto 20px;
+      max-width: 94vw;
+      margin: 20px auto;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 6px;
     }
     .nav a {
-      background: var(--chip);
+      background: #d8e6f2;
       color: #004080;
       text-decoration: none;
       font-weight: bold;
       border-radius: 8px;
       padding: 6px 14px;
-      font-size: 0.95em; /* 导航稍微大一点 */
+      font-size: 0.95em;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: background .25s ease;
     }
-    .nav a:hover { background: var(--chip-hover); }
-    .orange-button { background: var(--accent) !important; color:#fff !important; }
-    .orange-button:hover { background: var(--accent-hover) !important; }
+    .nav a:hover { background: #bcd4f5; }
+    .orange-button { background: #f9a825 !important; color: white !important; }
+    .orange-button:hover { background: #e68900 !important; }
 
-    /* 标题 */
     .hero h1 {
       margin: 8px 0;
       font-weight: 800;
-      font-size: clamp(30px, 3.8vw, 48px); /* ✅ 更大 */
-      line-height: 1.3;
+      font-size: clamp(30px, 3.8vw, 48px);
     }
     .hero h2 {
       margin: 0 auto 20px;
       font-weight: 500;
-      font-size: clamp(18px, 2vw, 24px); /* ✅ 更清晰 */
+      font-size: clamp(18px, 2vw, 24px);
       max-width: 80ch;
-      color: var(--muted);
+      color: #446384;
     }
 
-    /* 内容 */
-    .content { max-width: var(--measure); margin: 0 auto; text-align: left; font-size: 1.15rem; } /* ✅ 主体文字加大 */
+    .content {
+      max-width: 95ch;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 1.15rem;
+    }
     .content p { margin: 0 0 16px; }
-    .content .highlight {
+    .highlight {
       font-weight: 700;
       background: #e9f2fb;
       padding: 10px 12px;
@@ -85,22 +70,23 @@
       margin: 16px auto;
       padding: 0 16px;
       font-size: 1rem;
-      color: var(--muted);
+      color: #446384;
+      text-align: center;
     }
 
-    /* 页脚 */
-    footer {
-      margin-top: 16px;
-      background: #eef5fb;
-      border-top: 2px solid #d8e6f2;
-      box-shadow: var(--shadow);
+    /* 联系方式 */
+    .contact {
+      margin-top: 20px;
+      text-align: center;
     }
-    footer .wrap {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 14px 12px;
+    .contact .row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
     }
-    footer a {
+    .contact a {
       color: #004080;
       font-weight: 700;
       text-decoration: none;
@@ -109,23 +95,14 @@
       gap: 6px;
       padding: 8px 12px;
       border-radius: 10px;
-      background: var(--chip);
+      background: #d8e6f2;
     }
-    footer a:hover { background: var(--chip-hover); }
-    footer .row { display:flex; flex-wrap:wrap; gap: 12px; justify-content:center; }
-    footer .row + .row { margin-top: 10px; }
-
-    /* 手机版 */
-    @media (max-width: 480px) {
-      .nav { display: grid; grid-template-columns: repeat(2, 1fr); }
-      .hero h1 { font-size: 22px; }
-      .hero h2 { font-size: 15px; max-width: 36ch; }
-      .content { max-width: 92vw; font-size: 1rem; }
-    }
+    .contact a:hover { background: #bcd4f5; }
   </style>
 </head>
 <body>
 
+  <!-- 顶部导航 -->
   <nav class="nav">
     <a href="patents.html">🧵 Patents</a>
     <a href="testing.html">🧪 Test Reports</a>
@@ -140,25 +117,26 @@
     <a href="waste-art.html" class="orange-button">🎨 Waste Art</a>
   </nav>
 
+  <!-- 标题 -->
   <div class="hero">
     <h1>Together for a Sustainable Future</h1>
     <h2>“Solving Waste with Waste — Patented Technology to Transform Ocean Plastic Waste and Solid Waste into Durable Housing Materials.”</h2>
   </div>
 
+  <!-- 主体内容 -->
   <main class="content">
     <p>We are using the simplest and most direct method, through non-commercial technology integration, to solve global solid waste problems and provide affordable high-quality housing for the poor.</p>
     <p>For only USD 3,000, we can provide a durable, zero-pollution, B1 fire-rated house with 25–30 MPa strength — an affordable solution for over a billion people living in poor housing conditions.</p>
     <p>With USD 500 million (one-sixth of which is used to build a mobile operating platform), we can clean up 100,000 tons of Pacific plastic waste in 100 working days and generate 300,000 cubic meters of landfilling material. The platform can also be relocated to clean up other marine zones.</p>
     <p class="highlight">✅ Our website does not promote donations — we hope you will act with us.</p>
     <p class="highlight">✅ Core Technology: Our binder is made of 65% proprietary formulation + 35% volcanic ash and inorganic silicate materials.</p>
-  </main>
 
-  <p class="note">
-    All content on this website is based on real-world testing, certified reports, and formal domestic and international collaborations — without any commercial embellishment.
-  </p>
+    <p class="note">
+      All content on this website is based on real-world testing, certified reports, and formal domestic and international collaborations — without any commercial embellishment.
+    </p>
 
-  <footer>
-    <div class="wrap">
+    <!-- 联系方式直接放这里 -->
+    <div class="contact">
       <div class="row">
         <a href="https://x.com/atlasecoz" target="_blank">X</a>
         <a href="https://www.facebook.com/profile.php?id=100091581505543" target="_blank">Facebook</a>
@@ -167,7 +145,7 @@
         <a href="mailto:mgrsns63@gmail.com">mgrsns63@gmail.com</a>
       </div>
     </div>
-  </footer>
+  </main>
 
 </body>
 </html>
