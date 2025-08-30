@@ -1,75 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website</title>
   <style>
-    body {
-      background-color: #e9f2f9;
-      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-      padding: 40px 40px;
-      margin: 0;
-      line-height: 1.6;
-      font-size: 1.2em;
-      color: #111;
+    /* 顶部导航缩小按钮 */
+    .nav {
+      max-width: 960px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px; /* 按钮间距更紧凑 */
     }
 
-  /* 顶部导航缩小按钮 */
-.nav {
-  max-width: 960px;
-  margin: 0 auto 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px; /* 按钮间距缩小 */
-}
+    .nav a {
+      background-color: #d8e6f2;
+      color: #004080;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      padding: 4px 10px; /* 缩小内边距 */
+      font-size: 0.8em;  /* 字体更小 */
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      transition: background-color 0.25s ease;
+    }
 
-.nav a {
-  display: inline-block;
-  background: #d8e6f2;
-  color: #004080;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 10px;
-  padding: 6px 14px;   /* 内边距缩小，按钮更小巧 */
-  font-size: 0.9em;    /* 字体缩小 */
-  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-  transition: background 0.25s ease;
-}
+    .nav a:hover {
+      background-color: #c0dbf2;
+    }
 
-.nav a:hover {
-  background: #c0d8f0;
-}
-
-/* Waste Art 橙色按钮 */
-.orange-button {
-  background: #f9a825 !important;
-  color: #fff !important;
-  font-weight: 700;
-}
-.orange-button:hover {
-  background: #f57f17 !important;
-}
-
-</style>
+    /* 橙色 Waste Art 按钮 */
+    .orange-button {
+      background-color: #f9a825 !important;
+      color: white !important;
+      font-weight: 700;
+    }
+    .orange-button:hover {
+      background-color: #e68900 !important;
+    }
+  </style>
 </head>
 <body>
 
-<!-- 顶部导航（缩小按钮尺寸，含 AGU 和 Waste Art） -->
-<nav class="nav" aria-label="Main Navigation">
-  <a href="patents.html">🧵 Patents</a>
-  <a href="testing.html">🧪 Test Reports</a>
-  <a href="cases.html">🎯 Implementation Cases</a>
-  <a href="exchange.html">🌐 International Exchange</a>
-  <a href="ocean.html">🌊 Ocean Cleanup</a>
-  <a href="housing.html">🏠 Housing Construction</a>
-  <a href="videos.html">🎬 Video Materials</a>
-  <a href="media.html">📰 Media Reports</a>
-  <a href="product-transformation.html">♻️ Product Transformation</a>
-  <a href="agu.html">🌍 AGU: Global Platform for Science & Innovation</a>
-  <a href="waste-art.html" class="orange-button">🎨 Waste Art</a>
-</nav>
+  <!-- 顶部导航 (缩小按钮尺寸，含 AGU 和 Waste Art) -->
+  <nav class="nav" aria-label="Main Navigation">
+    <a href="patents.html">🧵 Patents</a>
+    <a href="testing.html">🧪 Test Reports</a>
+    <a href="cases.html">🎯 Implementation Cases</a>
+    <a href="exchange.html">🌐 International Exchange</a>
+    <a href="ocean.html">🌊 Ocean Cleanup</a>
+    <a href="housing.html">🏠 Housing Construction</a>
+    <a href="videos.html">🎬 Video Materials</a>
+    <a href="media.html">📰 Media Reports</a>
+    <a href="product-transformation.html">♻️ Product Transformation</a>
+    <a href="agu.html">🌍 AGU: Global Platform for Science & Innovation</a>
+    <a href="waste-art.html" class="orange-button">🎨 Waste Art</a>
+  </nav>
 
 
   <h1>Together for a Sustainable Future</h1>
