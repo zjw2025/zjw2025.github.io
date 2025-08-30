@@ -1,179 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
   <style>
-    body {
-      background-color: #e9f2f9;
-      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-      padding: 40px 40px;
-      margin: 0;
-      line-height: 1.6;
-      font-size: 1.2em;
-      color: #111;
+    /* 按钮统一样式（缩小版，比原来小 20%） */
+    .button {
+      display: inline-block;
+      padding: 8px 14px;       /* 缩小 padding */
+      margin: 5px;
+      font-size: 14px;         /* 缩小字体 */
+      font-weight: bold;
+      color: #0a2a5e;
+      background-color: #e9f3ff;
+      border-radius: 10px;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    /* top nav */
-    .nav {
-      max-width: 960px;
-      margin: 0 auto 30px;
+    /* 悬停效果 */
+    .button:hover {
+      background-color: #d2e9ff;
+      transform: translateY(-2px);
+    }
+
+    /* 特殊按钮（保持原大小和颜色，不动） */
+    .button.orange {
+      padding: 10px 18px;      /* 保持原来尺寸 */
+      font-size: 16px;
+      background-color: #ffa733;
+      color: white;
+    }
+    .button.orange:hover {
+      background-color: #ff9000;
+    }
+
+    /* 首页按钮容器 */
+    .button-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
-    }
-    .nav a {
-      background-color: #d8e6f2;
-      color: #004080;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 12px;
-      padding: 10px 18px;
-      font-size: 1em;
-      display: inline-flex;
-      align-items: center;
       gap: 8px;
-      transition: background-color .25s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,.06);
+      margin: 15px 0;
     }
-    .nav a:hover { background-color: #c8dbef; }
 
-    /* NEW: two-column row just above the orange CTA */
-    .nav.two-col { margin-top: -10px; } /* 收紧与上方间距 */
-    .nav.two-col a {
-      flex: 1 1 420px;       /* 两列布局；小屏会自动换行 */
-      justify-content: center;
+    /* 橙色按钮单独居中 */
+    .center {
       text-align: center;
-      min-width: 280px;
+      margin-top: 15px;
     }
-
-    h1 {
-      font-size: 2.4em;
-      text-align: center;
-      color: #004080;
-      letter-spacing: 1px;
-      margin: 6px 0 10px;
-    }
-    h2 {
-      font-size: 1.2em;
-      text-align: center;
-      color: #2b2b2b;
-      font-weight: 500;
-      margin: 0 0 28px;
-      max-width: 1100px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .content { max-width: 860px; margin: 0 auto; }
-    .content p { margin-bottom: 1em; }
-
-    .highlight { color: #0a8a0a; font-weight: 700; margin-top: 1em; }
-
-    .note {
-      font-size: .95em;
-      text-align: center;
-      color: #555;
-      margin-top: 40px;
-      max-width: 860px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    footer {
-      background-color: #f0f8ff;
-      padding: 20px 0;
-      text-align: center;
-      font-size: 1em;
-      border-top: 1px solid #ccc;
-      margin-top: 40px;
-    }
-    footer a { color: #004080; text-decoration: none; margin: 0 12px; }
-    footer img { vertical-align: middle; margin-right: 6px; }
-
-    /* Standalone Waste Art CTA */
-    .cta-wrap { text-align: center; margin: 16px 0 24px; }
-    .cta-waste {
-      display: inline-block;
-      background-color: #f9a825;       /* soft orange */
-      color: #fff;
-      font-weight: 800;
-      font-size: 18px;
-      letter-spacing: .2px;
-      padding: 12px 26px;
-      border-radius: 12px;
-      text-decoration: none;
-      box-shadow: 0 6px 14px rgba(0,0,0,.12);
-      transition: background-color .25s ease, transform .08s ease;
-    }
-    .cta-waste:hover { background-color: #f57f17; }
-    .cta-waste:active { transform: translateY(1px); }
   </style>
 </head>
 <body>
 
-  <!-- Top Nav (remove Product Transformation from here) -->
-  <nav class="nav" aria-label="Main Navigation">
-    <a href="patents.html">📜 Patents</a>
-    <a href="testing.html">🧪 Test Reports</a>
-    <a href="cases.html">🎯 Implementation Cases</a>
-    <a href="exchange.html">🌐 International Exchange</a>
-    <a href="ocean.html">🌊 Ocean Cleanup</a>
-    <a href="housing.html">🏠 Housing Construction</a>
-    <a href="videos.html">🎥 Video Materials</a>
-    <a href="media.html">📰 Media Reports</a>
-  </nav>
-
-  <!-- NEW: two-column row above the orange button -->
-  <nav class="nav two-col" aria-label="AGU and Product Row">
-    <a href="product-transformation.html">♻️ Product Transformation</a>
-    <a href="agu.html">🌍 AGU: Global Platform for Science & Innovation</a>
-  </nav>
-
-  <!-- Standalone Waste Art button (centered, below the two-column row) -->
-  <div class="cta-wrap">
-    <a class="cta-waste" href="waste-art.html">🎨 Waste Art</a>
+  <!-- 首页按钮区 -->
+  <div class="button-container">
+    <a href="patents.html" class="button">🧵 Patents</a>
+    <a href="test.html" class="button">🧪 Test Reports</a>
+    <a href="cases.html" class="button">🎯 Implementation Cases</a>
+    <a href="exchange.html" class="button">🌐 International Exchange</a>
+    <a href="ocean.html" class="button">🌊 Ocean Cleanup</a>
+    <a href="housing.html" class="button">🏠 Housing Construction</a>
+    <a href="videos.html" class="button">🎥 Video Materials</a>
+    <a href="media.html" class="button">📰 Media Reports</a>
+    <a href="product.html" class="button">♻️ Product Transformation</a>
+    <a href="agu.html" class="button">🌍 AGU: Global Platform for Science & Innovation</a>
   </div>
 
-  <h1>Together for a Sustainable Future</h1>
-  <h2>“Solving Waste with Waste — Patented Technology to Transform Ocean Plastic Waste and Solid Waste into Durable Housing Materials.”</h2>
-
-  <main class="content">
-    <p>
-      We are using the simplest and most direct method, through non-commercial technology integration, to solve global solid waste problems and provide affordable high-quality housing for the poor.
-    </p>
-    <p>
-      For only USD 3,000, we can provide a durable, zero-pollution, B1 fire-rated house with 25–30 MPa strength — an affordable solution for over a billion people living in poor housing conditions.
-    </p>
-    <p>
-      With USD 500 million (one-sixth of which is used to build a mobile operating platform), we can clean up 100,000 tons of Pacific plastic waste in 100 working days and generate 300,000 cubic meters of landfilling material. The platform can also be relocated to clean up other marine zones.
-    </p>
-    <p class="highlight">✅ Our website does not promote donations — we hope you will act with us.</p>
-    <p class="highlight">✅ Core Technology: Our binder is made of 65% proprietary formulation + 35% volcanic ash and inorganic silicate materials.</p>
-  </main>
-
-  <p class="note">
-    All content on this website is based on real-world testing, certified reports, and formal domestic and international collaborations — without any commercial embellishment.
-  </p>
-
-  <footer>
-    <div>
-      <a href="https://x.com/atlasecoz" target="_blank" rel="noopener">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" width="24"> X
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=100091581505543" target="_blank" rel="noopener">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook logo" width="24"> Facebook
-      </a>
-    </div>
-    <div style="margin-top: 8px;">
-      <a href="mailto:mgrsns@gmail.com">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email icon" width="24">
-        mgrsns63@gmail.com
-      </a>
-    </div>
-  </footer>
+  <!-- 橙色按钮单独居中 -->
+  <div class="center">
+    <a href="art.html" class="button orange">🎨 Waste Art</a>
+  </div>
 
 </body>
 </html>
