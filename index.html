@@ -1,144 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>AtlasEco</title>
+  <meta charset="UTF-8" />
+  <title>Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-color: #f4faff;
+      background-color: #e9f2f9;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+      padding: 40px 40px;
       margin: 0;
-      padding: 0;
+      line-height: 1.6;
+      font-size: 1.2em;
+      color: #111;
     }
-    .button-container {
-      margin: 40px auto 20px;
+
+    /* top nav */
+    .nav {
+      max-width: 960px;
+      margin: 0 auto 30px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
+      gap: 10px;
+    }
+    .nav a {
+      background-color: #d8e6f2;
+      color: #004080;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 12px;
+      padding: 10px 18px;
+      font-size: 1em;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color .25s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,.06);
+    }
+    .nav a:hover { background-color: #c8dbef; }
+
+    h1 {
+      font-size: 2.4em;
+      text-align: center;
+      color: #004080;
+      letter-spacing: 1px;
+      margin: 6px 0 10px;
+    }
+    h2 {
+      font-size: 1.2em;
+      text-align: center;
+      color: #2b2b2b;
+      font-weight: 500;
+      margin: 0 0 28px;
       max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .button {
-      background-color: #e6f0ff;
-      border-radius: 12px;
-      padding: 12px 18px;
-      font-size: 18px;
-      font-weight: bold;
-      text-decoration: none;
-      color: #003366;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-      transition: transform 0.2s, background-color 0.2s;
-      display: inline-block;
-    }
-    .button:hover {
-      background-color: #d0e0ff;
-      transform: translateY(-3px);
-    }
-    .special-button {
-      background-color: #ff9f1c;
-      color: white;
-      border-radius: 12px;
-      padding: 14px 26px;
-      font-size: 20px;
-      margin-top: 20px;
-      display: inline-block;
-    }
-    .special-button:hover {
-      background-color: #ff851b;
-      transform: translateY(-3px);
-    }
-    .content {
-      margin: 40px auto;
-      max-width: 900px;
+
+    .content { max-width: 860px; margin: 0 auto; }
+    .content p { margin-bottom: 1em; }
+
+    .highlight { color: #0a8a0a; font-weight: 700; margin-top: 1em; }
+
+    .note {
+      font-size: .95em;
       text-align: center;
-      padding: 20px;
+      color: #555;
+      margin-top: 40px;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .content h1 {
-      font-size: 36px;
-      font-weight: bold;
-      color: #003366;
-    }
-    .content h2 {
-      font-size: 22px;
-      font-style: italic;
-      color: #333;
-      margin-top: 20px;
-    }
-    .content p {
-      font-size: 18px;
-      color: #444;
-      line-height: 1.6;
-      margin: 15px 0;
-    }
+
     footer {
-      margin-top: 50px;
-      padding: 25px;
-      background-color: #eef6ff;
+      background-color: #f0f8ff;
+      padding: 20px 0;
       text-align: center;
-      font-size: 16px;
-      color: #333;
+      font-size: 1em;
+      border-top: 1px solid #ccc;
+      margin-top: 40px;
     }
-    footer a {
-      margin: 0 15px;
+    footer a { color: #004080; text-decoration: none; margin: 0 12px; }
+    footer img { vertical-align: middle; margin-right: 6px; }
+
+    /* Standalone Waste Art CTA */
+    .cta-wrap { text-align: center; margin: 16px 0 24px; }
+    .cta-waste {
+      display: inline-block;
+      background-color: #f9a825;       /* soft orange */
+      color: #fff;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: .2px;
+      padding: 12px 26px;
+      border-radius: 12px;
       text-decoration: none;
-      color: #003366;
-      font-weight: bold;
+      box-shadow: 0 6px 14px rgba(0,0,0,.12);
+      transition: background-color .25s ease, transform .08s ease;
     }
-    footer a:hover {
-      text-decoration: underline;
-    }
-    .social-icons {
-      margin-top: 10px;
-    }
+    .cta-waste:hover { background-color: #f57f17; }
+    .cta-waste:active { transform: translateY(1px); }
   </style>
 </head>
 <body>
 
-  <div class="button-container">
-    <a href="patents.html" class="button">🧵 Patents</a>
-    <a href="reports.html" class="button">✏️ Test Reports</a>
-    <a href="cases.html" class="button">🎯 Implementation Cases</a>
-    <a href="exchange.html" class="button">🌐 International Exchange</a>
-    <a href="cleanup.html" class="button">🌊 Ocean Cleanup</a>
-    <a href="housing.html" class="button">🏠 Housing Construction</a>
-    <a href="videos.html" class="button">🎬 Video Materials</a>
-    <a href="media.html" class="button">📰 Media Reports</a>
-    <a href="products.html" class="button">♻️ Product Transformation</a>
-    <a href="agu.html" class="button">🌍 AGU: Global Platform for Science & Innovation</a>
+  <!-- Top Nav (9 items, without Waste Art) -->
+  <nav class="nav" aria-label="Main Navigation">
+    <a href="patents.html">📜 Patents</a>
+    <a href="testing.html">🧪 Test Reports</a>
+    <a href="cases.html">🎯 Implementation Cases</a>
+    <a href="exchange.html">🌐 International Exchange</a>
+    <a href="ocean.html">🌊 Ocean Cleanup</a>
+    <a href="housing.html">🏠 Housing Construction</a>
+    <a href="videos.html">🎥 Video Materials</a>
+    <a href="media.html">📰 Media Reports</a>
+    <a href="product-transformation.html">♻️ Product Transformation</a>
+  </nav>
+
+  <!-- Standalone Waste Art button (centered, below Product Transformation) -->
+  <div class="cta-wrap">
+    <a class="cta-waste" href="waste-art.html">🎨 Waste Art</a>
   </div>
 
-  <a href="art.html" class="special-button">🎨 Waste Art</a>
+  <h1>Together for a Sustainable Future</h1>
+  <h2>“Solving Waste with Waste — Patented Technology to Transform Ocean Plastic Waste and Solid Waste into Durable Housing Materials.”</h2>
 
-  <div class="content">
-    <h1>Together for a Sustainable Future</h1>
-    <h2>“Solving Waste with Waste — Patented Technology to Transform Ocean Plastic Waste and Solid Waste into Durable Housing Materials.”</h2>
-    
+  <main class="content">
     <p>
-      At AtlasEco, we are committed to addressing the global solid waste crisis with the simplest and most direct solutions. 
-      Through non-commercial technology integration, we aim to transform waste into valuable resources and provide sustainable alternatives for the future.
+      We are using the simplest and most direct method, through non-commercial technology integration, to solve global solid waste problems and provide affordable high-quality housing for the poor.
     </p>
-    
     <p>
-      Our patented technology has been successfully applied in multiple international demonstration projects, 
-      earning recognition from scientists, engineers, and environmental leaders worldwide. 
-      This innovation not only reduces the burden of plastic and solid waste but also creates durable, affordable housing materials.
+      For only USD 3,000, we can provide a durable, zero-pollution, B1 fire-rated house with 25–30 MPa strength — an affordable solution for over a billion people living in poor housing conditions.
     </p>
-    
     <p>
-      Together, we can solve waste with waste, protect our oceans, and build a cleaner, more sustainable world for generations to come.
+      With USD 500 million (one-sixth of which is used to build a mobile operating platform), we can clean up 100,000 tons of Pacific plastic waste in 100 working days and generate 300,000 cubic meters of landfilling material. The platform can also be relocated to clean up other marine zones.
     </p>
-  </div>
+    <p class="highlight">✅ Our website does not promote donations — we hope you will act with us.</p>
+    <p class="highlight">✅ Core Technology: Our binder is made of 65% proprietary formulation + 35% volcanic ash and inorganic silicate materials.</p>
+  </main>
+
+  <p class="note">
+    All content on this website is based on real-world testing, certified reports, and formal domestic and international collaborations — without any commercial embellishment.
+  </p>
 
   <footer>
-    <div class="social-icons">
-      <a href="https://twitter.com" target="_blank">✖ X</a>
-      <a href="https://facebook.com" target="_blank">📘 Facebook</a>
-    </div>
     <div>
-      📧 <a href="mailto:mgrsns63@gmail.com">mgrsns63@gmail.com</a>
+      <a href="https://x.com/atlasecoz" target="_blank" rel="noopener">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" width="24"> X
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100091581505543" target="_blank" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook logo" width="24"> Facebook
+      </a>
+    </div>
+    <div style="margin-top: 8px;">
+      <a href="mailto:mgrsns@gmail.com">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email icon" width="24">
+        mgrsns63@gmail.com
+      </a>
     </div>
   </footer>
 
 </body>
 </html>
+
