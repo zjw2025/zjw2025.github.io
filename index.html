@@ -15,30 +15,23 @@
       --chip-hover: #bcd4f5;
       --accent: #f9a825;
       --accent-hover: #e68900;
-      --maxw: 1280px;   /* ✅ 内容区更宽 */
-      --measure: 85ch;  /* ✅ 行宽放松 */
-      --space: 24px;
+      --maxw: min(92vw, 1440px); /* ✅ 内容更宽，占屏 92% */
+      --measure: 95ch;           /* ✅ 行宽更宽 */
+      --space: 20px;
       --radius: 14px;
       --shadow: 0 8px 24px rgba(0,0,0,.06);
+      --fit: 1; /* 动态缩放系数，JS 会修改 */
     }
 
-    html, body { height: 100%; }
+    html, body { height: 100%; margin:0; padding:0; }
     * { box-sizing: border-box; }
 
     body {
-      margin: 0;
-      padding: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: var(--bg);
       color: var(--ink);
       text-align: center;
       line-height: 1.7;
-    }
-
-    .container {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 0 16px;
     }
 
     /* 顶部导航 */
@@ -78,33 +71,34 @@
       margin: 0 auto 18px;
       font-weight: 500;
       font-size: clamp(16px, 1.8vw, 22px);
-      max-width: 60ch;
+      max-width: 72ch; /* 更宽一点，少换行 */
       color: var(--muted);
     }
 
     /* 正文 */
     .content { max-width: var(--measure); margin: 0 auto; text-align: left; }
-    .content p { margin: 0 0 18px; }
+    .content p { margin: 0 0 14px; }
     .content .highlight {
       font-weight: 700;
       color: #004080;
-      margin-top: 18px;
+      margin-top: 14px;
       background: #e9f2fb;
-      padding: 10px 12px;
-      border-radius: 10px;
+      padding: 8px 10px;
+      border-radius: 8px;
     }
 
     .note {
-      max-width: 1000px;
-      margin: calc(var(--space) * 1.2) auto 0;
+      max-width: 1100px;
+      margin: 14px auto 0;
       padding: 0 16px;
-      font-size: .98rem;
+      font-size: .96rem;
       color: var(--muted);
+      line-height: 1.6;
     }
 
     /* 页脚 */
     footer {
-      margin-top: calc(var(--space) * 1.2);
+      margin-top: 12px;
       background: #eef5fb;
       border-top: 2px solid #d8e6f2;
       box-shadow: var(--shadow);
@@ -112,7 +106,7 @@
     footer .wrap {
       max-width: var(--maxw);
       margin: 0 auto;
-      padding: 18px 16px;
+      padding: 14px 12px;
     }
     footer a {
       color: #004080;
@@ -140,6 +134,22 @@
       .hero h1 { font-size: 22px; }
       .hero h2 { font-size: 15px; max-width: 36ch; }
       .content { max-width: 92vw; }
+    }
+
+    /* 桌面端根据缩放系数调节字号/间距 */
+    @media (min-width: 1024px){
+      html { font-size: calc(16px * var(--fit)); }
+      :root{
+        --space: calc(20px * var(--fit));
+      }
+      .hero{ padding-bottom: calc(6px * var(--fit)); }
+      .hero h1{ margin: calc(6px * var(--fit)) 0 calc(4px * var(--fit)); }
+      .hero h2{ margin-bottom: calc(8px * var(--fit)); }
+      .content p{ margin: 0 0 calc(12px * var(--fit)); }
+      .content .highlight{ padding: calc(8px * var(--fit)) calc(10px * var(--fit)); }
+      .note{ margin-top: calc(10px * var(--fit)); }
+      footer{ margin-top: calc(10px * var(--fit)); }
+      footer .wrap{ padding: calc(12px * var(--fit)) calc(10px * var(--fit)); }
     }
   </style>
 </head>
@@ -192,8 +202,35 @@
     </div>
   </footer>
 
+  <!-- JS: 自动缩放让整页一屏显示 -->
+  <script>
+  (function(){
+    var isDesktop = window.matchMedia('(pointer:fine)').matches && window.innerWidth >= 1024;
+    if (!isDesktop) return;
+
+    function setFit(val){
+      document.documentElement.style.setProperty('--fit', String(val));
+    }
+
+    function fitToScreen(){
+      var fit = 1.0;
+      setFit(fit);
+      var guard = 0;
+      while (document.documentElement.scrollHeight > window.innerHeight && fit > 0.75 && guard < 30){
+        fit -= 0.02;
+        setFit(fit.toFixed(3));
+        guard++;
+      }
+    }
+
+    window.addEventListener('load', fitToScreen);
+    window.addEventListener('resize', fitToScreen);
+  })();
+  </script>
+
 </body>
 </html>
+
 
 
 
