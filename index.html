@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homepage Preview</title>
+  <title>Homepage Combined Preview</title>
 
   <style>
     body {
@@ -98,6 +98,37 @@
       background: #d8e6f2;
     }
     .contact a:hover { background: #bcd4f5; }
+
+    /* 页脚 */
+    footer {
+      margin-top: 16px;
+      background: #eef5fb;
+      border-top: 2px solid #d8e6f2;
+    }
+    footer .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 14px 12px;
+    }
+    footer .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    footer a {
+      color: #004080;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: #d8e6f2;
+    }
+    footer a:hover { background: #bcd4f5; }
   </style>
 </head>
 <body>
@@ -135,7 +166,7 @@
       All content on this website is based on real-world testing, certified reports, and formal domestic and international collaborations — without any commercial embellishment.
     </p>
 
-    <!-- 联系方式直接放这里 -->
+    <!-- 联系方式正文内 -->
     <div class="contact">
       <div class="row">
         <a href="https://x.com/atlasecoz" target="_blank">X</a>
@@ -147,8 +178,22 @@
     </div>
   </main>
 
+  <!-- 页脚 -->
+  <footer>
+    <div class="wrap">
+      <div class="row">
+        <a href="https://x.com/atlasecoz" target="_blank">X</a>
+        <a href="https://www.facebook.com/profile.php?id=100091581505543" target="_blank">Facebook</a>
+      </div>
+      <div class="row">
+        <a href="mailto:mgrsns63@gmail.com">mgrsns63@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
+
 
 
 
