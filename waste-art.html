@@ -19,6 +19,7 @@
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
     color:var(--text);
     background:linear-gradient(180deg,#0f172a 0 140px, var(--bg) 140px 100%);
+    line-height:1.7;
   }
 
   /* 顶部导航（可保留/删改） */
@@ -71,7 +72,10 @@
     width:auto; height:auto;
     object-fit:contain;
     display:block; background:#e5e7eb; border-radius:8px;
+    cursor: zoom-in;              /* 可点击放大 */
+    transition: transform .12s ease, box-shadow .12s ease;
   }
+  .thumb:hover{ transform: translateY(-2px); }
 
   .back{margin:36px auto 0;text-align:center}
   .back a{
@@ -79,6 +83,38 @@
     padding:12px 18px;border-radius:10px;font-weight:700;box-shadow:var(--shadow);transition:.15s
   }
   .back a:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(0,0,0,.14)}
+
+  /* ===== Lightbox 弹窗（与测试报告/专利用同款交互） ===== */
+  dialog#lightbox{
+    width:100vw; max-width:none; height:100dvh;
+    margin:0; padding:0; border:0; background:rgba(0,0,0,.75);
+  }
+  dialog#lightbox::backdrop{ background:rgba(0,0,0,.65); }
+  .lb-toolbar{
+    position:sticky; top:0; z-index:2;
+    display:flex; gap:8px; align-items:center;
+    padding:10px 12px; background:rgba(12,20,28,.85);
+    backdrop-filter: blur(6px);
+  }
+  .lb-toolbar button, .lb-toolbar a{
+    appearance:none; border:0; border-radius:10px;
+    padding:6px 10px; font-weight:700; color:#e6f0ff;
+    background:#1f3a5b; text-decoration:none; cursor:pointer;
+  }
+  .lb-toolbar button:hover, .lb-toolbar a:hover{ background:#284b75; }
+  .lb-spacer{ flex:1; }
+  .lb-stage{
+    position:relative; width:100%; height:calc(100dvh - 52px);
+    overflow:hidden; display:grid; place-items:center; touch-action:none;
+  }
+  #lbImg{
+    max-width:95vw; max-height:calc(100dvh - 64px);
+    user-select:none; -webkit-user-drag:none;
+    transform-origin:50% 50%;
+    cursor:grab; background:#fff; border-radius:6px;
+    box-shadow:0 8px 28px rgba(0,0,0,.35);
+  }
+  #lbImg:active{ cursor:grabbing; }
 </style>
 </head>
 <body>
@@ -107,37 +143,36 @@
         </div>
     </div>
 
-    <!-- 第一排：011、003、001、002（按你指定的顺序） -->
+    <!-- 第一排：011、003、001、002 -->
     <h2 class="section-title" style="display:none">Row 1</h2>
     <section class="gallery row1" aria-label="Row 1">
-      <figure class="item"><img class="thumb" src="011.jpg" alt="011"></figure>
-      <figure class="item"><img class="thumb" src="003.jpg" alt="003"></figure>
-      <figure class="item"><img class="thumb" src="001.jpg" alt="001"></figure>
-      <figure class="item"><img class="thumb" src="002.jpg" alt="002"></figure>
+      <figure class="item"><img class="thumb" src="011.jpg" alt="011" data-full="011.jpg"></figure>
+      <figure class="item"><img class="thumb" src="003.jpg" alt="003" data-full="003.jpg"></figure>
+      <figure class="item"><img class="thumb" src="001.jpg" alt="001" data-full="001.jpg"></figure>
+      <figure class="item"><img class="thumb" src="002.jpg" alt="002" data-full="002.jpg"></figure>
     </section>
 
-    <!-- 第二排：5 幅 → 004、005、006、008、007（顺序固定） -->
+    <!-- 第二排：固定 5 列 → 004、005、006、008、007 -->
     <h2 class="section-title" style="display:none">Row 2</h2>
     <section class="gallery row2" aria-label="Row 2">
-      <figure class="item"><img class="thumb" src="004.jpg" alt="004"></figure>
-      <figure class="item"><img class="thumb" src="005.jpg" alt="005"></figure>
-      <figure class="item"><img class="thumb" src="006.jpg" alt="006"></figure>
-      <figure class="item"><img class="thumb" src="008.jpg" alt="008"></figure>
-      <figure class="item"><img class="thumb" src="007.jpg" alt="007"></figure>
+      <figure class="item"><img class="thumb" src="004.jpg" alt="004" data-full="004.jpg"></figure>
+      <figure class="item"><img class="thumb" src="005.jpg" alt="005" data-full="005.jpg"></figure>
+      <figure class="item"><img class="thumb" src="006.jpg" alt="006" data-full="006.jpg"></figure>
+      <figure class="item"><img class="thumb" src="008.jpg" alt="008" data-full="008.jpg"></figure>
+      <figure class="item"><img class="thumb" src="007.jpg" alt="007" data-full="007.jpg"></figure>
     </section>
 
-    <!-- 其余：先按编号顺序放置（需要按日期时，把 data-date 填上即可自动按日期排序） -->
+    <!-- 其余：可按 data-date 排序（留空则保持原顺序） -->
     <h2 class="section-title" style="display:none">Others</h2>
     <section id="others" class="gallery" aria-label="Others">
-      <!-- 先给出图片；如需按日期排序，把 data-date="YYYY-MM-DD" 补上，脚本会按日期升序重新排列 -->
-      <figure class="item"><img class="thumb" src="009.jpg" alt="009" data-date=""></figure>
-      <figure class="item"><img class="thumb" src="010.jpg" alt="010" data-date=""></figure>
-      <figure class="item"><img class="thumb" src="012.jpg" alt="012" data-date=""></figure>
-      <figure class="item"><img class="thumb" src="015.jpg" alt="015" data-date=""></figure>
-      <figure class="item"><img class="thumb" src="013.jpg" alt="013" data-date=""></figure>
-      <figure class="item"><img class="thumb" src="018.jpg" alt="018" data-date=""></figure>
-      <figure class="item"><img class="thumb" src="016.jpg" alt="016" data-date=""></figure>
-      <figure class="item"><img class="thumb" src="017.jpg" alt="017" data-date=""></figure>
+      <figure class="item"><img class="thumb" src="009.jpg" alt="009" data-full="009.jpg" data-date=""></figure>
+      <figure class="item"><img class="thumb" src="010.jpg" alt="010" data-full="010.jpg" data-date=""></figure>
+      <figure class="item"><img class="thumb" src="012.jpg" alt="012" data-full="012.jpg" data-date=""></figure>
+      <figure class="item"><img class="thumb" src="015.jpg" alt="015" data-full="015.jpg" data-date=""></figure>
+      <figure class="item"><img class="thumb" src="013.jpg" alt="013" data-full="013.jpg" data-date=""></figure>
+      <figure class="item"><img class="thumb" src="018.jpg" alt="018" data-full="018.jpg" data-date=""></figure>
+      <figure class="item"><img class="thumb" src="016.jpg" alt="016" data-full="016.jpg" data-date=""></figure>
+      <figure class="item"><img class="thumb" src="017.jpg" alt="017" data-full="017.jpg" data-date=""></figure>
     </section>
 
     <div class="back">
@@ -145,34 +180,79 @@
     </div>
   </main>
 
+<!-- Lightbox 弹窗容器 -->
+<dialog id="lightbox" aria-label="Zoomed artwork">
+  <div class="lb-toolbar">
+    <button type="button" id="lbClose" title="Close (Esc)">✕</button>
+    <div class="lb-spacer"></div>
+    <button type="button" id="lbZoomOut" title="Zoom out">−</button>
+    <button type="button" id="lbZoomReset" title="Reset zoom">100%</button>
+    <button type="button" id="lbZoomIn" title="Zoom in">+</button>
+    <a id="lbDownload" download title="Download original">⬇︎</a>
+  </div>
+  <div class="lb-stage"><img id="lbImg" alt=""></div>
+</dialog>
+
 <script>
 /* 可选：给“其余作品”按日期排序 —— 只要给每张图片加 data-date="YYYY-MM-DD" */
 (function(){
   const box = document.getElementById('others');
+  if(!box) return;
   const items = Array.from(box.querySelectorAll('.item'));
-  // 取出有日期的数据
-  const withDate = items
-    .map(el=>{
-      const img = el.querySelector('img');
-      const d = img.getAttribute('data-date');
-      return { el, date: d && /^\d{4}-\d{2}-\d{2}$/.test(d) ? new Date(d).getTime() : null };
-    });
-
-  // 如果至少有两张填了日期，按日期升序排序；否则保持原顺序
-  const dated = withDate.filter(x=>x.date!==null);
+  const withDate = items.map(el=>{
+    const d = el.querySelector('img').getAttribute('data-date');
+    return { el, t: d && /^\d{4}-\d{2}-\d{2}$/.test(d) ? new Date(d).getTime() : null };
+  });
+  const dated = withDate.filter(x=>x.t!==null);
   if(dated.length >= 2){
-    const sorted = withDate.slice().sort((a,b)=>{
-      if(a.date===null && b.date===null) return 0;
-      if(a.date===null) return 1;
-      if(b.date===null) return -1;
-      return a.date - b.date;
+    withDate.sort((a,b)=>{
+      if(a.t===null && b.t===null) return 0;
+      if(a.t===null) return 1;
+      if(b.t===null) return -1;
+      return a.t - b.t;
     });
-    // 重新渲染
     box.innerHTML = '';
-    sorted.forEach(x=> box.appendChild(x.el));
+    withDate.forEach(x=> box.appendChild(x.el));
   }
 })();
-</script>
 
-</body>
-</html>
+/* 与测试报告/专利一致的放大预览（滚轮缩放、拖动、双指缩放、下载） */
+(function(){
+  const dlg = document.getElementById('lightbox');
+  const img = document.getElementById('lbImg');
+  const btnClose = document.getElementById('lbClose');
+  const btnIn = document.getElementById('lbZoomIn');
+  const btnOut = document.getElementById('lbZoomOut');
+  const btnReset = document.getElementById('lbZoomReset');
+  const aDownload = document.getElementById('lbDownload');
+
+  let scale = 1, minScale = 1, maxScale = 6;
+  let pos = {x:0, y:0}, dragStart = null, lastTouch = null;
+
+  function openLightbox(src){ img.src = src; aDownload.href = src; scale = 1; pos = {x:0, y:0}; apply(); dlg.showModal(); }
+  function closeLightbox(){ dlg.close(); }
+  function apply(){ img.style.transform = `translate(${pos.x}px, ${pos.y}px) scale(${scale})`; btnReset.textContent = `${Math.round(scale*100)}%`; }
+  function zoom(delta, center){
+    const prev = scale;
+    scale = Math.min(maxScale, Math.max(minScale, scale + delta));
+    if(center && scale !== prev){
+      const rect = img.getBoundingClientRect();
+      const cx = center.x - rect.left - rect.width/2 - pos.x;
+      const cy = center.y - rect.top  - rect.height/2 - pos.y;
+      pos.x -= cx*(scale/prev - 1);
+      pos.y -= cy*(scale/prev - 1);
+    }
+    apply();
+  }
+
+  // 点击任何 .thumb 打开
+  document.addEventListener('click', e=>{
+    const t = e.target.closest('img.thumb');
+    if(!t) return;
+    openLightbox(t.getAttribute('data-full') || t.src);
+  });
+
+  // 关闭与快捷键
+  btnClose.addEventListener('click', closeLightbox);
+  dlg.addEven
+
