@@ -20,8 +20,6 @@
       margin: 0 0 16px;
       font-weight: 800;
     }
-
-    /* 顶部图像 */
     .top-img {
       text-align: center;
       margin-bottom: 2em;
@@ -35,61 +33,27 @@
     }
     .caption { color:#446384; margin:.5em 0 0; }
 
-    /* 专利申请卡 */
-    .notice {
-      background: #ffffff;
-      border-radius: 6px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-      padding: 1.5em;
-      margin: 2em auto;
-      max-width: 700px;
-      text-align: center;
-    }
-    .notice h2 {
-      color: #003366;
-      font-size: 1.4em;
-      margin-bottom: 1em;
-    }
-    .notice p {
-      margin: 0.5em 0;
-      font-size: 1.1em;
-    }
-    .notice a {
-      background：#cce7ff;
-      padding：8px 16px;
-      border-radius：6px;
-      text-decoration：none;
-      color：#003366;
-      font-weight：bold;
-      display：inline-block;
-      margin-top：1em;
-      transition：background 0.3s;
-    }
-    .notice a：hover {
-      background：#b3d9ff;
-    }
-
     /* 画廊 */
     .gallery {
-      display：flex;
-      flex-wrap：wrap;
-      gap：20px;
-      justify-content：space-between;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
     }
     .item {
-      width：30%;
-      text-align：center;
+      width: 30%;
+      text-align: center;
     }
     .item img {
-      width：100%;
-      border-radius：6px;
-      box-shadow：0 6px 18px rgba(0, 0, 0, 0.12);
-      background：#fff;
-      cursor：zoom-in;
-      过渡：变换 .15s 缓和，框阴影 .15s 缓和；
+      width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+      background:#fff;
+      cursor: zoom-in;
+      transition: transform .15s ease, box-shadow .15s ease;
     }
-    .item img：hover {
-      transform：translateY（-2px）;
+    .item img:hover {
+      transform: transformY(-2px);
       box-shadow：0 10px 26px rgba（0,0,0，.16）;
     }
 
@@ -101,69 +65,227 @@
       .top-img img{ 宽度：100％; }
     }
 
-    a.back {
-      display：inline-block;
-      margin-top：2em;
-      text-decoration：none;
-      background：#cce7ff;
-      padding：8px 14px;
-      border-radius：6px;
-      color：#003366;
-      font-weight：700;
+    .notice {
+      上边距：3em;
+      字体大小：1.05em;
+      颜色：#003366;
+      文本对齐：左;
+      行高：1.8;
     }
-    a.back：hover{ background：#b9dcff; }
+    .notice strong {
+      显示：块;
+      下边距：0.5em;
+      字体大小：1.2em;
+      颜色：#001b36;
+    }
+    a.back {
+      显示：内联块;
+      上边距：2em;
+      文本装饰：无;
+      背景：#cce7ff;
+      填充：8px 14px；
+      边框半径：6px；
+      颜色：#003366；
+      字体粗细：700；
+    }
+    a.back:hover{ background:#b9dcff; }
+
+    /* ======
+    Lightbox 弹窗（点击放大查看） ====== */ dialog#lightbox {
+      width: 100vw; max-width: none;
+      height: 100dvh; padding: 0; margin: 0; border: 0;
+      background: rgba(0,0,0,.75);
+    }
+    dialog#lightbox::backdrop { background: rgba(0,0,0,.65); }
+
+    .lb-toolbar{
+      position: sticky; top: 0; z-index: 2;
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 12px;
+      background: rgba(12,20,28,.85);
+      backdrop-filter: blur(6px);
+    }
+    .lb-toolbar button, .lb-toolbar a{
+      appearance: none;边框：0；边框半径：10px；
+      填充：6px 10px；字体粗细：700；
+      颜色：#e6f0ff；背景：#1f3a5b；文本装饰：无；
+      光标：指针；
+    }
+    .lb-toolbar 按钮：悬停，.lb-toolbar a：悬停{背景：#284b75；}
+    .lb-spacer{弹性：1；}
+
+    .lb-stage{
+      位置：相对；宽度：100%；高度：计算（100dvh - 52px）；
+      溢出：隐藏；显示：网格；放置项目：居中；
+      触摸动作：无；
+    }
+    #lbImg{
+      最大宽度：95vw；最大高度：计算（100dvh - 64px）；
+      用户选择：无；-webkit-user-drag：无；
+      变换原点：50% 50%；
+      光标：抓取；
+      背景：#fff；
+      边框半径：6px；
+      盒子阴影：0 8px 28px rgba(0,0,0,.35)；
+    }
+    #lbImg：active{光标：抓取； }
   </style>
 </head>
 <body>
 
-  <!-- 专利申请卡 -->
-  <div class="notice">
-    <h2>已提交的专利申请</h2>
-    <p>1. 纺织废料板制造工艺 — 申请号：<strong>2021108973930</strong> </p>
-    <p>2.高效环保的海洋塑料废弃物处理系统及其制备方法 — 申请号：<strong>819457</strong></p>
-    <a href="patent.pdf" target="_blank">📄查看完整专利列表 (PDF)</a>
-  </div>
+  <h1>专利证书</h1>
 
-  <!-- 顶部图片 -->
+  <!-- 顶部主图 -->
   <div class="top-img">
-    <img class="zoomable" src="1.jpg" data-full="1.jpg" alt="主专利图片" 加载中="lazy">
+    <img class="zoomable" src="1.jpg" data-full="1.jpg" alt="主专利图" 加载中="lazy">
     <p class="caption">发明专利：一种胶凝材料</p>
   </div>
 
-  <!-- 标题 -->
-  <h1>专利证书</h1>
-
-  <!-- 图库 -->
+  <!-- 画廊 -->
   <div class="gallery">
     <div class="item"><img class="zoomable" src="2.jpg" data-full="2.jpg" alt="专利2" 加载中="lazy"></div>
-    <div class="item"><img class="zoomable" src="3.jpg" data-full="3.jpg" alt="专利 3" 加载中="lazy"></div>
+    <div class="item"><img class="zoomable" src="3.jpg" data-full="3.jpg" alt="专利3" 加载中="lazy"></div>
     <div class="item"><img class="zoomable" src="4.jpg" data-full="4.jpg" alt="专利 4" 加载中="lazy"></div>
-    <div class="item"><img class="zoomable" src="5.jpg" data-full="5.
-    : <div class="item"><img class="zoomable" src="6.jpg" data-full="6.jpg" alt="专利 6" load="lazy"></div>
-    <div class="item"><img class="zoomable" src="7.jpg" data-full="7.jpg" alt="专利 7" load="lazy"></div>
-    <div class="item"><img class="zoomable" src="8.jpg" data-full="8.jpg" alt="专利 8" load="lazy"></div>
-    <div class="item"><img class="zoomable" src="9.jpg" data-full="9.jpg" alt="专利 9" load="lazy"></div>
-    <div class="item"><img class="zoomable" src="10.jpg" data-full="10.jpg" alt="专利 10" 加载中="lazy"></div>
-    <div class="item"><img class="zoomable" src="11.jpg" data-full="11.jpg" alt="专利 11" 加载中="lazy"></div>
+    <div class="item"><img class="zoomable" src="5.jpg" data-full="5.jpg" alt="专利 5" 加载中="lazy"></div>
+    <div class="item"><img class="zoomable" src="6.jpg" data-full="6.jpg" alt="专利 6" 加载中="lazy"></div>
+    <div class="item"><img class="zoomable" src="7.jpg" data-full="7.jpg" alt="专利 7" loading="lazy"></div>
+    <div class="item"><img class="zoomable" src="8.jpg" data-full="8.jpg" alt="专利 8" loading="lazy"></div>
+    <div class="item"><img class="zoomable" src="9.jpg" data-full="9.jpg" alt="专利 9" loading="lazy"></div>
+    <div class="item"><img class="zoomable" src="10.jpg" data-full="10.jpg" alt="专利 10" loading="lazy"></div>
+    <div class="item"><img class="zoomable" src="11.jpg" data-full="11.jpg" alt="专利11" 加载中="lazy"></div>
     <div class="item"><img class="zoomable" src="12.jpg" data-full="12.jpg" alt="专利 12" 加载中="lazy"></div>
     <div class="item"><img class="zoomable" src="13.jpg" data-full="13.jpg" alt="专利 13" 加载中="lazy"></div>
-    <div class="item"><img class="zoomable" src="14.jpg" data-full="14.jpg" alt="专利14" 加载中="lazy"></div>
-    <div class="item"><img class="zoomable" src="15.jpg" data-full="15.jpg" alt="专利15" 加载中="lazy"></div>
+    <div class="item"><img class="zoomable" src="14.jpg" data-full="14.jpg" alt="专利 14" 加载中="lazy"></div>
+    <div class="item"><img class="zoomable" src="15.jpg" data-full="15.jpg" alt="专利 15" 加载中="lazy"></div>
   </div>
 
-  <!-- 其他证书 -->
-  <hr style="margin-top:3em;">
-  <div style="text-align:center; margin-bottom:2em;">
-    <p style="font-weight:bold;">上海合和新材料科技有限公司营业执照</p>
-    <img class="zoomable" src="5.1.jpg" data-full="5.1.jpg" style="max-width:500px; border:1px solid #ccc; border-radius:6px; cursor:zoom-in;" alt="营业执照" 加载中="lazy">
-  </div>
-  <div style="text-align:center; margin-bottom:2em;">
-    <p style="font-weight:bold;">中国科学技术部金桥奖证书</p>
-    <img class="zoomable" src="5.2.jpg" data-full="5.2.jpg" style="max-width:500px; border:1px solid #ccc; border-radius:6px; cursor:zoom-in;" alt="金桥奖" 加载中="lazy">
-  </div>
+  <div class="notice">
+    <strong>已提交的专利申请</strong>
+    <p>1. 一种纺织废料纸板制造工艺 — 申请号：<strong>2021108973930</strong> </p>
+    <p>2.一种高效环保的海洋塑料废弃物处理系统及其制备方法 — 申请号：<strong>819457</strong></p>
+<div style="text-align:center; margin-top:1.5em;">             <a href="patent.pdf" target="_blank" style="display:inline-block; background:#cce7ff; padding:10px 18px; border-radius:8px; text-decoration:none; color:#003366; font-weight:700; font-size:1.05em;">     
+  查看完整专利列表（PDF）  </a> </div>   </div>   <hr style="margin-top:3em;">   <div style="text-align:center; margin-bottom:2em;">     <p style="font-weight:bold;">上海合和新材料科技有限公司营业执照</p>     <img class="zoomable" src="5.1.jpg" data-full="5.1.jpg" style="max-width:500px; border:1px solid #ccc; border-radius:6px; cursor:zoom-in;" alt="营业执照" loading="lazy">   </div>   <div style="text-align:center; margin-bottom:2em;">     <p style="font-weight:bold;">中国科技部金桥奖证书</p>     <img class="zoomable" src="5.2.jpg" data-full="5.2.jpg" style="max-width:500px; border:1px solid #ccc; border-radius:6px; cursor:zoom-in;" alt="金桥奖" loading="lazy">   </div>   <p style="text-align: center;">     <a class="back" href="index.html">�larr; 返回首页</a>
 
-  <p style="text-align: center;">
-    <a class="back" href="index.html">→返回首页</a>
+
+    📄
+
+
   </p>
+
+  <!-- ===== Lightbox 弹窗容器 ===== -->
+  <dialog id="lightbox" aria-label="缩放图像">
+    <div class="lb-toolbar">
+      <button type="button" id="lbClos​​e" title="关闭 (Esc)">✕</button>
+      <div class="lb-spacer"></div>
+      <button type="button" id="lbZoomOut" title="缩小">−</button>
+      <button type="button" id="lbZoomReset" title="重置缩放">100%</button>
+      <button type="button" id="lbZoomIn" title="放大">+</button>
+      <a id="lbDownload" download title="下载原图">⬇︎</a>
+    </div>
+    <div class="lb-stage">
+      <img id="lbImg" alt="">
+    </div>
+  </dialog>
+
+  <!-- ===== 放大/缩放/拖拽脚本（与测试报告同款） ===== -->       <script> (function(){ const dlg = document.getElementById('
+  lightbox
+    ' );       const img = document.getElementById(' lbImg');       const btnClose = document.getElementById(' lbClos​​e');       const btnIn = document.getElementById(' lbZoomIn');       const btnOut = document.getElementById(' lbZoomOut');       const btnReset = document.getElementById(' lbZoomReset');       const aDownload = document.getElementById(' lbDownload');      让比例 = 1, minScale = 1, maxScale = 6       ;最后触摸 = null;      函数 openLightbox(src){         img.src = src;         aDownload.href = src;         scale = 1; pos = {x：0，y：0}; apply();         dlg.showModal();       }       function closeLightbox(){ dlg.close(); }       function apply(){         img.style.transform = `translate(${pos.x}px, ${pos.y}px) scale(${scale})`;         btnReset.textContent = `${Math.round(scale*100)}%`;       }       function zoom(delta, center){         const prev = scale;         scale = Math.min(maxScale, Math.max(minScale, scale + delta));         if(center && scale !== prev){           const rect = img.getBoundingClientRect();           const cx = center.x - rect.left - rect.width/2 - pos.x;           const cy = center.y - rect.top - rect.height/2 - pos.y;           pos.x -= cx*(scale/prev - 1);           pos.y -= cy*(规模/上一个 - 1);         }        申请（）;       }       // 点击任何带 .zoomable 的图片打开      document.addEventListener(' click', e=>{         const t = e.target.closest('img.zoomable ');         if(!t) return;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        const full = t.getAttribute('data-full') || t.src;
+        openLightbox(full);
+      });
+
+      // 关闭与快捷键
+      btnClose.addEventListener(' click', closeLightbox);
+      dlg.addEventListener(' keydown' , e=>{ if(e.key==='Escape') closeLightbox(); });
+
+      // 拖拽平移
+      img.addEventListener(' mousedown', e=>{
+        if(scale<=1) return;
+        dragStart = {x: e.clientX - pos.x, y: e.clientY - pos.y};
+        e.preventDefault();
+      });
+      window.addEventListener(' mousemove', e=>{
+        if(!dragStart) return;
+        pos = {x: e.clientX - dragStart.x, y: e.clientY - dragStart.y};
+        apply();
+      });
+      window.addEventListener(' mouseup', ()=> dragStart=null);
+
+      // 滚轮缩放
+      img.addEventListener('wheel', e=>{
+        e.preventDefault();
+        zoom(e.deltaY < 0 ? +0.15 : -0.15, {x:e.clientX, y:e.clientY});
+      }, {passive:false});
+
+      // 触摸缩放/拖动（手机端）
+      img.addEventListener(' touchstart', e=>{
+        if(e.touches.length===1){
+          lastTouch = {x:e.touches[0].clientX, y:e.touches[0].clientY};
+        }else if(e.touches.length===2){
+          lastTouch = {d: dist(e.touches[0], e.touches[1]), scale};
+        }
+      }, {passive:false});
+      img.addEventListener(' touchmove', e=>{
+        e.preventDefault();
+        if(e.touches.length===1 && scale>1 && lastTouch && lastTouch.x!=null){
+          const nx = e.touches[0].clientX, ny = e.touches[0].clientY;
+          pos.x += nx - lastTouch.x; pos.y += ny - lastTouch.y;
+          lastTouch = {x:nx, y:ny};
+          apply();
+        }else if(e.touches.length===2 && lastTouch && lastTouch.d){
+          const d = dist(e.touches[0], e.touches[1]);
+          scale = Math.min(maxScale, Math.max(minScale, lastTouch.scale * (d/lastTouch.d)));
+          apply();
+        }
+      }, {passive:false});
+      函数 dist(a,b){ const dx=a.clientX-b.clientX, dy=a.clientY-b.clientY;返回 Math.hypot(dx,dy); }
+
+      // 点击背景关闭（不误关图片/工具栏）
+      dlg.addEventListener('click', e=>{
+        const insideImg = e.composedPath().includes(img) ;
+        const insideBar = e.composedPath().includes( document.querySelector('.lb- toolbar'));
+        if(!insideImg && !insideBar) closeLightbox();
+      });
+    })();
+  </script>
 </body>
 </html>
