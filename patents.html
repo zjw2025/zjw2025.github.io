@@ -289,3 +289,33 @@
   </script>
 </body>
 </html>
+  <!-- Patent Certificates Section (insert below the patent application list, styled to match PDF button) -->
+<style>
+.cert-section{ text-align:center; margin:2rem auto; }
+.cert-title{ font-weight:700; margin-bottom:.75rem; }
+.cert-img{ max-width:520px; width:100%; border:1px solid #ccc; border-radius:8px; cursor:zoom-in; background:#f8f8f8; }
+.cert-grid{ display:grid; gap:2rem; }
+@media (min-width: 900px){ .cert-grid{ grid-template-columns:1fr 1fr; align-items:start; } }
+.back-wrap{ text-align:center; margin:2rem 0 3rem; }
+.btn-back{ display:inline-block; padding:.75rem 1.5rem; border-radius:8px; background:#4a90e2; color:#fff; font-weight:600; text-decoration:none; box-shadow:0 2px 6px rgba(0,0,0,.15); transition:background .2s; }
+.btn-back:hover{ background:#357ab8; }
+</style>
+
+
+<section aria-label="Other Certificates" class="cert-grid">
+<div class="cert-section">
+<p class="cert-title">Business License of Shanghai Hehe New Material Technology Co., Ltd.</p>
+<img class="cert-img" src="5.1.jpg" alt="Business License" loading="lazy">
+</div>
+
+
+<div class="cert-section">
+<p class="cert-title">China Ministry of Science and Technology Jinqiao Award Certificate</p>
+<img class="cert-img" src="5.2.jpg" alt="Jinqiao Award Certificate" loading="lazy">
+</div>
+</section>
+
+
+<div class="back-wrap">
+<a class="btn-back" href="javascript:void(0)" onclick="if(window.history.length>1){history.back()}else{window.location.href='/patents' }">← Back to Patents</a>
+</div>
